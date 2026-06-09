@@ -194,6 +194,34 @@ main{flex:1;display:flex;flex-direction:column;overflow:hidden;position:relative
 .ad-chip{padding:4px 11px;background:var(--s2);border-radius:20px;font-size:11px;cursor:pointer;transition:.15s}
 .ad-chip:hover{color:#fff}
 
+/* ── FOUNDATIONS ── */
+#v-foundations{flex-direction:row}
+.found-sidebar{width:240px;min-width:240px;background:var(--s1);border-right:1px solid var(--s3);overflow-y:auto}
+.found-sidebar::-webkit-scrollbar{width:3px}
+.found-sidebar::-webkit-scrollbar-thumb{background:var(--s3)}
+.found-cat-group{margin-bottom:4px}
+.found-cat-head{font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:var(--t3);padding:10px 14px 4px}
+.found-item{padding:7px 14px;font-size:12px;color:var(--t2);cursor:pointer;border-left:2px solid transparent;transition:.1s}
+.found-item:hover{background:var(--s2);color:var(--t1)}
+.found-item.on{background:var(--s2);color:var(--acc);border-left-color:var(--acc)}
+.found-main{flex:1;padding:24px;overflow-y:auto}
+.found-main::-webkit-scrollbar{width:3px}
+.found-main::-webkit-scrollbar-thumb{background:var(--s3)}
+.found-card{max-width:680px}
+.found-card .fc-cat{display:inline-block;background:var(--acc2);color:#fff;border-radius:20px;font-size:10px;padding:2px 10px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.found-card h1{font-size:24px;font-weight:800;letter-spacing:-.4px;margin-bottom:8px}
+.found-card .fc-desc{font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:6px}
+.found-card .fc-yield{font-size:11px;color:var(--t3);margin-bottom:18px}
+.found-card h3{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--t3);margin:18px 0 8px;display:flex;align-items:center;gap:6px}
+.found-card ul.fc-ings{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:5px}
+.found-card ul.fc-ings li{font-size:12px;color:var(--t2);padding:6px 10px;background:var(--s2);border-radius:6px;border-left:2px solid var(--s3)}
+.found-card .fc-steps{counter-reset:s;display:flex;flex-direction:column;gap:9px}
+.found-card .fc-step{display:flex;gap:10px;font-size:13px;color:var(--t2);line-height:1.6}
+.found-card .fc-step .fc-n{background:var(--acc);color:#fff;border-radius:50%;width:21px;height:21px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:1px}
+.found-card .fc-note{background:rgba(6,182,212,.07);border:1px solid rgba(6,182,212,.2);border-radius:8px;padding:11px 13px;font-size:12px;color:#67E8F9;line-height:1.55;margin-top:18px}
+.found-card .fc-note strong{color:#A5F3FC}
+.found-empty{color:var(--t3);font-size:13px;padding:40px;text-align:center}
+
 /* ── TOOLTIP ── */
 #tip{position:fixed;background:var(--s1);border:1px solid var(--s3);border-radius:7px;padding:7px 11px;font-size:11px;pointer-events:none;display:none;z-index:999;max-width:200px}
 #tip strong{display:block;margin-bottom:2px}
@@ -213,6 +241,7 @@ main{flex:1;display:flex;flex-direction:column;overflow:hidden;position:relative
     <button class="nav-btn" onclick="nav('recipe',this)">🎨 Pairing Builder</button>
     <button class="nav-btn" onclick="nav('generator',this)">✨ Recipe Generator<span class="recipe-count" id="recipe-count">0</span></button>
     <button class="nav-btn" onclick="nav('aroma',this)">🌸 Aroma Explorer</button>
+    <button class="nav-btn" onclick="nav('foundations',this)">📖 Foundations<span class="recipe-count" id="base-count">0</span></button>
   </nav>
 </header>
 
@@ -342,6 +371,16 @@ main{flex:1;display:flex;flex-direction:column;overflow:hidden;position:relative
       <div class="aroma-grid" id="aroma-grid"></div>
       <div class="aroma-detail" id="aroma-detail"></div>
     </div>
+
+    <!-- CULINARY FOUNDATIONS -->
+    <div class="view" id="v-foundations">
+      <div class="found-sidebar">
+        <div class="sec-title" style="padding:14px 14px 6px">📖 Culinary Foundations</div>
+        <p style="font-size:11px;color:var(--t3);padding:0 14px 10px">The classical base recipes & techniques every kitchen is built on.</p>
+        <div id="found-cats"></div>
+      </div>
+      <div class="found-main" id="found-main"></div>
+    </div>
   </main>
 </div>
 <div id="tip"></div>
@@ -351,6 +390,7 @@ main{flex:1;display:flex;flex-direction:column;overflow:hidden;position:relative
 // DATA LOADING
 // ═══════════════════════════════════════
 let RECIPES = [];
+let BASES = [];
 let recipeIngredients = [];
 let selectedId = null;
 let showLabels = true;
@@ -362,13 +402,21 @@ const ingMap = Object.fromEntries(INGREDIENTS.map(i=>[i.id,i]));
 
 async function loadRecipes() {
   try {
-    const r = await fetch('recipes_final.json');
+    const r = await fetch('recipes.json');
     RECIPES = await r.json();
     document.getElementById('recipe-count').textContent = RECIPES.length;
     populateGenSelects();
   } catch(e) {
     console.warn('Recipes not loaded:', e);
     RECIPES = [];
+  }
+  try {
+    const b = await fetch('culinary_bases.json');
+    BASES = await b.json();
+    renderFoundations();
+  } catch(e) {
+    console.warn('Bases not loaded:', e);
+    BASES = [];
   }
 }
 
@@ -612,13 +660,39 @@ function loadRecipeInGenerator(recId) {
   const rec = RECIPES.find(r=>r.id===recId);
   if (!rec) return;
   nav('generator', document.querySelectorAll('.nav-btn')[2]);
-  // Set the first linked ingredient
   if (rec.linked_ingredients?.length) {
     document.getElementById('gen-base').value = rec.linked_ingredients[0]||'';
     document.getElementById('gen-pair').value = rec.linked_ingredients[1]||'';
-    document.getElementById('gen-cuisine').value = rec.cuisine;
   }
-  generateRecipe();
+  // Render the ACTUAL real recipe (full ingredients + method) from the database
+  const linked = (rec.linked_ingredients||[]).map(id=>ingMap[id]).filter(Boolean);
+  const aromaFreq={};
+  linked.forEach(i=>i.aromas.forEach(a=>{aromaFreq[a]=(aromaFreq[a]||0)+1}));
+  const topAromas = Object.entries(aromaFreq).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([a])=>a);
+  document.getElementById('rg-output').innerHTML = `
+    <div class="recipe-card" style="border-top-color:var(--acc2)">
+      <h2>${rec.name}</h2>
+      <div class="rc-meta">
+        <span>🌍 ${rec.cuisine}</span>
+        ${rec.servings?`<span>👤 ${rec.servings}</span>`:''}
+        <span>📖 Real recipe</span>
+      </div>
+      <div class="recipe-section">
+        <h3>🧂 Ingredients</h3>
+        <ul>${rec.ingredients.map(i=>`<li>${i}</li>`).join('')}</ul>
+      </div>
+      ${rec.method?.length?`<div class="recipe-section">
+        <h3>👨‍🍳 Method</h3>
+        <div class="steps-list">${rec.method.map((s,i)=>`<div class="step"><div class="step-num">${i+1}</div><div>${s}</div></div>`).join('')}</div>
+      </div>`:''}
+      ${topAromas.length?`<div class="recipe-section">
+        <h3>🌸 Aroma Notes</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:4px">${topAromas.map(a=>{const n=AROMA_NOTES[a];return `<div class="a-tag" style="background:${n?.color}22;color:${n?.color};border:1px solid ${n?.color}44">${n?.icon||''} ${n?.label||a}</div>`;}).join('')}</div>
+      </div>`:''}
+      ${linked.length?`<div class="recipe-section"><h3>🔗 Key Ingredients</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:5px">${linked.map(i=>`<div class="ad-chip" onclick="selectIng('${i.id}');nav('network',document.querySelectorAll('.nav-btn')[0])">${i.emoji} ${i.name}</div>`).join('')}</div></div>`:''}
+    </div>`;
+  document.getElementById('similar-box').style.display='none';
 }
 
 function generateRecipe() {
@@ -718,8 +792,18 @@ function generateRecipe() {
 
     <div class="pairing-science">${scienceNote}</div>
 
+    ${(() => {
+      const recBase = suggestBase(method, course, selected_ings);
+      return recBase ? `<div class="recipe-section" style="margin-top:12px">
+        <h3>📖 Suggested Foundation</h3>
+        <div class="sim-card" onclick="nav('foundations',document.querySelectorAll('.nav-btn')[4]);showBase('${recBase.id}')">
+          <div class="si-em">📖</div>
+          <div class="si-info"><div class="si-nm">${recBase.name}</div><div class="si-cu">${recBase.category} · master this base technique</div></div>
+        </div></div>` : '';
+    })()}
+
     ${matchingRecs.length?`<div class="recipe-section" style="margin-top:12px">
-      <h3>📚 Reference Recipes from Database</h3>
+      <h3>📚 Real Recipes from the Library <span style="font-weight:400;color:var(--t3)">(click to view full method)</span></h3>
       <ul>${matchingRecs.map(r=>`<li style="cursor:pointer" onclick="loadRecipeInGenerator('${r.id}')">${r.name} <span style="color:var(--t3)">(${r.cuisine})</span></li>`).join('')}</ul>
     </div>`:''}
   </div>`;
@@ -779,6 +863,20 @@ function buildSteps(ings, base, pair, method, course, aromas, refRec) {
 function topAromas(a, b) {
   const shared = a.aromas.filter(ar=>b.aromas.includes(ar));
   return shared.length ? (AROMA_NOTES[shared[0]]?.label||shared[0]) : 'aromatic';
+}
+
+function suggestBase(method, course, ings) {
+  if (!BASES.length) return null;
+  const cats = ings.map(i=>i.category);
+  const find = id => BASES.find(b=>b.id===id);
+  if (course==='dessert') return find('base_pastry_cream') || find('base_caramel');
+  if (method==='emulsified') return find('base_mayonnaise') || find('base_beurre_blanc');
+  if (method==='braised') return find('base_brown_stock') || find('base_espagnole');
+  if (cats.includes('protein') && ings.some(i=>i.id==='fish'||i.id==='oyster'||i.id==='crustaceans')) return find('base_fish_fumet') || find('base_beurre_blanc');
+  if (cats.includes('protein')) return find('base_white_stock') || find('base_brown_stock');
+  if (method==='raw') return find('base_vinaigrette') || find('base_mayonnaise');
+  if (cats.includes('vegetable')) return find('base_mirepoix') || find('base_vegetable_stock');
+  return find('base_mirepoix');
 }
 
 function buildScienceNote(base, pair, topPair) {
@@ -935,6 +1033,45 @@ function showAromaDetail(key,note,ings,card) {
       <div style="font-size:12px;color:var(--t3)">${ings.length} ingredients share this aroma note</div></div></div>
     <div class="ad-ing-grid">${ings.map(i=>`<div class="ad-chip" onclick="selectIng('${i.id}');nav('network',document.querySelectorAll('.nav-btn')[0])" style="--hover:${note.color}" onmouseover="this.style.background='${note.color}';this.style.color='#fff'" onmouseout="this.style.background='';this.style.color=''">${i.emoji} ${i.name}</div>`).join('')}</div>`;
   detail.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+// ═══════════════════════════════════════
+// CULINARY FOUNDATIONS
+// ═══════════════════════════════════════
+let activeBaseId = null;
+function renderFoundations() {
+  document.getElementById('base-count').textContent = BASES.length;
+  const nav = document.getElementById('found-cats');
+  const groups = {};
+  BASES.forEach(b => { (groups[b.category] = groups[b.category] || []).push(b); });
+  nav.innerHTML = Object.entries(groups).map(([cat, items]) => `
+    <div class="found-cat-group">
+      <div class="found-cat-head">${cat}</div>
+      ${items.map(b => `<div class="found-item" id="fi-${b.id}" onclick="showBase('${b.id}')">${b.name}</div>`).join('')}
+    </div>`).join('');
+  if (BASES.length && !activeBaseId) showBase(BASES[0].id);
+}
+
+function showBase(id) {
+  activeBaseId = id;
+  const b = BASES.find(x => x.id === id);
+  if (!b) return;
+  document.querySelectorAll('.found-item').forEach(el => el.classList.remove('on'));
+  document.getElementById('fi-' + id)?.classList.add('on');
+  const linked = (b.linked_ingredients || []).map(iid => ingMap[iid]).filter(Boolean);
+  document.getElementById('found-main').innerHTML = `
+    <div class="found-card">
+      <span class="fc-cat">${b.category}</span>
+      <h1>${b.name}</h1>
+      <p class="fc-desc">${b.description}</p>
+      <p class="fc-yield">${b.yields ? '⚖ Yields: ' + b.yields : ''}</p>
+      <h3>🧂 Ingredients</h3>
+      <ul class="fc-ings">${b.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
+      <h3>👨‍🍳 Method</h3>
+      <div class="fc-steps">${b.method.map((s, i) => `<div class="fc-step"><div class="fc-n">${i + 1}</div><div>${s}</div></div>`).join('')}</div>
+      ${b.technique_notes ? `<div class="fc-note"><strong>🔬 Technique:</strong> ${b.technique_notes}</div>` : ''}
+      ${linked.length ? `<h3>🔗 Pairs with</h3><div style="display:flex;flex-wrap:wrap;gap:5px">${linked.map(i => `<div class="ad-chip" onclick="selectIng('${i.id}');nav('network',document.querySelectorAll('.nav-btn')[0])">${i.emoji} ${i.name}</div>`).join('')}</div>` : ''}
+    </div>`;
 }
 
 // ═══════════════════════════════════════

@@ -33,7 +33,8 @@ AROMA_NOTES = evalScope.AROMA_NOTES;
 CATEGORY_COLORS = evalScope.CATEGORY_COLORS;
 CATEGORY_LABELS = evalScope.CATEGORY_LABELS;
 
-const RECIPES = JSON.parse(readFileSync(join(dataPath, "recipes_final.json"), "utf-8"));
+const RECIPES = JSON.parse(readFileSync(join(dataPath, "recipes.json"), "utf-8"));
+const BASES = JSON.parse(readFileSync(join(dataPath, "culinary_bases.json"), "utf-8"));
 const ingMap = Object.fromEntries(INGREDIENTS.map(i => [i.id, i]));
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -280,6 +281,27 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         required: ["aroma"],
       },
     },
+    {
+      name: "list_culinary_bases",
+      description: "List the foundational culinary base recipes & techniques (stocks, mother sauces, doughs, emulsions, knife cuts, etc.), optionally filtered by category.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          category: { type: "string", description: "Optional category filter, e.g. 'Stock', 'Mother Sauce', 'Dough', 'Cold Emulsion', 'Technique'" },
+        },
+      },
+    },
+    {
+      name: "get_culinary_base",
+      description: "Get the full method and ingredients for a foundational culinary base recipe or technique (e.g. béchamel, brown stock, pasta dough, mayonnaise, hollandaise).",
+      inputSchema: {
+        type: "object",
+        properties: {
+          id: { type: "string", description: "The base id (e.g. 'base_bechamel') or a search term in its name (e.g. 'hollandaise')" },
+        },
+        required: ["id"],
+      },
+    },
   ],
 }));
 
@@ -400,12 +422,32 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           text: JSON.stringify(results.map(r => ({
             name: r.name,
             cuisine: r.cuisine,
-            ingredients: r.ingredients_raw?.slice(0, 5),
+            servings: r.servings || undefined,
+            ingredients: r.ingredients,
+            method: r.method,
             linkedIngredients: r.linked_ingredients,
-            source: r.source,
           })), null, 2),
         }],
       };
+    }
+
+    case "list_culinary_bases": {
+      let list = BASES;
+      if (args.category) list = list.filter(b => b.category.toLowerCase() === args.category.toLowerCase());
+      return {
+        content: [{
+          type: "text",
+          text: JSON.stringify(list.map(b => ({ id: b.id, name: b.name, category: b.category, description: b.description })), null, 2),
+        }],
+      };
+    }
+
+    case "get_culinary_base": {
+      const q = (args.id || "").toLowerCase();
+      const base = BASES.find(b => b.id === args.id)
+        || BASES.find(b => b.name.toLowerCase().includes(q) || b.id.includes(q));
+      if (!base) return { content: [{ type: "text", text: `No culinary base found for "${args.id}". Use list_culinary_bases to see available bases.` }] };
+      return { content: [{ type: "text", text: JSON.stringify(base, null, 2) }] };
     }
 
     case "get_aroma_ingredients": {
