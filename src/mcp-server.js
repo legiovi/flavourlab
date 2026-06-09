@@ -99,26 +99,44 @@ function scoreHarmony(ingredientIds) {
   };
 }
 
+const SWEET_ONLY = new Set(["chocolate", "vanilla"]);
+const SUPPORT_BONUS = { herb: 3, spice: 3, other: 2, vegetable: 2, dairy: 1, fruit: 1 };
+function pickFillers(core, count, course) {
+  if (count <= 0) return [];
+  const coreIds = new Set(core.map(i => i.id));
+  const proteinsInCore = core.filter(i => i.category === "protein").length;
+  const isDessert = course === "dessert", isDrink = course === "cocktail";
+  const need = Math.ceil(core.length / 2);
+  return INGREDIENTS.filter(o => !coreIds.has(o.id)).map(o => {
+    let pairCount = 0, aromaTotal = 0, verified = 0;
+    core.forEach(c => {
+      const sh = c.aromas.filter(a => o.aromas.includes(a));
+      aromaTotal += sh.length;
+      const isPair = c.pairings.includes(o.id) || o.pairings.includes(c.id);
+      if (sh.length > 0 || isPair) pairCount++;
+      if (isPair) verified++;
+    });
+    return { ing: o, pairCount, score: aromaTotal + verified * 3 + (SUPPORT_BONUS[o.category] || 0) };
+  })
+    .filter(x => x.pairCount >= need)
+    .filter(x => !(proteinsInCore >= 1 && x.ing.category === "protein"))
+    .filter(x => x.ing.category !== "wine" && x.ing.category !== "beverage")
+    .filter(x => isDessert || isDrink ? true : !SWEET_ONLY.has(x.ing.id))
+    .sort((a, b) => b.pairCount - a.pairCount || b.score - a.score)
+    .slice(0, count).map(x => x.ing);
+}
+
 function generateRecipe({ baseId, pairId, cuisine = "any", course = "any", method = "any", complexity = "medium", extraIds = [] }) {
   const base = ingMap[baseId];
   if (!base) throw new Error(`Unknown ingredient: ${baseId}`);
   const pair = pairId ? ingMap[pairId] : null;
   const extra = extraIds.map(id => ingMap[id]).filter(Boolean);
 
-  const ingCount = complexity === "simple" ? 5 : complexity === "complex" ? 12 : 8;
-  const topPairings = pairGraph
-    .filter(c => c.source === baseId || c.target === baseId)
-    .map(c => {
-      const oid = c.source === baseId ? c.target : c.source;
-      return { ing: ingMap[oid], strength: c.strength };
-    })
-    .filter(p => p.ing && p.ing.id !== pairId && !extraIds.includes(p.ing.id))
-    .sort((a, b) => b.strength - a.strength);
-
+  const ingCount = complexity === "simple" ? 5 : complexity === "complex" ? 10 : 7;
   const selected = [base];
   if (pair) selected.push(pair);
   extra.forEach(e => selected.push(e));
-  topPairings.slice(0, ingCount - selected.length).forEach(p => selected.push(p.ing));
+  pickFillers(selected, ingCount - selected.length, course).forEach(f => selected.push(f));
 
   const aromaFreq = {};
   selected.forEach(i => i.aromas.forEach(a => { aromaFreq[a] = (aromaFreq[a] || 0) + 1; }));

@@ -116,26 +116,51 @@ def find_recipes(ids, cuisine=None, limit=10):
             for _, r in res[:limit]]
 
 
+SWEET_ONLY = {"chocolate", "vanilla"}
+SUPPORT_BONUS = {"herb": 3, "spice": 3, "other": 2, "vegetable": 2, "dairy": 1, "fruit": 1}
+
+
+def pick_fillers(core, count, course):
+    """Coherent supporting cast: complements the WHOLE core, no extra proteins/sweets."""
+    if count <= 0:
+        return []
+    core_ids = {i["id"] for i in core}
+    proteins = sum(1 for i in core if i["category"] == "protein")
+    dessert, drink_c = course == "dessert", course == "cocktail"
+    need = (len(core) + 1) // 2
+    scored = []
+    for o in INGREDIENTS:
+        if o["id"] in core_ids:
+            continue
+        if proteins >= 1 and o["category"] == "protein":
+            continue
+        if o["category"] in ("wine", "beverage"):
+            continue
+        if not (dessert or drink_c) and o["id"] in SWEET_ONLY:
+            continue
+        pc = at = vf = 0
+        for c in core:
+            sh = [a for a in c["aromas"] if a in o["aromas"]]
+            at += len(sh)
+            is_pair = o["id"] in c.get("pairings", []) or c["id"] in o.get("pairings", [])
+            if sh or is_pair:
+                pc += 1
+            if is_pair:
+                vf += 1
+        if pc >= need:
+            scored.append((pc, at + vf * 3 + SUPPORT_BONUS.get(o["category"], 0), o))
+    scored.sort(key=lambda x: (-x[0], -x[1]))
+    return [o for _, _, o in scored[:count]]
+
+
 def generate(base_id, pair=None, cuisine="any", course="any", method="any", complexity="medium", extra=None):
     base = IMAP.get(base_id)
     if not base:
         return {"error": f"Unknown base '{base_id}'"}
     extra = extra or []
-    count = {"simple": 5, "complex": 12}.get(complexity, 8)
-    cand = []
-    for o in INGREDIENTS:
-        if o["id"] in (base_id, pair) or o["id"] in extra:
-            continue
-        sh = [a for a in base["aromas"] if a in o["aromas"]]
-        if sh:
-            cand.append((len(sh), o))
-    cand.sort(key=lambda x: -x[0])
+    count = {"simple": 5, "complex": 10}.get(complexity, 7)
     sel = [base] + ([IMAP[pair]] if pair and pair in IMAP else []) + [IMAP[e] for e in extra if e in IMAP]
-    for _, o in cand:
-        if len(sel) >= count:
-            break
-        if o not in sel:
-            sel.append(o)
+    sel += pick_fillers(sel, count - len(sel), course)
     freq = {}
     for i in sel:
         for a in i["aromas"]:

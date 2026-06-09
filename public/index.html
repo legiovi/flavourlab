@@ -695,6 +695,44 @@ function loadRecipeInGenerator(recId) {
   document.getElementById('similar-box').style.display='none';
 }
 
+// Pick a coherent supporting cast that complements the WHOLE core selection,
+// not just the base. Avoids stacking proteins, random sweets, and incoherent fills.
+const SWEET_ONLY = new Set(['chocolate','vanilla']); // dessert-leaning, skip in savoury dishes
+// supporting roles that make culinary sense as additions
+const SUPPORT_BONUS = { herb:3, spice:3, other:2, vegetable:2, dairy:1, fruit:1 };
+function pickFillers(core, count, course) {
+  if (count <= 0) return [];
+  const coreIds = new Set(core.map(i=>i.id));
+  const proteinsInCore = core.filter(i=>i.category==='protein').length;
+  const isDessert = course==='dessert';
+  const isDrink = course==='cocktail';
+  const need = Math.ceil(core.length/2); // must pair with at least half the core
+
+  const cand = INGREDIENTS.filter(o=>!coreIds.has(o.id)).map(o=>{
+    let pairCount=0, aromaTotal=0, verified=0;
+    core.forEach(c=>{
+      const sh = c.aromas.filter(a=>o.aromas.includes(a));
+      aromaTotal += sh.length;
+      const isPair = c.pairings.includes(o.id) || o.pairings.includes(c.id);
+      if (sh.length>0 || isPair) pairCount++;
+      if (isPair) verified++;
+    });
+    const score = aromaTotal + verified*3 + (SUPPORT_BONUS[o.category]||0);
+    return { ing:o, pairCount, score };
+  })
+  // coherence: must connect to most of the core, not just one item
+  .filter(x => x.pairCount >= need)
+  // never auto-add a competing protein when the dish already has one
+  .filter(x => !(proteinsInCore>=1 && x.ing.category==='protein'))
+  // drinks are surfaced separately as a pairing, never as an ingredient
+  .filter(x => x.ing.category!=='wine' && x.ing.category!=='beverage')
+  // keep dessert-only flavours out of savoury dishes (and vice-versa)
+  .filter(x => isDessert || isDrink ? true : !SWEET_ONLY.has(x.ing.id))
+  .sort((a,b)=> b.pairCount-a.pairCount || b.score-a.score);
+
+  return cand.slice(0, count).map(x=>x.ing);
+}
+
 function generateRecipe() {
   const baseId = document.getElementById('gen-base').value;
   const pairId = document.getElementById('gen-pair').value;
@@ -710,17 +748,15 @@ function generateRecipe() {
   const extraIds = recipeIngredients.filter(id=>id!==baseId&&id!==pairId);
   const extra = extraIds.map(id=>ingMap[id]).filter(Boolean);
 
-  // Build ingredient list using aroma pairing
-  const ing_count = complexity==='simple'?5:complexity==='complex'?12:8;
-  const allPaired = pairGraph.filter(c=>c.source===baseId||c.target===baseId)
-    .map(c=>{const oid=c.source===baseId?c.target:c.source;return {ing:ingMap[oid],shared:c.sharedAromas,strength:c.strength};})
-    .filter(c=>c.ing&&c.ing.id!==pairId).sort((a,b)=>b.strength-a.strength);
-
+  // Core = what the user explicitly chose (base + pairing + extras)
   const selected_ings = [base];
   if (pair2) selected_ings.push(pair2);
   extra.forEach(e=>selected_ings.push(e));
-  let fill = allPaired.filter(p=>!selected_ings.find(s=>s.id===p.ing.id)).slice(0,ing_count-selected_ings.length);
-  fill.forEach(p=>selected_ings.push(p.ing));
+
+  // Build a COHERENT supporting cast (not just whatever overlaps the base)
+  const ing_count = complexity==='simple'?5:complexity==='complex'?10:7;
+  const fillers = pickFillers(selected_ings, ing_count - selected_ings.length, course);
+  fillers.forEach(f=>selected_ings.push(f));
 
   // Find real recipes for reference
   const linkedIds = selected_ings.map(i=>i.id);
@@ -750,8 +786,14 @@ function generateRecipe() {
   // Steps
   const steps = buildSteps(selected_ings, base, pair2, method, course, topAromas, matchingRecs[0]);
 
-  // Science note
-  const scienceNote = buildScienceNote(base, pair2, allPaired[0]);
+  // Science note (fall back to the strongest aroma match of the base if no explicit pairing)
+  let topPair = null;
+  if (!pair2) {
+    const best = pairGraph.filter(c=>c.source===baseId||c.target===baseId)
+      .sort((a,b)=>b.strength-a.strength)[0];
+    if (best) topPair = { ing: ingMap[best.source===baseId?best.target:best.source] };
+  }
+  const scienceNote = buildScienceNote(base, pair2, topPair);
 
   // Render
   const output = document.getElementById('rg-output');
