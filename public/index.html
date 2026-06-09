@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foodpairing Lab</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="data.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+:root {
+  --bg:#09090B; --s1:#111113; --s2:#18181B; --s3:#27272A;
+  --b1:#3F3F46; --b2:#52525B;
+  --t1:#FAFAFA; --t2:#A1A1AA; --t3:#71717A;
+  --acc:#F97316; --acc2:#8B5CF6; --acc3:#06B6D4; --acc4:#10B981;
+  --red:#EF4444; --font:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--t1);font-family:var(--font);height:100vh;overflow:hidden;display:flex;flex-direction:column}
+
+/* ── HEADER ── */
+header{display:flex;align-items:center;gap:12px;padding:0 20px;height:52px;border-bottom:1px solid var(--s3);background:var(--s1);flex-shrink:0;z-index:100}
+.brand{font-size:20px;font-weight:800;letter-spacing:-1px}
+.brand em{color:var(--acc);font-style:normal}
+.tagline{font-size:11px;color:var(--t3);margin-top:1px}
+header nav{display:flex;gap:2px;margin-left:auto}
+.nav-btn{padding:6px 14px;border-radius:6px;border:1px solid transparent;background:none;color:var(--t3);cursor:pointer;font-size:12px;font-weight:500;transition:.15s;white-space:nowrap}
+.nav-btn:hover{background:var(--s2);color:var(--t1)}
+.nav-btn.active{background:var(--s2);color:var(--acc);border-color:var(--s3)}
+.recipe-count{background:var(--acc);color:#fff;border-radius:20px;font-size:10px;padding:1px 6px;margin-left:5px}
+
+/* ── LAYOUT ── */
+.app{display:flex;flex:1;overflow:hidden}
+
+/* ── SIDEBAR ── */
+aside{width:260px;min-width:260px;background:var(--s1);border-right:1px solid var(--s3);display:flex;flex-direction:column;overflow:hidden}
+.sb-search{padding:10px;border-bottom:1px solid var(--s3)}
+.sb-search input{width:100%;background:var(--bg);border:1px solid var(--s3);border-radius:8px;color:var(--t1);padding:7px 10px 7px 30px;font-size:12px;outline:none;transition:.15s}
+.sb-search{position:relative}
+.sb-search::before{content:'⌕';position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--t3);font-size:14px;pointer-events:none}
+.sb-search input:focus{border-color:var(--acc)}
+.sb-filters{display:flex;flex-wrap:wrap;gap:3px;padding:8px 10px;border-bottom:1px solid var(--s3)}
+.f-chip{padding:3px 8px;border-radius:20px;font-size:11px;cursor:pointer;border:1px solid var(--s3);color:var(--t3);transition:.15s}
+.f-chip.on{color:#fff;border-color:transparent}
+.ing-list{flex:1;overflow-y:auto;padding:6px}
+.ing-list::-webkit-scrollbar{width:3px}
+.ing-list::-webkit-scrollbar-thumb{background:var(--s3);border-radius:2px}
+.ing-row{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:7px;cursor:pointer;transition:.1s;border:1px solid transparent}
+.ing-row:hover{background:var(--s2)}
+.ing-row.sel{background:var(--s2);border-color:var(--acc)!important}
+.ing-row.inrec{border-color:var(--acc2)!important;background:rgba(139,92,246,.08)}
+.ing-emoji{font-size:18px;width:26px;text-align:center;flex-shrink:0}
+.ing-meta{flex:1;min-width:0}
+.ing-name{font-size:12px;font-weight:500}
+.ing-cat{font-size:10px;color:var(--t3);text-transform:capitalize}
+.add-btn{background:none;border:1px solid var(--s3);color:var(--t3);border-radius:5px;width:22px;height:22px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:.15s;flex-shrink:0;line-height:1}
+.add-btn:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+.add-btn.on{background:var(--acc2);border-color:var(--acc2);color:#fff}
+
+/* ── MAIN ── */
+main{flex:1;display:flex;flex-direction:column;overflow:hidden;position:relative}
+.view{display:none;flex:1;overflow:hidden}
+.view.on{display:flex;flex-direction:column}
+
+/* ── NETWORK ── */
+#v-network{position:relative;flex:1}
+#graph-svg{width:100%;height:100%}
+.net-ctrl{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:5px;z-index:10}
+.net-btn{background:var(--s1);border:1px solid var(--s3);color:var(--t2);border-radius:6px;padding:5px 10px;cursor:pointer;font-size:11px;transition:.15s;white-space:nowrap}
+.net-btn:hover{background:var(--s2);color:var(--t1)}
+.net-hint{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:var(--s1);border:1px solid var(--s3);border-radius:6px;padding:6px 12px;font-size:11px;color:var(--t3);pointer-events:none;white-space:nowrap}
+.legend{position:absolute;bottom:12px;right:12px;background:var(--s1);border:1px solid var(--s3);border-radius:8px;padding:10px 12px;font-size:10px;z-index:10}
+.leg-title{font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
+.leg-item{display:flex;align-items:center;gap:6px;margin-bottom:3px}
+.leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+/* ── DETAIL PANEL ── */
+#detail{position:absolute;top:10px;left:10px;width:290px;background:var(--s1);border:1px solid var(--s3);border-radius:12px;padding:16px;display:none;z-index:20;max-height:calc(100% - 20px);overflow-y:auto}
+#detail.on{display:block}
+#detail::-webkit-scrollbar{width:3px}
+#detail::-webkit-scrollbar-thumb{background:var(--s3)}
+.det-close{position:absolute;top:10px;right:10px;background:none;border:none;color:var(--t3);font-size:18px;cursor:pointer;line-height:1;padding:2px}
+.det-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.det-emoji{font-size:34px}
+.det-name{font-size:17px;font-weight:700}
+.det-cat{font-size:11px;color:var(--t3);text-transform:capitalize}
+.det-desc{font-size:11px;color:var(--t2);line-height:1.5;margin-bottom:12px}
+.sec{margin-bottom:12px}
+.sec h4{font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:var(--t3);margin-bottom:6px}
+.aroma-tags{display:flex;flex-wrap:wrap;gap:4px}
+.a-tag{padding:2px 8px;border-radius:20px;font-size:10px;font-weight:500}
+.pair-list{display:flex;flex-direction:column;gap:3px}
+.pair-row{background:var(--s2);border-radius:6px;padding:6px 9px;font-size:11px;cursor:pointer;transition:.1s;border-left:2px solid transparent}
+.pair-row:hover{border-left-color:var(--acc)}
+.pair-row .pr-name{font-weight:500}
+.pair-row .pr-shared{font-size:10px;color:var(--t3);margin-top:1px}
+.classic-box,.surp-box{border-radius:6px;padding:7px 9px;font-size:11px;margin-bottom:5px}
+.classic-box{background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.25);color:#FB923C}
+.surp-box{background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.25);color:#A78BFA}
+.box-label{font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+
+/* recipe list in detail */
+.rec-list{display:flex;flex-direction:column;gap:3px;max-height:180px;overflow-y:auto}
+.rec-list::-webkit-scrollbar{width:2px}
+.rec-row{background:var(--s2);border-radius:5px;padding:5px 8px;font-size:11px;cursor:pointer;border-left:2px solid transparent;transition:.1s}
+.rec-row:hover{border-left-color:var(--acc)}
+.rec-row .rr-name{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rec-row .rr-cuisine{font-size:10px;color:var(--t3)}
+.add-det-btn{margin-top:8px;width:100%;padding:8px;border-radius:7px;border:none;color:#fff;font-size:12px;font-weight:600;cursor:pointer;transition:.15s}
+
+/* ── RECIPE BUILDER ── */
+#v-recipe{flex-direction:row}
+.rb-main{flex:1;padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:16px}
+.rb-panel{width:310px;background:var(--s1);border-left:1px solid var(--s3);padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:14px}
+.rb-panel::-webkit-scrollbar,.rb-main::-webkit-scrollbar{width:3px}
+.rb-panel::-webkit-scrollbar-thumb,.rb-main::-webkit-scrollbar-thumb{background:var(--s3)}
+.sec-title{font-size:13px;font-weight:600;display:flex;align-items:center;gap:7px;flex-shrink:0}
+.badge{background:var(--acc);color:#fff;border-radius:20px;font-size:10px;padding:1px 7px}
+.recipe-tray{display:flex;flex-wrap:wrap;gap:7px;min-height:52px;background:var(--s2);border-radius:10px;padding:10px;border:1px dashed var(--s3);align-content:flex-start}
+.tray-chip{display:flex;align-items:center;gap:5px;background:var(--s1);border:1px solid var(--s3);border-radius:20px;padding:4px 9px 4px 7px;font-size:12px}
+.tray-chip.new{border-color:var(--acc2);background:rgba(139,92,246,.1)}
+.tray-chip button{background:none;border:none;color:var(--t3);cursor:pointer;font-size:13px;line-height:1;padding:0;margin-left:2px}
+.tray-chip button:hover{color:var(--red)}
+.empty-msg{color:var(--t3);font-size:11px;text-align:center;padding:12px;width:100%}
+.sug-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
+.sug-card{background:var(--s2);border:1px solid var(--s3);border-radius:9px;padding:11px;cursor:pointer;transition:.2s;position:relative;overflow:hidden}
+.sug-card:hover{border-color:var(--acc2);transform:translateY(-1px)}
+.sug-card .sc-em{font-size:24px;margin-bottom:5px}
+.sug-card .sc-nm{font-size:12px;font-weight:600;margin-bottom:3px}
+.sug-card .sc-sc{font-size:10px;color:var(--acc2);font-weight:600;margin-bottom:3px}
+.sug-card .sc-ar{font-size:10px;color:var(--t3);line-height:1.3}
+.sug-card .sc-bar{position:absolute;bottom:0;left:0;height:2px;background:var(--acc2);border-radius:0}
+
+/* harmony display */
+.harmony-card{background:var(--s2);border-radius:10px;padding:14px}
+.harmony-card h4{font-size:12px;font-weight:600;margin-bottom:8px}
+.h-bar{height:5px;background:var(--bg);border-radius:3px;overflow:hidden;margin:8px 0}
+.h-fill{height:100%;border-radius:3px;transition:width .5s}
+.harmony-score{font-size:22px;font-weight:800}
+.shared-tags{display:flex;flex-wrap:wrap;gap:4px}
+
+/* ── REAL RECIPE GENERATOR ── */
+#v-generator{flex-direction:row}
+.rg-left{width:380px;min-width:380px;background:var(--s1);border-right:1px solid var(--s3);padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:14px}
+.rg-left::-webkit-scrollbar{width:3px}
+.rg-left::-webkit-scrollbar-thumb{background:var(--s3)}
+.rg-right{flex:1;padding:16px;overflow-y:auto}
+.rg-right::-webkit-scrollbar{width:3px}
+.rg-right::-webkit-scrollbar-thumb{background:var(--s3)}
+.param-group{background:var(--s2);border-radius:10px;padding:14px}
+.param-group label{font-size:11px;color:var(--t3);margin-bottom:5px;display:block;text-transform:uppercase;letter-spacing:.6px}
+.param-group select,.param-group input{width:100%;background:var(--bg);border:1px solid var(--s3);border-radius:7px;color:var(--t1);padding:7px 10px;font-size:12px;outline:none;transition:.15s;margin-bottom:8px}
+.param-group select:focus,.param-group input:focus{border-color:var(--acc)}
+.param-group select:last-child,.param-group input:last-child{margin-bottom:0}
+.gen-btn{background:var(--acc);border:none;color:#fff;border-radius:8px;padding:11px 20px;font-size:13px;font-weight:700;cursor:pointer;width:100%;transition:.2s;letter-spacing:-.2px}
+.gen-btn:hover{opacity:.88}
+.gen-btn:disabled{opacity:.35;cursor:default}
+.recipe-card{background:var(--s2);border:1px solid var(--s3);border-radius:12px;padding:20px;margin-bottom:12px;border-top:3px solid var(--acc)}
+.recipe-card h2{font-size:18px;font-weight:800;margin-bottom:6px;letter-spacing:-.3px}
+.recipe-card .rc-meta{display:flex;gap:8px;font-size:11px;color:var(--t3);margin-bottom:14px;flex-wrap:wrap}
+.rc-meta span{background:var(--s3);border-radius:20px;padding:2px 8px}
+.recipe-section{margin-bottom:14px}
+.recipe-section h3{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--t3);margin-bottom:7px;display:flex;align-items:center;gap:5px}
+.recipe-section ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.recipe-section ul li{font-size:12px;color:var(--t2);padding:5px 8px;background:var(--s1);border-radius:6px;border-left:2px solid var(--s3)}
+.recipe-section ul li.key-ing{border-left-color:var(--acc)}
+.steps-list{counter-reset:steps;display:flex;flex-direction:column;gap:8px}
+.step{display:flex;gap:10px;font-size:12px;color:var(--t2);line-height:1.6}
+.step-num{background:var(--acc);color:#fff;border-radius:50%;width:20px;height:20px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;margin-top:2px}
+.pairing-science{background:rgba(6,182,212,.07);border:1px solid rgba(6,182,212,.2);border-radius:8px;padding:10px 12px;font-size:11px;color:#67E8F9;line-height:1.5;margin-top:8px}
+.similar-rec{display:flex;flex-direction:column;gap:6px}
+.sim-card{background:var(--s1);border:1px solid var(--s3);border-radius:8px;padding:10px 12px;cursor:pointer;transition:.1s;display:flex;gap:10px;align-items:flex-start}
+.sim-card:hover{border-color:var(--acc)}
+.sim-card .si-em{font-size:20px;flex-shrink:0}
+.sim-card .si-info .si-nm{font-size:12px;font-weight:600}
+.sim-card .si-info .si-cu{font-size:10px;color:var(--t3)}
+.empty-gen{text-align:center;padding:60px 20px;color:var(--t3)}
+.empty-gen .eg-icon{font-size:60px;margin-bottom:12px}
+.empty-gen h3{font-size:16px;color:var(--t2);margin-bottom:6px}
+.empty-gen p{font-size:12px;line-height:1.5}
+
+/* ── AROMA EXPLORER ── */
+#v-aroma{overflow-y:auto;padding:20px;flex-wrap:wrap;align-content:flex-start}
+.aroma-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;width:100%}
+.ac{background:var(--s1);border:1px solid var(--s3);border-radius:10px;padding:14px;cursor:pointer;transition:.2s}
+.ac:hover,.ac.on{transform:translateY(-2px)}
+.ac .ac-icon{font-size:28px;margin-bottom:6px}
+.ac .ac-name{font-size:13px;font-weight:600;margin-bottom:3px}
+.ac .ac-cnt{font-size:11px;color:var(--t3)}
+.aroma-detail{width:100%;margin-top:16px;background:var(--s1);border:1px solid var(--s3);border-radius:12px;padding:16px;display:none}
+.aroma-detail.on{display:block}
+.ad-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ad-ing-grid{display:flex;flex-wrap:wrap;gap:6px}
+.ad-chip{padding:4px 11px;background:var(--s2);border-radius:20px;font-size:11px;cursor:pointer;transition:.15s}
+.ad-chip:hover{color:#fff}
+
+/* ── TOOLTIP ── */
+#tip{position:fixed;background:var(--s1);border:1px solid var(--s3);border-radius:7px;padding:7px 11px;font-size:11px;pointer-events:none;display:none;z-index:999;max-width:200px}
+#tip strong{display:block;margin-bottom:2px}
+
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-thumb{background:var(--s3);border-radius:2px}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <div class="brand">Flavour<em>Lab</em></div>
+    <div class="tagline">Aroma-based ingredient pairing & recipe intelligence</div>
+  </div>
+  <nav>
+    <button class="nav-btn active" onclick="nav('network',this)">🕸 Flavour Network</button>
+    <button class="nav-btn" onclick="nav('recipe',this)">🎨 Pairing Builder</button>
+    <button class="nav-btn" onclick="nav('generator',this)">✨ Recipe Generator<span class="recipe-count" id="recipe-count">0</span></button>
+    <button class="nav-btn" onclick="nav('aroma',this)">🌸 Aroma Explorer</button>
+  </nav>
+</header>
+
+<div class="app">
+  <!-- SIDEBAR -->
+  <aside>
+    <div class="sb-search"><input type="text" id="sb-input" placeholder="Search ingredients…" oninput="filterList()"></div>
+    <div class="sb-filters" id="sb-filters">
+      <div class="f-chip on" data-cat="all" onclick="setCategory('all',this)">All</div>
+    </div>
+    <div class="ing-list" id="ing-list"></div>
+  </aside>
+
+  <main>
+    <!-- NETWORK -->
+    <div class="view on" id="v-network">
+      <svg id="graph-svg"></svg>
+      <div class="net-ctrl">
+        <button class="net-btn" onclick="resetZoom()">⊡ Reset</button>
+        <button class="net-btn" onclick="toggleLabels()">🏷 Labels</button>
+        <button class="net-btn" onclick="focusSelected()">🔍 Focus</button>
+        <button class="net-btn" onclick="toggleBookLinks()">📖 Book links only</button>
+      </div>
+      <div class="net-hint" id="net-hint">Click a node to explore · Scroll to zoom · Drag to pan</div>
+      <div class="legend"><div class="leg-title">Categories</div><div id="leg-items"></div></div>
+      <div id="detail">
+        <button class="det-close" onclick="closeDetail()">×</button>
+        <div id="det-content"></div>
+      </div>
+    </div>
+
+    <!-- RECIPE BUILDER (Pairing) -->
+    <div class="view" id="v-recipe">
+      <div class="rb-main">
+        <div class="sec-title">🎨 Aroma Pairing Builder <span style="font-size:11px;color:var(--t3);font-weight:400">— click + to add ingredients, then discover what pairs with them</span></div>
+        <div class="recipe-tray" id="tray"><div class="empty-msg">Use the + button on any ingredient to start building</div></div>
+        <div class="sec-title">✨ Suggested Pairings <span class="badge" id="sug-badge">0</span></div>
+        <div class="sug-grid" id="sug-grid"></div>
+      </div>
+      <div class="rb-panel">
+        <div class="sec-title">📊 Harmony Score</div>
+        <div class="harmony-card" id="harmony-card"><p style="font-size:11px;color:var(--t3)">Add 2+ ingredients to see aromatic harmony.</p></div>
+        <div class="sec-title">🌐 Shared Notes</div>
+        <div class="shared-tags" id="shared-tags"></div>
+        <div class="sec-title">📖 Verified Pairings</div>
+        <div id="verified-list" style="font-size:11px;display:flex;flex-direction:column;gap:4px"></div>
+        <div class="sec-title">🍽 Matching Recipes</div>
+        <div class="rec-list" id="panel-recipes"></div>
+        <button class="gen-btn" style="background:var(--acc2)" onclick="goToGeneratorWith()" id="gen-from-pairing">✨ Generate Recipe</button>
+      </div>
+    </div>
+
+    <!-- RECIPE GENERATOR -->
+    <div class="view" id="v-generator">
+      <div class="rg-left">
+        <div class="sec-title">✨ Recipe Generator</div>
+        <div class="param-group">
+          <label>Base Ingredient</label>
+          <select id="gen-base">
+            <option value="">— pick main ingredient —</option>
+          </select>
+          <label>Second Ingredient (pairing)</label>
+          <select id="gen-pair">
+            <option value="">— optional —</option>
+          </select>
+          <label>Cuisine Style</label>
+          <select id="gen-cuisine">
+            <option value="any">Any cuisine</option>
+            <option value="Italian">Italian</option>
+            <option value="French">French</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Middle Eastern">Middle Eastern</option>
+            <option value="Nordic">Nordic</option>
+            <option value="Asian">Asian</option>
+            <option value="Catalan">Catalan</option>
+          </select>
+          <label>Course</label>
+          <select id="gen-course">
+            <option value="any">Any course</option>
+            <option value="starter">Starter / Appetizer</option>
+            <option value="main">Main Course</option>
+            <option value="dessert">Dessert</option>
+            <option value="cocktail">Cocktail / Drink</option>
+            <option value="snack">Snack / Bite</option>
+          </select>
+          <label>Cooking Method</label>
+          <select id="gen-method">
+            <option value="any">Any method</option>
+            <option value="raw">Raw / No-cook</option>
+            <option value="roasted">Roasted / Baked</option>
+            <option value="sautéed">Sautéed / Pan-fried</option>
+            <option value="braised">Braised / Slow-cooked</option>
+            <option value="grilled">Grilled / Charred</option>
+            <option value="emulsified">Emulsified / Sauce</option>
+            <option value="fermented">Fermented / Cured</option>
+          </select>
+          <label>Complexity</label>
+          <select id="gen-complexity">
+            <option value="simple">Simple (< 6 ingredients)</option>
+            <option value="medium" selected>Medium (6–10 ingredients)</option>
+            <option value="complex">Complex (10+ ingredients)</option>
+          </select>
+        </div>
+        <div class="param-group" id="extra-ings-box">
+          <label>Additional Ingredients (from your pairing)</label>
+          <div id="extra-ings" style="display:flex;flex-wrap:wrap;gap:4px;min-height:30px"></div>
+        </div>
+        <button class="gen-btn" id="gen-btn" onclick="generateRecipe()">✨ Generate Recipe</button>
+        <div id="similar-box" style="display:none">
+          <div class="sec-title" style="margin-top:4px">📚 Similar Real Recipes</div>
+          <div class="similar-rec" id="similar-list"></div>
+        </div>
+      </div>
+      <div class="rg-right" id="rg-output">
+        <div class="empty-gen">
+          <div class="eg-icon">🧪</div>
+          <h3>Recipe Generator</h3>
+          <p>Choose your base ingredient and parameters on the left, then click <strong>Generate Recipe</strong> to create an aroma-science-based recipe.</p>
+          <p style="margin-top:8px">The generator uses flavour pairing science to suggest harmonious ingredient combinations and builds a complete recipe with techniques inspired by real culinary books.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AROMA EXPLORER -->
+    <div class="view" id="v-aroma">
+      <div class="aroma-grid" id="aroma-grid"></div>
+      <div class="aroma-detail" id="aroma-detail"></div>
+    </div>
+  </main>
+</div>
+<div id="tip"></div>
+
+<script>
+// ═══════════════════════════════════════
+// DATA LOADING
+// ═══════════════════════════════════════
+let RECIPES = [];
+let recipeIngredients = [];
+let selectedId = null;
+let showLabels = true;
+let bookLinksOnly = false;
+let activeCat = 'all';
+let sim, svgZoom, gMain;
+const pairGraph = buildPairingGraph();
+const ingMap = Object.fromEntries(INGREDIENTS.map(i=>[i.id,i]));
+
+async function loadRecipes() {
+  try {
+    const r = await fetch('recipes_final.json');
+    RECIPES = await r.json();
+    document.getElementById('recipe-count').textContent = RECIPES.length;
+    populateGenSelects();
+  } catch(e) {
+    console.warn('Recipes not loaded:', e);
+    RECIPES = [];
+  }
+}
+
+// ═══════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════
+document.addEventListener('DOMContentLoaded', async () => {
+  buildCategoryChips();
+  renderList();
+  buildLegend();
+  buildAromaGrid();
+  initNetwork();
+  await loadRecipes();
+});
+
+// ═══════════════════════════════════════
+// SIDEBAR
+// ═══════════════════════════════════════
+function buildCategoryChips() {
+  const row = document.getElementById('sb-filters');
+  [...new Set(INGREDIENTS.map(i=>i.category))].forEach(cat => {
+    const d = document.createElement('div');
+    d.className = 'f-chip';
+    d.setAttribute('data-cat', cat);
+    d.style.background = CATEGORY_COLORS[cat]+'22';
+    d.style.borderColor = CATEGORY_COLORS[cat]+'44';
+    d.textContent = (CATEGORY_LABELS[cat]||cat);
+    d.onclick = () => setCategory(cat, d);
+    row.appendChild(d);
+  });
+}
+
+function setCategory(cat, el) {
+  activeCat = cat;
+  document.querySelectorAll('.f-chip').forEach(c => {
+    const cc = c.getAttribute('data-cat');
+    c.classList.remove('on');
+    c.style.background = cc==='all' ? '' : CATEGORY_COLORS[cc]+'22';
+    c.style.color = '';
+    c.style.borderColor = cc==='all' ? '' : CATEGORY_COLORS[cc]+'44';
+  });
+  el.classList.add('on');
+  if (cat === 'all') { el.style.background='var(--acc)'; el.style.color='#fff'; el.style.borderColor='var(--acc)'; }
+  else { el.style.background=CATEGORY_COLORS[cat]; el.style.color='#fff'; el.style.borderColor=CATEGORY_COLORS[cat]; }
+  renderList();
+}
+
+function filterList() { renderList(document.getElementById('sb-input').value.toLowerCase()); }
+
+function renderList(q='') {
+  const list = document.getElementById('ing-list');
+  list.innerHTML = '';
+  INGREDIENTS.filter(i => {
+    const mcat = activeCat==='all' || i.category===activeCat;
+    const mq = !q || i.name.toLowerCase().includes(q) || i.aromas.some(a=>a.includes(q));
+    return mcat && mq;
+  }).forEach(ing => {
+    const d = document.createElement('div');
+    d.className = 'ing-row' + (selectedId===ing.id?' sel':'') + (recipeIngredients.includes(ing.id)?' inrec':'');
+    d.style.borderColor = recipeIngredients.includes(ing.id) ? CATEGORY_COLORS[ing.category]+'66' : '';
+    d.innerHTML = `
+      <span class="ing-emoji">${ing.emoji}</span>
+      <div class="ing-meta"><div class="ing-name">${ing.name}</div><div class="ing-cat">${CATEGORY_LABELS[ing.category]||ing.category}</div></div>
+      <button class="add-btn ${recipeIngredients.includes(ing.id)?'on':''}" onclick="event.stopPropagation();toggleIng('${ing.id}')" title="${recipeIngredients.includes(ing.id)?'Remove':'Add to builder'}">${recipeIngredients.includes(ing.id)?'✓':'+'}</button>`;
+    d.onclick = () => selectIng(ing.id);
+    list.appendChild(d);
+  });
+}
+
+function selectIng(id) {
+  selectedId = id;
+  renderList(document.getElementById('sb-input').value.toLowerCase());
+  showDetail(id);
+  highlightNode(id);
+}
+
+// ═══════════════════════════════════════
+// INGREDIENT BUILDER
+// ═══════════════════════════════════════
+function toggleIng(id) {
+  if (recipeIngredients.includes(id)) recipeIngredients = recipeIngredients.filter(x=>x!==id);
+  else recipeIngredients.push(id);
+  renderList(document.getElementById('sb-input').value.toLowerCase());
+  renderTray();
+  updateSuggestions();
+  updateHarmony();
+  updateExtraIngs();
+}
+
+function renderTray() {
+  const c = document.getElementById('tray');
+  if (!recipeIngredients.length) { c.innerHTML='<div class="empty-msg">Use the + button on any ingredient to start building</div>'; return; }
+  c.innerHTML = recipeIngredients.map(id => {
+    const i = ingMap[id];
+    return `<div class="tray-chip ${recipeIngredients.indexOf(id)===recipeIngredients.length-1?'new':''}">
+      <span>${i.emoji}</span><span>${i.name}</span>
+      <button onclick="toggleIng('${id}')" title="Remove">×</button></div>`;
+  }).join('');
+}
+
+function updateSuggestions() {
+  const grid = document.getElementById('sug-grid');
+  const badge = document.getElementById('sug-badge');
+  if (!recipeIngredients.length) { grid.innerHTML='<div style="color:var(--t3);font-size:11px">Add ingredients to get suggestions</div>'; badge.textContent='0'; return; }
+  const scores = INGREDIENTS.filter(i=>!recipeIngredients.includes(i.id)).map(ing => {
+    let score=0; const shared=new Set();
+    recipeIngredients.forEach(rid => {
+      const ri = ingMap[rid];
+      ri.aromas.filter(a=>ing.aromas.includes(a)).forEach(a=>{score+=2;shared.add(a)});
+      if (ri.pairings.includes(ing.id)||ing.pairings.includes(rid)) score+=5;
+    });
+    return {ing,score,shared:[...shared]};
+  }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,16);
+  badge.textContent = scores.length;
+  if (!scores.length) { grid.innerHTML='<div style="color:var(--t3);font-size:11px">No strong matches — try different ingredients</div>'; return; }
+  const mx = scores[0].score;
+  grid.innerHTML = scores.map(({ing,score,shared}) => {
+    const pct = Math.round(score/mx*100);
+    const icons = shared.slice(0,3).map(a=>AROMA_NOTES[a]?.icon||'').join('');
+    return `<div class="sug-card" onclick="toggleIng('${ing.id}')">
+      <div class="sc-em">${ing.emoji}</div>
+      <div class="sc-nm">${ing.name}</div>
+      <div class="sc-sc">${score} pts</div>
+      <div class="sc-ar">${icons} ${shared.slice(0,3).map(a=>AROMA_NOTES[a]?.label||a).join(', ')}</div>
+      <div class="sc-bar" style="width:${pct}%"></div></div>`;
+  }).join('');
+}
+
+function updateHarmony() {
+  const card = document.getElementById('harmony-card');
+  const sharedDiv = document.getElementById('shared-tags');
+  const verDiv = document.getElementById('verified-list');
+  const recDiv = document.getElementById('panel-recipes');
+  if (recipeIngredients.length < 2) {
+    card.innerHTML='<p style="font-size:11px;color:var(--t3)">Add 2+ ingredients to see aromatic harmony.</p>';
+    sharedDiv.innerHTML=''; verDiv.innerHTML=''; recDiv.innerHTML=''; return;
+  }
+  const freq={};
+  recipeIngredients.forEach(id => ingMap[id].aromas.forEach(a=>{freq[a]=(freq[a]||0)+1}));
+  const shared = Object.entries(freq).filter(([,c])=>c>=2).sort((a,b)=>b[1]-a[1]);
+  let total=0,mx2=0;
+  for (let i=0;i<recipeIngredients.length;i++) for (let j=i+1;j<recipeIngredients.length;j++) {
+    const a=ingMap[recipeIngredients[i]], b=ingMap[recipeIngredients[j]];
+    const s=a.aromas.filter(ar=>b.aromas.includes(ar));
+    total+=s.length; mx2+=Math.max(a.aromas.length,b.aromas.length);
+  }
+  const score = mx2>0?Math.min(100,Math.round(total/mx2*320)):0;
+  const col = score>=70?'var(--acc4)':score>=40?'var(--acc)':'var(--red)';
+  const lbl = score>=70?'Excellent harmony 🌟':score>=40?'Good compatibility ✓':'Adventurous contrast ⚡';
+  card.innerHTML=`<h4>${lbl}</h4>
+    <div class="h-bar"><div class="h-fill" style="width:${score}%;background:${col}"></div></div>
+    <div><span class="harmony-score" style="color:${col}">${score}</span><span style="font-size:11px;color:var(--t3)">/100</span></div>
+    <p style="font-size:11px;color:var(--t3);margin-top:5px">${shared.length} shared aroma notes across all ingredients</p>`;
+  sharedDiv.innerHTML=shared.slice(0,10).map(([a,c])=>{const n=AROMA_NOTES[a];return `<div class="a-tag" style="background:${n?.color}22;color:${n?.color};border:1px solid ${n?.color}44">${n?.icon||''} ${n?.label||a} ×${c}</div>`}).join('');
+  // Verified pairings
+  const ver=[];
+  for (let i=0;i<recipeIngredients.length;i++) for (let j=i+1;j<recipeIngredients.length;j++) {
+    const a=ingMap[recipeIngredients[i]],b=ingMap[recipeIngredients[j]];
+    if (a.pairings.includes(b.id)||b.pairings.includes(a.id)) ver.push(`${a.emoji} ${a.name} + ${b.emoji} ${b.name}`);
+  }
+  verDiv.innerHTML=ver.length?ver.map(v=>`<div style="background:var(--s2);border-radius:5px;padding:5px 8px;">${v}</div>`).join(''):'<div style="color:var(--t3)">No direct pairings — but shared aromas connect them</div>';
+  // Matching recipes
+  const matchRecs = RECIPES.filter(r => {
+    const rl = r.linked_ingredients||[];
+    return recipeIngredients.filter(id=>rl.includes(id)).length >= Math.min(2,recipeIngredients.length);
+  }).slice(0,8);
+  recDiv.innerHTML=matchRecs.length?matchRecs.map(r=>`<div class="rec-row" onclick="loadRecipeInGenerator('${r.id}')">
+    <div class="rr-name">${r.name}</div>
+    <div class="rr-cuisine">${r.cuisine} · p.${r.page}</div></div>`).join(''):'<div style="color:var(--t3);font-size:11px">No matching recipes in database</div>';
+}
+
+function updateExtraIngs() {
+  const d = document.getElementById('extra-ings');
+  d.innerHTML = recipeIngredients.map(id=>{const i=ingMap[id];return `<div class="tray-chip" style="font-size:11px">${i.emoji} ${i.name}</div>`;}).join('');
+}
+
+// ═══════════════════════════════════════
+// DETAIL PANEL
+// ═══════════════════════════════════════
+function showDetail(id) {
+  const ing = ingMap[id];
+  if (!ing) return;
+  const panel = document.getElementById('detail');
+  const content = document.getElementById('det-content');
+  const conns = pairGraph.filter(c=>c.source===id||c.target===id).map(c=>{
+    const oid = c.source===id?c.target:c.source;
+    return {ing:ingMap[oid],shared:c.sharedAromas,fromBook:c.fromBook,strength:c.strength};
+  }).filter(c=>c.ing).sort((a,b)=>b.strength-a.strength).slice(0,8);
+  // Recipes with this ingredient
+  const recs = RECIPES.filter(r=>(r.linked_ingredients||[]).includes(id)).slice(0,6);
+  content.innerHTML = `
+    <div class="det-head"><span class="det-emoji">${ing.emoji}</span>
+      <div><div class="det-name">${ing.name}</div><div class="det-cat">${CATEGORY_LABELS[ing.category]||ing.category}</div></div></div>
+    <div class="det-desc">${ing.description}</div>
+    <div class="sec"><h4>Aroma Profile</h4>
+      <div class="aroma-tags">${ing.aromas.map(a=>{const n=AROMA_NOTES[a];return `<div class="a-tag" style="background:${n?.color}22;color:${n?.color};border:1px solid ${n?.color}44">${n?.icon||''} ${n?.label||a}</div>`;}).join('')}</div></div>
+    <div class="sec"><h4>Verified Pairings</h4>
+      <div class="classic-box"><div class="box-label">Classic</div>${ing.classic}</div>
+      <div class="surp-box"><div class="box-label">Surprising</div>${ing.surprising}</div></div>
+    <div class="sec"><h4>Best Matches</h4>
+      <div class="pair-list">${conns.map(c=>`<div class="pair-row" onclick="selectIng('${c.ing.id}')">
+        <div class="pr-name">${c.ing.emoji} ${c.ing.name} ${c.fromBook?'📖':''}</div>
+        <div class="pr-shared">${c.shared.map(a=>AROMA_NOTES[a]?.icon||'').join('')} ${c.shared.map(a=>AROMA_NOTES[a]?.label||a).join(', ')}</div></div>`).join('')}</div></div>
+    ${recs.length?`<div class="sec"><h4>In ${recs.length} Recipes</h4>
+      <div class="rec-list">${recs.map(r=>`<div class="rec-row" onclick="loadRecipeInGenerator('${r.id}')">
+        <div class="rr-name">${r.name}</div><div class="rr-cuisine">${r.cuisine}</div></div>`).join('')}</div></div>`:''}
+    <button class="add-det-btn" style="background:${recipeIngredients.includes(id)?'var(--acc2)':'var(--acc)'}" onclick="toggleIng('${id}')">
+      ${recipeIngredients.includes(id)?'✓ In Builder — Remove':'+ Add to Builder'}</button>`;
+  panel.classList.add('on');
+}
+
+function closeDetail() {
+  document.getElementById('detail').classList.remove('on');
+  selectedId=null; renderList();
+}
+
+// ═══════════════════════════════════════
+// RECIPE GENERATOR
+// ═══════════════════════════════════════
+function populateGenSelects() {
+  const base = document.getElementById('gen-base');
+  const pair = document.getElementById('gen-pair');
+  INGREDIENTS.forEach(i => {
+    base.innerHTML += `<option value="${i.id}">${i.emoji} ${i.name}</option>`;
+    pair.innerHTML += `<option value="${i.id}">${i.emoji} ${i.name}</option>`;
+  });
+}
+
+function goToGeneratorWith() {
+  if (recipeIngredients.length) {
+    const base = document.getElementById('gen-base');
+    const pair = document.getElementById('gen-pair');
+    base.value = recipeIngredients[0] || '';
+    pair.value = recipeIngredients[1] || '';
+  }
+  nav('generator', document.querySelectorAll('.nav-btn')[2]);
+  generateRecipe();
+}
+
+function loadRecipeInGenerator(recId) {
+  const rec = RECIPES.find(r=>r.id===recId);
+  if (!rec) return;
+  nav('generator', document.querySelectorAll('.nav-btn')[2]);
+  // Set the first linked ingredient
+  if (rec.linked_ingredients?.length) {
+    document.getElementById('gen-base').value = rec.linked_ingredients[0]||'';
+    document.getElementById('gen-pair').value = rec.linked_ingredients[1]||'';
+    document.getElementById('gen-cuisine').value = rec.cuisine;
+  }
+  generateRecipe();
+}
+
+function generateRecipe() {
+  const baseId = document.getElementById('gen-base').value;
+  const pairId = document.getElementById('gen-pair').value;
+  const cuisine = document.getElementById('gen-cuisine').value;
+  const course = document.getElementById('gen-course').value;
+  const method = document.getElementById('gen-method').value;
+  const complexity = document.getElementById('gen-complexity').value;
+
+  if (!baseId) { alert('Please select a base ingredient'); return; }
+
+  const base = ingMap[baseId];
+  const pair2 = pairId ? ingMap[pairId] : null;
+  const extraIds = recipeIngredients.filter(id=>id!==baseId&&id!==pairId);
+  const extra = extraIds.map(id=>ingMap[id]).filter(Boolean);
+
+  // Build ingredient list using aroma pairing
+  const ing_count = complexity==='simple'?5:complexity==='complex'?12:8;
+  const allPaired = pairGraph.filter(c=>c.source===baseId||c.target===baseId)
+    .map(c=>{const oid=c.source===baseId?c.target:c.source;return {ing:ingMap[oid],shared:c.sharedAromas,strength:c.strength};})
+    .filter(c=>c.ing&&c.ing.id!==pairId).sort((a,b)=>b.strength-a.strength);
+
+  const selected_ings = [base];
+  if (pair2) selected_ings.push(pair2);
+  extra.forEach(e=>selected_ings.push(e));
+  let fill = allPaired.filter(p=>!selected_ings.find(s=>s.id===p.ing.id)).slice(0,ing_count-selected_ings.length);
+  fill.forEach(p=>selected_ings.push(p.ing));
+
+  // Find real recipes for reference
+  const linkedIds = selected_ings.map(i=>i.id);
+  const matchingRecs = RECIPES.filter(r=>{
+    const rl=r.linked_ingredients||[];
+    const ov=linkedIds.filter(id=>rl.includes(id)).length;
+    const cu=cuisine==='any'||r.cuisine.toLowerCase().includes(cuisine.toLowerCase())||cuisine.toLowerCase().includes(r.cuisine.toLowerCase());
+    return ov>=1&&cu;
+  }).sort((a,b)=>{
+    const oa=linkedIds.filter(id=>(a.linked_ingredients||[]).includes(id)).length;
+    const ob=linkedIds.filter(id=>(b.linked_ingredients||[]).includes(id)).length;
+    return ob-oa;
+  }).slice(0,4);
+
+  // Build shared aromas
+  const sharedFreq={};
+  selected_ings.forEach(i=>i.aromas.forEach(a=>{sharedFreq[a]=(sharedFreq[a]||0)+1}));
+  const topAromas = Object.entries(sharedFreq).sort((a,b)=>b[1]-a[1]).slice(0,4).map(([a])=>a);
+  const topAromaNotes = topAromas.map(a=>AROMA_NOTES[a]?.label||a);
+
+  // Recipe name generation
+  const cuisineName = cuisine==='any'?'Modern':cuisine;
+  const courseName = course==='any'?'Dish':course.charAt(0).toUpperCase()+course.slice(1);
+  const methodName = method==='any'?'Prepared':method.charAt(0).toUpperCase()+method.slice(1);
+  const name = buildRecipeName(base, pair2, cuisineName, course, method, topAromaNotes);
+
+  // Steps
+  const steps = buildSteps(selected_ings, base, pair2, method, course, topAromas, matchingRecs[0]);
+
+  // Science note
+  const scienceNote = buildScienceNote(base, pair2, allPaired[0]);
+
+  // Render
+  const output = document.getElementById('rg-output');
+  const servings = course==='cocktail'?'2 glasses':course==='snack'?'12 pieces':'4 servings';
+  const time = method==='braised'?'2h 30m':method==='fermented'?'3–5 days':complexity==='complex'?'60–90 min':'25–40 min';
+
+  output.innerHTML = `
+  <div class="recipe-card">
+    <h2>${name}</h2>
+    <div class="rc-meta">
+      <span>🌍 ${cuisineName}</span>
+      <span>🍽 ${courseName}</span>
+      <span>🔥 ${methodName}</span>
+      <span>⏱ ${time}</span>
+      <span>👤 ${servings}</span>
+      <span>⚡ ${complexity}</span>
+    </div>
+
+    <div class="recipe-section">
+      <h3>🧪 Ingredients <span style="font-weight:400;color:var(--t3)">(${selected_ings.length} items, aroma-selected)</span></h3>
+      <ul>${selected_ings.map((ing,idx) => {
+        const qty = getQuantity(ing, course, complexity, idx);
+        const isKey = idx<2;
+        return `<li class="${isKey?'key-ing':''}">${ing.emoji} <strong>${qty}</strong> ${ing.name}${isKey?' ★':''}${idx===0?' (base)':idx===1&&pair2?' (pairing)':''}</li>`;
+      }).join('')}
+      </ul>
+    </div>
+
+    <div class="recipe-section">
+      <h3>👨‍🍳 Method</h3>
+      <div class="steps-list">${steps.map((s,i)=>`<div class="step"><div class="step-num">${i+1}</div><div>${s}</div></div>`).join('')}</div>
+    </div>
+
+    <div class="recipe-section">
+      <h3>🌸 Aroma Notes</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:4px">${topAromas.map(a=>{const n=AROMA_NOTES[a];return `<div class="a-tag" style="background:${n?.color}22;color:${n?.color};border:1px solid ${n?.color}44">${n?.icon||''} ${n?.label||a}</div>`;}).join('')}</div>
+    </div>
+
+    <div class="pairing-science">${scienceNote}</div>
+
+    ${matchingRecs.length?`<div class="recipe-section" style="margin-top:12px">
+      <h3>📚 Reference Recipes from Database</h3>
+      <ul>${matchingRecs.map(r=>`<li style="cursor:pointer" onclick="loadRecipeInGenerator('${r.id}')">${r.name} <span style="color:var(--t3)">(${r.cuisine})</span></li>`).join('')}</ul>
+    </div>`:''}
+  </div>`;
+
+  // Show similar
+  const simBox = document.getElementById('similar-box');
+  const simList = document.getElementById('similar-list');
+  if (matchingRecs.length) {
+    simBox.style.display='block';
+    simList.innerHTML = matchingRecs.map(r=>{
+      const shared = (r.linked_ingredients||[]).filter(id=>linkedIds.includes(id));
+      return `<div class="sim-card" onclick="loadRecipeInGenerator('${r.id}')">
+        <div class="si-em">${base.emoji}</div>
+        <div class="si-info"><div class="si-nm">${r.name}</div><div class="si-cu">${r.cuisine} · ${shared.length} shared ing.</div></div></div>`;
+    }).join('');
+  } else simBox.style.display='none';
+}
+
+// ─── Recipe building helpers ───
+function buildRecipeName(base, pair, cuisine, course, method, aromas) {
+  const methodAdj = {roasted:'Roasted',grilled:'Grilled',sautéed:'Sautéed',braised:'Braised',raw:'Raw',emulsified:'Emulsified',fermented:'Cured',any:''}[method]||'';
+  const aromaAdj = aromas[0]?aromas[0]+'-scented':'';
+  if (course==='cocktail') return `${base.name} & ${pair?.name||aromas[0]} Cocktail`;
+  if (course==='dessert') return `${methodAdj} ${base.name}${pair?` with ${pair.name}`:''} Dessert`;
+  if (!pair) return `${methodAdj} ${base.name} — ${cuisine} style`.trim();
+  return `${methodAdj} ${base.name} with ${pair.name}${aromas[1]?' & '+aromas[1]+' notes':''}`.trim();
+}
+
+function getQuantity(ing, course, complexity, idx) {
+  const mult = complexity==='complex'?1.5:complexity==='simple'?.6:1;
+  const QTYS = {
+    protein:['200g','150g','180g'], dairy:['80g','60g'], fruit:['2','1','3'],
+    vegetable:['150g','100g'], herb:['handful','2 tbsp','1 tbsp'], spice:['1 tsp','½ tsp','2 tsp'],
+    beverage:['60ml','30ml','90ml'], other:['2 tbsp','1 tbsp','3 tbsp']
+  };
+  const arr = QTYS[ing.category]||['to taste'];
+  return arr[idx%arr.length];
+}
+
+function buildSteps(ings, base, pair, method, course, aromas, refRec) {
+  const steps = [];
+  const baseVerb = {roasted:'Roast',grilled:'Grill',sautéed:'Sauté',braised:'Braise',raw:'Prepare',emulsified:'Blend',fermented:'Cure',any:'Cook'}[method]||'Prepare';
+  const herbs = ings.filter(i=>i.category==='herb'||i.category==='spice').slice(0,2);
+  const proteins = ings.filter(i=>i.category==='protein').slice(0,1);
+  const fruits = ings.filter(i=>i.category==='fruit').slice(0,2);
+  const liquids = ings.filter(i=>i.category==='beverage'||i.category==='dairy').slice(0,1);
+
+  steps.push(`${baseVerb} the ${base.name} until the key ${AROMA_NOTES[aromas[0]]?.label||aromas[0]} aroma compounds are activated${method==='roasted'?' at 200°C (400°F)':method==='sautéed'?' in a hot pan over medium-high heat':''}.`);
+  if (pair) steps.push(`Prepare the ${pair.name} separately — ${pair.aromas[0]&&base.aromas.includes(pair.aromas[0])?`its shared ${AROMA_NOTES[pair.aromas[0]]?.label||pair.aromas[0]} notes will create aromatic harmony with the ${base.name}`:`its ${AROMA_NOTES[pair.aromas[0]]?.label||pair.aromas[0]} profile complements the ${base.name}`}.`);
+  if (herbs.length) steps.push(`Add ${herbs.map(h=>h.name).join(' and ')} to reinforce the ${AROMA_NOTES[aromas[1]]?.label||aromas[1]||'aromatic'} backbone. ${herbs[0]?.aromas.includes('floral')?'Keep heat low to preserve the delicate volatile compounds.':''}`);
+  if (fruits.length && method!=='raw') steps.push(`Incorporate ${fruits.map(f=>f.name).join(' and ')} — the ${AROMA_NOTES[fruits[0].aromas[0]]?.label||fruits[0].aromas[0]} esters will bridge the flavours and add brightness.`);
+  if (liquids.length) steps.push(`Deglaze or finish with ${liquids[0].name} to bring cohesion and amplify the shared ${topAromas(base,liquids[0])} notes between all elements.`);
+  steps.push(`Season carefully — salt suppresses bitterness and amplifies the ${AROMA_NOTES[aromas[0]]?.label||aromas[0]} aromas. Serve ${course==='cocktail'?'in a chilled glass':course==='dessert'?'at room temperature to open the aroma compounds':method==='grilled'?'immediately off the heat':'while aromatic volatile compounds are still at their peak'}.`);
+  return steps;
+}
+
+function topAromas(a, b) {
+  const shared = a.aromas.filter(ar=>b.aromas.includes(ar));
+  return shared.length ? (AROMA_NOTES[shared[0]]?.label||shared[0]) : 'aromatic';
+}
+
+function buildScienceNote(base, pair, topPair) {
+  if (!pair && !topPair) return `The aroma compounds in ${base.name} include ${base.aromas.slice(0,2).map(a=>AROMA_NOTES[a]?.label||a).join(' and ')} notes. Ingredients sharing these key molecules pair harmoniously according to flavour pairing science.`;
+  const partner = pair||topPair?.ing;
+  if (!partner) return '';
+  const sharedAromas = base.aromas.filter(a=>partner.aromas.includes(a));
+  return `🧬 <strong>Pairing Science:</strong> ${base.name} and ${partner.name} share ${sharedAromas.length} key aroma molecule${sharedAromas.length>1?'s':''}: <em>${sharedAromas.map(a=>AROMA_NOTES[a]?.label||a).join(', ')}</em>. When ingredients share volatile organic compounds at similar concentrations, they create multi-dimensional harmony in the dish. This combination has a theoretical aromatic overlap score of ${Math.round(sharedAromas.length/Math.max(base.aromas.length,partner.aromas.length)*100)}%.`;
+}
+
+// ═══════════════════════════════════════
+// D3 NETWORK
+// ═══════════════════════════════════════
+function initNetwork() {
+  const svg = d3.select('#graph-svg');
+  const w = svg.node().clientWidth||900, h=svg.node().clientHeight||600;
+  svgZoom = d3.zoom().scaleExtent([.15,4]).on('zoom',e=>gMain.attr('transform',e.transform));
+  svg.call(svgZoom);
+  gMain = svg.append('g');
+
+  const nodes = INGREDIENTS.map(i=>({...i}));
+  const links = pairGraph.map(c=>({source:c.source,target:c.target,strength:c.strength,fromBook:c.fromBook}));
+
+  sim = d3.forceSimulation(nodes)
+    .force('link',d3.forceLink(links).id(d=>d.id).distance(d=>95-d.strength*7).strength(.35))
+    .force('charge',d3.forceManyBody().strength(-200))
+    .force('center',d3.forceCenter(w/2,h/2))
+    .force('collide',d3.forceCollide(26));
+
+  const linkG = gMain.append('g');
+  const nodeG = gMain.append('g');
+
+  const link = linkG.selectAll('line').data(links).join('line')
+    .attr('class','net-link')
+    .attr('stroke',d=>d.fromBook?'#F97316':'#ffffff12')
+    .attr('stroke-width',d=>d.fromBook?1.5:.6)
+    .attr('stroke-opacity',d=>d.fromBook?.7:.5);
+
+  const node = nodeG.selectAll('g').data(nodes).join('g')
+    .attr('class','net-node')
+    .attr('data-id',d=>d.id)
+    .style('cursor','pointer')
+    .call(d3.drag().on('start',(e,d)=>{if(!e.active)sim.alphaTarget(.3).restart();d.fx=d.x;d.fy=d.y})
+      .on('drag',(e,d)=>{d.fx=e.x;d.fy=e.y})
+      .on('end',(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null}));
+
+  // Glow filter
+  const defs = svg.append('defs');
+  const filter = defs.append('filter').attr('id','glow').attr('x','-50%').attr('y','-50%').attr('width','200%').attr('height','200%');
+  filter.append('feGaussianBlur').attr('in','SourceGraphic').attr('stdDeviation','3').attr('result','blur');
+  const merge = filter.append('feMerge');
+  merge.append('feMergeNode').attr('in','blur');
+  merge.append('feMergeNode').attr('in','SourceGraphic');
+
+  node.append('circle').attr('r',17)
+    .attr('fill',d=>CATEGORY_COLORS[d.category]+'BB')
+    .attr('stroke',d=>CATEGORY_COLORS[d.category])
+    .attr('stroke-width',1.5);
+
+  node.append('text').attr('text-anchor','middle').attr('dominant-baseline','central')
+    .attr('font-size','13px').text(d=>d.emoji);
+
+  node.append('text').attr('class','net-label').attr('text-anchor','middle').attr('dy',26)
+    .attr('font-size','10px').attr('fill','#A1A1AA').text(d=>d.name);
+
+  node.on('click',(e,d)=>{e.stopPropagation();selectIng(d.id)})
+    .on('mouseover',(e,d)=>{
+      const tip=document.getElementById('tip');
+      tip.style.display='block';
+      tip.innerHTML=`<strong>${d.emoji} ${d.name}</strong>${d.aromas.slice(0,3).map(a=>AROMA_NOTES[a]?.label||a).join(' · ')}`;
+      tip.style.left=(e.clientX+12)+'px'; tip.style.top=(e.clientY-8)+'px';
+    })
+    .on('mousemove',e=>{const t=document.getElementById('tip');t.style.left=(e.clientX+12)+'px';t.style.top=(e.clientY-8)+'px'})
+    .on('mouseout',()=>{document.getElementById('tip').style.display='none'});
+
+  svg.on('click',()=>closeDetail());
+  sim.on('tick',()=>{
+    link.attr('x1',d=>d.source.x).attr('y1',d=>d.source.y).attr('x2',d=>d.target.x).attr('y2',d=>d.target.y);
+    node.attr('transform',d=>`translate(${d.x},${d.y})`);
+  });
+}
+
+function highlightNode(id) {
+  d3.selectAll('.net-node circle')
+    .attr('r',d=>d.id===id?22:17)
+    .attr('stroke',d=>d.id===id?'#fff':CATEGORY_COLORS[d.category])
+    .attr('stroke-width',d=>d.id===id?3:1.5)
+    .attr('filter',d=>d.id===id?'url(#glow)':null);
+  const connected = new Set([id]);
+  pairGraph.forEach(c=>{if(c.source===id)connected.add(c.target);if(c.target===id)connected.add(c.source)});
+  d3.selectAll('.net-link')
+    .attr('stroke',d=>{
+      const s=typeof d.source==='object'?d.source.id:d.source;
+      const t=typeof d.target==='object'?d.target.id:d.target;
+      if(s===id||t===id)return'#F97316';
+      return d.fromBook?'#F9731622':'#ffffff08';
+    })
+    .attr('stroke-width',d=>{
+      const s=typeof d.source==='object'?d.source.id:d.source;
+      const t=typeof d.target==='object'?d.target.id:d.target;
+      return s===id||t===id?2:d.fromBook?1:.4;
+    });
+}
+
+function resetZoom() {
+  d3.select('#graph-svg').transition().duration(500).call(svgZoom.transform,d3.zoomIdentity);
+  d3.selectAll('.net-node circle').attr('r',17).attr('stroke',d=>CATEGORY_COLORS[d.category]).attr('stroke-width',1.5).attr('filter',null);
+  d3.selectAll('.net-link').attr('stroke',d=>d.fromBook?'#F97316':'#ffffff12').attr('stroke-width',d=>d.fromBook?1.5:.6);
+}
+function toggleLabels() { showLabels=!showLabels; d3.selectAll('.net-label').style('display',showLabels?null:'none'); }
+function focusSelected() {
+  if (!selectedId) return;
+  const connected=new Set([selectedId]);
+  pairGraph.forEach(c=>{if(c.source===selectedId)connected.add(c.target);if(c.target===selectedId)connected.add(c.source)});
+  d3.selectAll('.net-node').style('opacity',d=>connected.has(d.id)?1:.08);
+  d3.selectAll('.net-link').style('opacity',d=>{
+    const s=typeof d.source==='object'?d.source.id:d.source;
+    const t=typeof d.target==='object'?d.target.id:d.target;
+    return connected.has(s)&&connected.has(t)?1:.03;
+  });
+}
+function toggleBookLinks() {
+  bookLinksOnly=!bookLinksOnly;
+  d3.selectAll('.net-link').style('display',d=>bookLinksOnly&&!d.fromBook?'none':null);
+}
+
+// ═══════════════════════════════════════
+// AROMA EXPLORER
+// ═══════════════════════════════════════
+function buildAromaGrid() {
+  const grid = document.getElementById('aroma-grid');
+  Object.entries(AROMA_NOTES).forEach(([key,note]) => {
+    const ings = INGREDIENTS.filter(i=>i.aromas.includes(key));
+    const card = document.createElement('div');
+    card.className='ac';
+    card.style.borderTop=`3px solid ${note.color}`;
+    card.innerHTML=`<div class="ac-icon">${note.icon}</div>
+      <div class="ac-name" style="color:${note.color}">${note.label}</div>
+      <div class="ac-cnt">${ings.length} ingredients</div>`;
+    card.onclick=()=>showAromaDetail(key,note,ings,card);
+    grid.appendChild(card);
+  });
+}
+
+function showAromaDetail(key,note,ings,card) {
+  document.querySelectorAll('.ac').forEach(c=>{c.classList.remove('on');c.style.borderColor='transparent';c.style.borderTopColor=AROMA_NOTES[Object.keys(AROMA_NOTES).find(k=>c.querySelector('.ac-icon').textContent===AROMA_NOTES[k].icon)]?.color;});
+  card.classList.add('on'); card.style.borderTopColor=note.color; card.style.borderColor=note.color;
+  const detail=document.getElementById('aroma-detail');
+  detail.classList.add('on');
+  detail.innerHTML=`
+    <div class="ad-head">
+      <span style="font-size:36px">${note.icon}</span>
+      <div><div style="font-size:18px;font-weight:700;color:${note.color}">${note.label}</div>
+      <div style="font-size:12px;color:var(--t3)">${ings.length} ingredients share this aroma note</div></div></div>
+    <div class="ad-ing-grid">${ings.map(i=>`<div class="ad-chip" onclick="selectIng('${i.id}');nav('network',document.querySelectorAll('.nav-btn')[0])" style="--hover:${note.color}" onmouseover="this.style.background='${note.color}';this.style.color='#fff'" onmouseout="this.style.background='';this.style.color=''">${i.emoji} ${i.name}</div>`).join('')}</div>`;
+  detail.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+// ═══════════════════════════════════════
+// LEGEND
+// ═══════════════════════════════════════
+function buildLegend() {
+  const c=document.getElementById('leg-items');
+  Object.entries(CATEGORY_COLORS).forEach(([cat,col])=>{
+    const d=document.createElement('div');
+    d.className='leg-item';
+    d.innerHTML=`<div class="leg-dot" style="background:${col}"></div><span>${CATEGORY_LABELS[cat]||cat}</span>`;
+    c.appendChild(d);
+  });
+}
+
+// ═══════════════════════════════════════
+// NAV
+// ═══════════════════════════════════════
+function nav(name, btn) {
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('v-'+name).classList.add('on');
+  if (btn) btn.classList.add('active');
+  if (name==='recipe') { renderTray(); updateSuggestions(); updateHarmony(); }
+}
+</script>
+</body>
+</html>

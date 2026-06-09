@@ -1,0 +1,23 @@
+{
+  "name": "flavourlab",
+  "version": "1.0.0",
+  "description": "Aroma-based food pairing intelligence — visual app + MCP server for AI agents",
+  "type": "module",
+  "main": "src/mcp-server.js",
+  "bin": {
+    "flavourlab-mcp": "./src/mcp-server.js"
+  },
+  "scripts": {
+    "start": "node src/mcp-server.js",
+    "serve": "python3 -m http.server 8765 --directory public",
+    "dev": "python3 -m http.server 8765 --directory public"
+  },
+  "keywords": ["foodpairing", "flavour", "aroma", "cooking", "recipe", "mcp", "ai-agent"],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
