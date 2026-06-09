@@ -238,7 +238,8 @@
    "cauliflower",
    "beetroot",
    "carrot",
-   "coriander"
+   "coriander",
+   "cider"
   ],
   "source": "epub"
  },
@@ -473,7 +474,8 @@
   ],
   "linked_ingredients": [
    "apple",
-   "shiitake"
+   "shiitake",
+   "cider"
   ],
   "source": "epub"
  },
@@ -525,7 +527,7 @@
    "carrot",
    "tomato",
    "oyster",
-   "pork",
+   "lamb",
    "shiitake"
   ],
   "source": "epub"
@@ -828,7 +830,8 @@
    "fish",
    "cheese-goat",
    "olive-oil",
-   "balsamic"
+   "balsamic",
+   "chardonnay"
   ],
   "source": "epub"
  },
@@ -920,6 +923,7 @@
    "tomato",
    "pork",
    "chicken",
+   "beef",
    "olive-oil"
   ],
   "source": "epub"
@@ -1215,7 +1219,8 @@
    "chicken",
    "iberico-ham",
    "cheese-parmesan",
-   "olive-oil"
+   "olive-oil",
+   "cider"
   ],
   "source": "epub"
  },
@@ -1360,7 +1365,8 @@
   ],
   "linked_ingredients": [
    "garlic",
-   "pork"
+   "pork",
+   "beef"
   ],
   "source": "epub"
  },
@@ -1387,7 +1393,7 @@
   "linked_ingredients": [
    "red-bell-pepper",
    "tomato",
-   "pork",
+   "beef",
    "olive-oil"
   ],
   "source": "epub"
@@ -1491,7 +1497,8 @@
   ],
   "linked_ingredients": [
    "ginger",
-   "soy-sauce"
+   "soy-sauce",
+   "sherry"
   ],
   "source": "epub"
  },
@@ -1513,7 +1520,8 @@
   ],
   "linked_ingredients": [
    "sesame",
-   "soy-sauce"
+   "soy-sauce",
+   "sherry"
   ],
   "source": "epub"
  },
@@ -1565,7 +1573,6 @@
    "watermelon",
    "pear",
    "cauliflower",
-   "beetroot",
    "carrot",
    "vanilla",
    "almond"
@@ -2257,7 +2264,8 @@
    "apple",
    "chocolate",
    "vanilla",
-   "almond"
+   "almond",
+   "cider"
   ],
   "source": "epub"
  },
@@ -2474,7 +2482,8 @@
   "linked_ingredients": [
    "apple",
    "chocolate",
-   "vanilla"
+   "vanilla",
+   "cider"
   ],
   "source": "epub"
  },
@@ -2960,7 +2969,8 @@
    "lemon",
    "crustaceans",
    "pork",
-   "almond"
+   "almond",
+   "champagne"
   ],
   "source": "epub"
  },
@@ -3366,7 +3376,8 @@
    "In a small bowl, whisk together the vinegar, mustard, sea salt, and white pepper until the salt dissolves. Constantly whisking, slowly drizzle in the olive oil. Store remaining vinaigrette in an airtight container in the refrigerator for up to three days."
   ],
   "linked_ingredients": [
-   "olive-oil"
+   "olive-oil",
+   "sherry"
   ],
   "source": "epub"
  },
@@ -3405,7 +3416,8 @@
    "In a medium bowl, combine both vinegars with a pinch of sea salt and stir. Add the mustard, then slowly whisk in the canola oil and extra-virgin olive oil to emulsify. Stir in the tarragon. Cover and set the vinaigrette aside until ready to use. Store any remaining vinaigrette in an airtight container in the refrigerator for up to 3 days."
   ],
   "linked_ingredients": [
-   "olive-oil"
+   "olive-oil",
+   "sherry"
   ],
   "source": "epub"
  },
@@ -3959,7 +3971,8 @@
   "linked_ingredients": [
    "garlic",
    "olive-oil",
-   "hazelnut"
+   "hazelnut",
+   "sherry"
   ],
   "source": "epub"
  },
@@ -4415,7 +4428,7 @@
    "coriander",
    "ginger",
    "lemongrass",
-   "pork",
+   "beef",
    "coconut"
   ],
   "source": "epub"
@@ -4645,7 +4658,7 @@
    "tomato",
    "basil",
    "lemongrass",
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -4677,7 +4690,7 @@
   "linked_ingredients": [
    "garlic",
    "coriander",
-   "pork",
+   "beef",
    "coconut"
   ],
   "source": "epub"
@@ -4699,7 +4712,7 @@
    "Transfer the mixture to the serving plate and garnish with onions and capsicu m ."
   ],
   "linked_ingredients": [
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -5005,7 +5018,7 @@
    "carrot",
    "tomato",
    "chicken",
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -5162,7 +5175,7 @@
    "7. Ladle into individual plates or bowls, and serve the crostini on the side."
   ],
   "linked_ingredients": [
-   "pork",
+   "beef",
    "cheese-parmesan"
   ],
   "source": "epub"
@@ -5189,7 +5202,7 @@
    "5. Before turning off the heat, swirl in the grated Parmesan and the parsley, then taste and correct for salt. Ladle into individual plates or bowls and serve with additional grated cheese on the side."
   ],
   "linked_ingredients": [
-   "pork",
+   "beef",
    "cheese-parmesan"
   ],
   "source": "epub"
@@ -5218,7 +5231,7 @@
    "7. Before turning off the heat, swirl in the grated Parmesan, then taste and correct for salt. Ladle into individual plates or bowls and serve with crostini on the side and additional grated Parmesan for the table."
   ],
   "linked_ingredients": [
-   "pork",
+   "beef",
    "cheese-parmesan"
   ],
   "source": "epub"
@@ -5251,7 +5264,7 @@
   "linked_ingredients": [
    "carrot",
    "tomato",
-   "pork",
+   "beef",
    "iberico-ham",
    "cheese-parmesan"
   ],
@@ -5929,9 +5942,10 @@
    "garlic",
    "tomato",
    "chicken",
-   "pork",
+   "beef",
    "iberico-ham",
-   "cheese-parmesan"
+   "cheese-parmesan",
+   "vermouth"
   ],
   "source": "epub"
  },
@@ -5995,6 +6009,7 @@
   "linked_ingredients": [
    "tomato",
    "pork",
+   "beef",
    "iberico-ham",
    "cheese-parmesan",
    "olive-oil"
@@ -6204,7 +6219,7 @@
    "6. Off heat, add a few grindings of pepper, the remaining butter, all the grated Parmesan, and stir thoroughly until the cheese melts and clings to the rice. Taste and correct for salt. Transfer to a platter and serve promptly with additional grated cheese on the side."
   ],
   "linked_ingredients": [
-   "pork",
+   "beef",
    "iberico-ham",
    "cheese-parmesan"
   ],
@@ -6233,7 +6248,7 @@
    "6. Off heat, add a few grindings of pepper, the remaining 1 tablespoon of butter, and all the grated Parmesan, and stir thoroughly until the cheese melts and clings to the rice. Taste and correct for salt. Transfer to a platter and serve promptly with additional grated cheese on the side."
   ],
   "linked_ingredients": [
-   "pork",
+   "beef",
    "cheese-parmesan",
    "shiitake"
   ],
@@ -6266,7 +6281,7 @@
   ],
   "linked_ingredients": [
    "garlic",
-   "pork",
+   "beef",
    "cheese-parmesan"
   ],
   "source": "epub"
@@ -6303,7 +6318,7 @@
    "carrot",
    "tomato",
    "basil",
-   "pork",
+   "beef",
    "cheese-parmesan"
   ],
   "source": "epub"
@@ -6365,7 +6380,7 @@
   ],
   "linked_ingredients": [
    "garlic",
-   "pork",
+   "beef",
    "cheese-parmesan"
   ],
   "source": "epub"
@@ -6390,7 +6405,7 @@
    "5. Off heat, swirl in the tablespoon of butter and all the grated Parmesan, and stir thoroughly until the cheese melts and clings to the rice. Taste and correct for salt. Transfer to a platter and serve promptly with grated cheese on the side."
   ],
   "linked_ingredients": [
-   "pork",
+   "beef",
    "cheese-parmesan"
   ],
   "source": "epub"
@@ -6419,6 +6434,7 @@
   ],
   "linked_ingredients": [
    "pork",
+   "beef",
    "cheese-parmesan"
   ],
   "source": "epub"
@@ -6520,7 +6536,9 @@
   ],
   "linked_ingredients": [
    "pork",
-   "chicken"
+   "chicken",
+   "lamb",
+   "beef"
   ],
   "source": "epub"
  },
@@ -6721,6 +6739,7 @@
   ],
   "linked_ingredients": [
    "fish",
+   "beef",
    "olive-oil"
   ],
   "source": "epub"
@@ -7050,7 +7069,7 @@
   "linked_ingredients": [
    "garlic",
    "chicken",
-   "pork",
+   "beef",
    "cheese-parmesan"
   ],
   "source": "epub"
@@ -7072,7 +7091,7 @@
    "3. Turn the heat on to high, add the Marsala, and while it boils down, scrape loose with a wooden spoon all browning residues on the bottom and sides. Add the second tablespoon of butter and any juices the scaloppine may have shed on the plate. When the juices in the pan are no longer runny and have the density of sauce, turn the heat down to low, return the scaloppine to the pan, and turn them on"
   ],
   "linked_ingredients": [
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -7097,7 +7116,7 @@
   ],
   "linked_ingredients": [
    "lemon",
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -7120,7 +7139,7 @@
    "5. Add 1 or 2 tablespoons water to the pan, turn the heat up to high, and while the water boils away, scrape the cooking residues from the bottom and sides with a wooden spoon. Pour the few dark drops of pan juices over the scaloppine , stippling the mozzarella, and serve at once."
   ],
   "linked_ingredients": [
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -7148,7 +7167,7 @@
   "linked_ingredients": [
    "garlic",
    "tomato",
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -7177,7 +7196,7 @@
   "linked_ingredients": [
    "apple",
    "fish",
-   "pork",
+   "beef",
    "iberico-ham"
   ],
   "source": "epub"
@@ -7206,7 +7225,7 @@
    "9. Take the dish out of the oven, and open the parchment or foil wrap, taking care to direct the outrushing steam away from you so as not to be scalded by it. Cut away the parchment or foil all around the dish and serve as is or gently lift the scaloppine out using a broad metal spatula, and transfer them to a warm serving platter without turning them over. Spoon the juices in the baking dish over"
   ],
   "linked_ingredients": [
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -7234,7 +7253,7 @@
   ],
   "linked_ingredients": [
    "tomato",
-   "pork",
+   "beef",
    "cheese-parmesan"
   ],
   "source": "epub"
@@ -7264,7 +7283,7 @@
   "linked_ingredients": [
    "tomato",
    "fish",
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -7285,7 +7304,7 @@
    "3. Tip the skillet and spoon off most of the oil. Add the wine and simmer it over medium-high heat until it is reduced to a slightly syrupy consistency. While it simmers, scrape with a wooden spoon to loosen cooking residues from the bottom and sides of the pan. When the wine has simmered away almost completely, turn the heat down to low and stir in the butter. Return the chops to the skillet brie"
   ],
   "linked_ingredients": [
-   "pork",
+   "beef",
    "cheese-brie"
   ],
   "source": "epub"
@@ -7311,7 +7330,7 @@
   "linked_ingredients": [
    "garlic",
    "fish",
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -7339,7 +7358,7 @@
   ],
   "linked_ingredients": [
    "tomato",
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -7375,6 +7394,7 @@
    "garlic",
    "tomato",
    "pork",
+   "beef",
    "shiitake"
   ],
   "source": "epub"
@@ -7429,7 +7449,7 @@
   ],
   "linked_ingredients": [
    "tomato",
-   "pork",
+   "beef",
    "olive-oil",
    "shiitake"
   ],
@@ -7460,7 +7480,7 @@
   ],
   "linked_ingredients": [
    "garlic",
-   "pork",
+   "beef",
    "iberico-ham",
    "olive-oil"
   ],
@@ -7492,7 +7512,8 @@
   "linked_ingredients": [
    "carrot",
    "tomato",
-   "pork"
+   "beef",
+   "syrah"
   ],
   "source": "epub"
  },
@@ -7517,7 +7538,7 @@
   ],
   "linked_ingredients": [
    "garlic",
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -7546,7 +7567,7 @@
   "linked_ingredients": [
    "tomato",
    "black-pepper",
-   "pork",
+   "beef",
    "cheese-parmesan",
    "olive-oil"
   ],
@@ -7583,7 +7604,7 @@
   "linked_ingredients": [
    "garlic",
    "tomato",
-   "pork",
+   "beef",
    "cheese-parmesan",
    "olive-oil"
   ],
@@ -7617,7 +7638,7 @@
   "linked_ingredients": [
    "tomato",
    "fish",
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -7642,7 +7663,7 @@
   ],
   "linked_ingredients": [
    "green-beans",
-   "pork",
+   "lamb",
    "olive-oil"
   ],
   "source": "epub"
@@ -7830,7 +7851,7 @@
   ],
   "linked_ingredients": [
    "garlic",
-   "pork",
+   "lamb",
    "olive-oil",
    "shiitake"
   ],
@@ -8623,7 +8644,7 @@
   ],
   "linked_ingredients": [
    "tomato",
-   "pork",
+   "beef",
    "iberico-ham",
    "cheese-parmesan"
   ],
@@ -9277,7 +9298,7 @@
    "garlic",
    "tomato",
    "black-pepper",
-   "pork",
+   "beef",
    "olive-oil"
   ],
   "source": "epub"
@@ -9565,7 +9586,7 @@
    "garlic",
    "ginger",
    "black-pepper",
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -9632,6 +9653,7 @@
    "mango",
    "coriander",
    "black-pepper",
+   "beef",
    "olive-oil"
   ],
   "source": "epub"
@@ -9772,7 +9794,7 @@
   ],
   "linked_ingredients": [
    "garlic",
-   "pork",
+   "beef",
    "cheese-parmesan"
   ],
   "source": "epub"
@@ -10230,7 +10252,7 @@
   ],
   "linked_ingredients": [
    "garlic",
-   "chicken",
+   "duck",
    "truffle",
    "hazelnut"
   ],
@@ -10269,7 +10291,7 @@
    "garlic",
    "carrot",
    "tomato",
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -10297,7 +10319,7 @@
   ],
   "linked_ingredients": [
    "garlic",
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -10332,7 +10354,7 @@
    "garlic",
    "carrot",
    "tomato",
-   "pork"
+   "lamb"
   ],
   "source": "epub"
  },
@@ -10396,7 +10418,7 @@
    "garlic",
    "carrot",
    "black-pepper",
-   "pork"
+   "beef"
   ],
   "source": "epub"
  },
@@ -10430,7 +10452,7 @@
   "linked_ingredients": [
    "carrot",
    "tomato",
-   "chicken"
+   "duck"
   ],
   "source": "epub"
  },
@@ -10458,7 +10480,7 @@
   ],
   "linked_ingredients": [
    "carrot",
-   "chicken",
+   "duck",
    "coffee",
    "shiitake"
   ],
@@ -10550,7 +10572,10 @@
    "carrot",
    "tomato",
    "pork",
-   "chicken"
+   "chicken",
+   "duck",
+   "lamb",
+   "beef"
   ],
   "source": "epub"
  },
@@ -10603,8 +10628,9 @@
    "garlic",
    "carrot",
    "black-pepper",
-   "pork",
-   "shiitake"
+   "beef",
+   "shiitake",
+   "cabernet-sauvignon"
   ],
   "source": "epub"
  },
@@ -10686,7 +10712,8 @@
    "garlic",
    "carrot",
    "chicken",
-   "pork"
+   "beef",
+   "champagne"
   ],
   "source": "epub"
  },
@@ -10714,7 +10741,7 @@
   "linked_ingredients": [
    "garlic",
    "black-pepper",
-   "chicken"
+   "duck"
   ],
   "source": "epub"
  },
@@ -10795,7 +10822,7 @@
    "carrot",
    "artichoke",
    "chicken",
-   "pork",
+   "beef",
    "iberico-ham",
    "olive-oil"
   ],
@@ -10824,7 +10851,8 @@
    "To complete: Pour the onions, with their liquid, into separate small saucepans. Boil to reduce the liquid by about two-thirds. Add the champagne vinegar to the white onions and the red wine vinegar to the red onions and reduce the liquid, rolling the vegetables around in the glaze to coat them."
   ],
   "linked_ingredients": [
-   "pear"
+   "pear",
+   "champagne"
   ],
   "source": "epub"
  },
@@ -10950,7 +10978,8 @@
   ],
   "linked_ingredients": [
    "carrot",
-   "pork"
+   "beef",
+   "vermouth"
   ],
   "source": "epub"
  },
@@ -11030,7 +11059,7 @@
   "method": [],
   "linked_ingredients": [
    "tomato",
-   "pork"
+   "beef"
   ],
   "source": "bigmamma"
  },
@@ -11049,7 +11078,7 @@
   "method": [],
   "linked_ingredients": [
    "fish",
-   "pork"
+   "beef"
   ],
   "source": "bigmamma"
  },
@@ -11493,7 +11522,7 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "pork",
+   "beef",
    "iberico-ham",
    "cheese-parmesan"
   ],
@@ -12061,7 +12090,8 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "apple"
+   "apple",
+   "cider"
   ],
   "source": "bigmamma"
  },
@@ -12197,7 +12227,8 @@
    "garlic",
    "cinnamon",
    "black-pepper",
-   "pork"
+   "pork",
+   "cider"
   ],
   "source": "mexico"
  },
@@ -12244,7 +12275,8 @@
    "apple",
    "pineapple",
    "garlic",
-   "cumin"
+   "cumin",
+   "cider"
   ],
   "source": "mexico"
  },
@@ -12483,7 +12515,8 @@
   "method": [],
   "linked_ingredients": [
    "tomato",
-   "cucumber"
+   "cucumber",
+   "sherry"
   ],
   "source": "mexico"
  },
@@ -12507,7 +12540,8 @@
   "linked_ingredients": [
    "apple",
    "garlic",
-   "beetroot"
+   "beetroot",
+   "sherry"
   ],
   "source": "mexico"
  },
@@ -13035,7 +13069,7 @@
   "method": [],
   "linked_ingredients": [
    "garlic",
-   "pork"
+   "beef"
   ],
   "source": "mexico"
  },
@@ -13109,7 +13143,8 @@
   "method": [],
   "linked_ingredients": [
    "apple",
-   "tomato"
+   "tomato",
+   "cider"
   ],
   "source": "mexico"
  },
@@ -13157,7 +13192,8 @@
   "method": [],
   "linked_ingredients": [
    "apple",
-   "garlic"
+   "garlic",
+   "cider"
   ],
   "source": "mexico"
  },
@@ -13761,7 +13797,7 @@
   "method": [],
   "linked_ingredients": [
    "garlic",
-   "chicken",
+   "duck",
    "olive-oil"
   ],
   "source": "mexico"
@@ -13787,7 +13823,7 @@
   "linked_ingredients": [
    "garlic",
    "black-pepper",
-   "pork"
+   "beef"
   ],
   "source": "mexico"
  },
@@ -13811,7 +13847,7 @@
   "method": [],
   "linked_ingredients": [
    "garlic",
-   "pork"
+   "beef"
   ],
   "source": "mexico"
  },
@@ -13837,7 +13873,7 @@
    "garlic",
    "cumin",
    "black-pepper",
-   "pork"
+   "beef"
   ],
   "source": "mexico"
  },
@@ -13860,7 +13896,8 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "pork"
+   "pork",
+   "beef"
   ],
   "source": "mexico"
  },
@@ -13887,7 +13924,7 @@
    "sweet-potato",
    "tomato",
    "coriander",
-   "pork"
+   "beef"
   ],
   "source": "mexico"
  },
@@ -13935,7 +13972,7 @@
   "method": [],
   "linked_ingredients": [
    "garlic",
-   "pork"
+   "beef"
   ],
   "source": "mexico"
  },
@@ -14004,7 +14041,7 @@
    "garlic",
    "tomato",
    "black-pepper",
-   "pork"
+   "beef"
   ],
   "source": "mexico"
  },
@@ -14023,7 +14060,7 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "pork",
+   "beef",
    "olive-oil"
   ],
   "source": "mexico"
@@ -14049,7 +14086,7 @@
   "linked_ingredients": [
    "garlic",
    "tomato",
-   "pork"
+   "beef"
   ],
   "source": "mexico"
  },
@@ -14096,7 +14133,7 @@
   "linked_ingredients": [
    "apple",
    "garlic",
-   "pork",
+   "beef",
    "tequila",
    "olive-oil"
   ],
@@ -14145,7 +14182,7 @@
   "linked_ingredients": [
    "garlic",
    "tomato",
-   "pork"
+   "beef"
   ],
   "source": "mexico"
  },
@@ -14235,7 +14272,7 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "chicken"
+   "duck"
   ],
   "source": "faviken"
  },
@@ -14276,7 +14313,7 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "pork"
+   "beef"
   ],
   "source": "faviken"
  },
@@ -14299,7 +14336,7 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "pork"
+   "lamb"
   ],
   "source": "faviken"
  },
@@ -14338,7 +14375,7 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "pork",
+   "beef",
    "yogurt"
   ],
   "source": "faviken"
@@ -14362,7 +14399,7 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "pork"
+   "lamb"
   ],
   "source": "faviken"
  },
@@ -14515,7 +14552,7 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "chicken",
+   "duck",
    "balsamic"
   ],
   "source": "faviken"
@@ -14601,7 +14638,7 @@
   "method": [],
   "linked_ingredients": [
    "raspberry",
-   "chicken"
+   "duck"
   ],
   "source": "faviken"
  },
@@ -14625,7 +14662,8 @@
   "method": [],
   "linked_ingredients": [
    "olive-oil",
-   "shiitake"
+   "shiitake",
+   "port"
   ],
   "source": "bibo"
  },
@@ -14675,7 +14713,8 @@
    "garlic",
    "tomato",
    "coriander",
-   "olive-oil"
+   "olive-oil",
+   "sherry"
   ],
   "source": "bibo"
  },
@@ -14703,7 +14742,8 @@
    "sesame",
    "fish",
    "soy-sauce",
-   "miso"
+   "miso",
+   "cider"
   ],
   "source": "bibo"
  },
@@ -14731,7 +14771,8 @@
    "ginger",
    "sesame",
    "fish",
-   "soy-sauce"
+   "soy-sauce",
+   "sake"
   ],
   "source": "bibo"
  },
@@ -14788,6 +14829,7 @@
    "cumin",
    "black-pepper",
    "chicken",
+   "duck",
    "olive-oil"
   ],
   "source": "bibo"
@@ -14875,7 +14917,8 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "olive-oil"
+   "olive-oil",
+   "sherry"
   ],
   "source": "disfrutar"
  },
@@ -14893,7 +14936,7 @@
   "method": [],
   "linked_ingredients": [
    "crustaceans",
-   "pork",
+   "beef",
    "truffle",
    "soy-sauce"
   ],
@@ -15050,7 +15093,7 @@
   "linked_ingredients": [
    "cumin",
    "black-pepper",
-   "pork",
+   "lamb",
    "olive-oil"
   ],
   "source": "middleeastern"
@@ -15361,7 +15404,6 @@
   "linked_ingredients": [
    "lemon",
    "garlic",
-   "beetroot",
    "yogurt",
    "olive-oil"
   ],
@@ -15711,7 +15753,8 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "yogurt"
+   "yogurt",
+   "syrah"
   ],
   "source": "middleeastern"
  },
@@ -15943,7 +15986,7 @@
   "method": [],
   "linked_ingredients": [
    "tomato",
-   "pork",
+   "lamb",
    "olive-oil"
   ],
   "source": "middleeastern"
@@ -16307,7 +16350,7 @@
   "method": [],
   "linked_ingredients": [
    "chicken",
-   "pork"
+   "beef"
   ],
   "source": "middleeastern"
  },
@@ -16330,7 +16373,7 @@
   "linked_ingredients": [
    "apricot",
    "chicken",
-   "pork"
+   "beef"
   ],
   "source": "middleeastern"
  },
@@ -16407,7 +16450,8 @@
   "method": [],
   "linked_ingredients": [
    "cumin",
-   "pork"
+   "lamb",
+   "beef"
   ],
   "source": "middleeastern"
  },
@@ -16430,7 +16474,7 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "pork"
+   "lamb"
   ],
   "source": "middleeastern"
  },
@@ -16454,7 +16498,7 @@
   "method": [],
   "linked_ingredients": [
    "tomato",
-   "pork"
+   "lamb"
   ],
   "source": "middleeastern"
  },
@@ -16479,7 +16523,7 @@
   "linked_ingredients": [
    "tomato",
    "cumin",
-   "pork"
+   "lamb"
   ],
   "source": "middleeastern"
  },
@@ -16522,7 +16566,7 @@
    "garlic",
    "tomato",
    "cinnamon",
-   "pork"
+   "lamb"
   ],
   "source": "middleeastern"
  },
@@ -16546,7 +16590,8 @@
   "linked_ingredients": [
    "tomato",
    "cinnamon",
-   "pork"
+   "lamb",
+   "beef"
   ],
   "source": "middleeastern"
  },
@@ -16568,7 +16613,8 @@
   "linked_ingredients": [
    "tomato",
    "cinnamon",
-   "pork"
+   "lamb",
+   "beef"
   ],
   "source": "middleeastern"
  },
@@ -16592,7 +16638,8 @@
   "method": [],
   "linked_ingredients": [
    "cinnamon",
-   "pork"
+   "lamb",
+   "beef"
   ],
   "source": "middleeastern"
  },
@@ -16611,7 +16658,8 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "pork"
+   "lamb",
+   "beef"
   ],
   "source": "middleeastern"
  },
@@ -16652,7 +16700,7 @@
   "method": [],
   "linked_ingredients": [
    "tomato",
-   "pork"
+   "beef"
   ],
   "source": "middleeastern"
  },
@@ -16713,7 +16761,8 @@
   "method": [],
   "linked_ingredients": [
    "garlic",
-   "pork"
+   "lamb",
+   "beef"
   ],
   "source": "middleeastern"
  },
@@ -16738,7 +16787,7 @@
    "lemon",
    "garlic",
    "coriander",
-   "pork"
+   "lamb"
   ],
   "source": "middleeastern"
  },
@@ -17097,7 +17146,7 @@
   "linked_ingredients": [
    "apricot",
    "cinnamon",
-   "pork"
+   "beef"
   ],
   "source": "middleeastern"
  },
@@ -17141,7 +17190,7 @@
   "method": [],
   "linked_ingredients": [
    "artichoke",
-   "pork"
+   "lamb"
   ],
   "source": "middleeastern"
  },
@@ -17362,7 +17411,7 @@
   "method": [],
   "linked_ingredients": [
    "carrot",
-   "pork"
+   "lamb"
   ],
   "source": "middleeastern"
  },
@@ -17449,7 +17498,7 @@
    "apple",
    "lemon",
    "cinnamon",
-   "pork"
+   "beef"
   ],
   "source": "middleeastern"
  },
@@ -17474,7 +17523,7 @@
    "lemon",
    "peach",
    "chicken",
-   "pork"
+   "beef"
   ],
   "source": "middleeastern"
  },
@@ -17499,7 +17548,8 @@
    "garlic",
    "cinnamon",
    "black-pepper",
-   "pork"
+   "lamb",
+   "beef"
   ],
   "source": "middleeastern"
  },
@@ -18405,7 +18455,7 @@
   "method": [],
   "linked_ingredients": [
    "orange",
-   "chicken"
+   "duck"
   ],
   "source": "celler_roca"
  },
@@ -18423,7 +18473,7 @@
   "linked_ingredients": [
    "pear",
    "garlic",
-   "chicken"
+   "duck"
   ],
   "source": "celler_roca"
  },
@@ -18461,6 +18511,7 @@
   "linked_ingredients": [
    "garlic",
    "pork",
+   "lamb",
    "olive-oil"
   ],
   "source": "celler_roca"
@@ -18862,7 +18913,7 @@
   "method": [],
   "linked_ingredients": [
    "garlic",
-   "pork",
+   "beef",
    "olive-oil"
   ],
   "source": "arabesque"
@@ -18882,7 +18933,7 @@
   "method": [],
   "linked_ingredients": [
    "tomato",
-   "pork",
+   "lamb",
    "olive-oil"
   ],
   "source": "arabesque"
@@ -19062,7 +19113,8 @@
    "garlic",
    "yogurt",
    "olive-oil",
-   "almond"
+   "almond",
+   "cider"
   ],
   "source": "arabesque"
  },
@@ -19228,7 +19280,7 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "pork",
+   "lamb",
    "yogurt",
    "vanilla"
   ],
@@ -19479,7 +19531,8 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "apple"
+   "apple",
+   "cider"
   ],
   "source": "disfrutar2"
  },
@@ -19754,7 +19807,9 @@
   "method": [],
   "linked_ingredients": [
    "carrot",
-   "soy-sauce"
+   "soy-sauce",
+   "port",
+   "sherry"
   ],
   "source": "disfrutar2"
  },
@@ -19778,7 +19833,9 @@
   "method": [],
   "linked_ingredients": [
    "carrot",
-   "soy-sauce"
+   "soy-sauce",
+   "port",
+   "sherry"
   ],
   "source": "disfrutar2"
  },
@@ -19801,7 +19858,9 @@
   ],
   "method": [],
   "linked_ingredients": [
-   "soy-sauce"
+   "soy-sauce",
+   "port",
+   "sherry"
   ],
   "source": "disfrutar2"
  },

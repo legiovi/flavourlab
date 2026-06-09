@@ -67,7 +67,7 @@ INGREDIENT_MAP = {
     'oyster':'oyster','lobster':'crustaceans','prawn':'crustaceans','shrimp':'crustaceans',
     'crab':'crustaceans','langoustine':'crustaceans','scallop':'crustaceans',
     'pork':'pork','bacon':'pork','chicken':'chicken','duck':'chicken','turkey':'chicken',
-    'lamb':'pork','beef':'pork','veal':'pork','ham':'iberico-ham','prosciutto':'iberico-ham',
+    'lamb':'lamb','beef':'beef','veal':'beef','ham':'iberico-ham','prosciutto':'iberico-ham',
     'chorizo':'chorizo','goat cheese':'cheese-goat','goats cheese':'cheese-goat',
     'gorgonzola':'cheese-blue','blue cheese':'cheese-blue','brie':'cheese-brie',
     'parmesan':'cheese-parmesan','parmigiano':'cheese-parmesan','pecorino':'cheese-parmesan',
