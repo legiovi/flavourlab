@@ -1,0 +1,2271 @@
+{
+ "ingredients": [
+  {
+   "id": "kiwi",
+   "name": "Kiwi",
+   "category": "fruit",
+   "emoji": "🥝",
+   "aromas": [
+    "fruity",
+    "green",
+    "floral",
+    "citrus",
+    "minty"
+   ],
+   "description": "Bright fruity flavour with apple-and pineapple-scented esters, grassy aldehydes, and subtle minty notes.",
+   "pairings": [
+    "oyster",
+    "melon",
+    "apple",
+    "asparagus",
+    "cheese-blue",
+    "crab"
+   ],
+   "classic": "Kiwi & melon — shared tropical fruity esters",
+   "surprising": "Kiwi & oyster — shared green/marine aldehydes"
+  },
+  {
+   "id": "apple",
+   "name": "Apple",
+   "category": "fruit",
+   "emoji": "🍎",
+   "aromas": [
+    "fruity",
+    "green",
+    "floral",
+    "spicy",
+    "cheesy",
+    "caramel"
+   ],
+   "description": "Fruity, floral, green, spicy and cheesy notes. Key molecule hexanal gives it grassy, green character.",
+   "pairings": [
+    "celeriac",
+    "cheese-brie",
+    "cheese-cheddar",
+    "caramel",
+    "cinnamon",
+    "potato",
+    "pork"
+   ],
+   "classic": "Apple & Brie — aromatic and textural contrast",
+   "surprising": "Apple & hay — shared grassy, coumarin notes"
+  },
+  {
+   "id": "strawberry",
+   "name": "Strawberry",
+   "category": "fruit",
+   "emoji": "🍓",
+   "aromas": [
+    "fruity",
+    "floral",
+    "caramel",
+    "cheesy",
+    "citrus"
+   ],
+   "description": "Characteristic fruity, floral aroma from esters. Furaneol adds caramellic sweetness with pineapple undertones.",
+   "pairings": [
+    "chocolate",
+    "tomato",
+    "basil",
+    "cauliflower",
+    "rose",
+    "balsamic",
+    "cointreau"
+   ],
+   "classic": "Strawberry & chocolate — shared caramellic furaneol",
+   "surprising": "Strawberry & cauliflower — shared citrus/orange notes"
+  },
+  {
+   "id": "watermelon",
+   "name": "Watermelon",
+   "category": "fruit",
+   "emoji": "🍉",
+   "aromas": [
+    "green",
+    "fruity",
+    "floral",
+    "fatty"
+   ],
+   "description": "Green-cucumber and green-fatty scents with fruity floral-geranium and oat-flake notes.",
+   "pairings": [
+    "tequila",
+    "feta",
+    "basil",
+    "chicken",
+    "anchovies",
+    "cashew"
+   ],
+   "classic": "Watermelon & feta — sweet-salty contrast with shared green notes",
+   "surprising": "Watermelon & anchovies — salt enhances sweetness"
+  },
+  {
+   "id": "lemon",
+   "name": "Lemon & Lime",
+   "category": "fruit",
+   "emoji": "🍋",
+   "aromas": [
+    "citrus",
+    "floral",
+    "green",
+    "spicy",
+    "woody"
+   ],
+   "description": "Citral and geranial give the lemony fragrance, supplemented by woody terpinenes and camphoraceous pinene.",
+   "pairings": [
+    "gin",
+    "tequila",
+    "ricotta",
+    "mustard",
+    "gremolata",
+    "seafood",
+    "elderflower"
+   ],
+   "classic": "Lemon & ricotta pie — floral-creamy harmony",
+   "surprising": "Lemon & mustard dressing — shared terpene compounds"
+  },
+  {
+   "id": "blueberry",
+   "name": "Blueberry",
+   "category": "fruit",
+   "emoji": "🫐",
+   "aromas": [
+    "fruity",
+    "floral",
+    "green",
+    "minty",
+    "woody"
+   ],
+   "description": "Fruity, floral and minty notes. Contains terpenes that create aromatic links to herbs and spices.",
+   "pairings": [
+    "lavender",
+    "lemon",
+    "thyme",
+    "vanilla",
+    "basil",
+    "cheese-goat"
+   ],
+   "classic": "Blueberry & lemon — complementary citrus-fruity",
+   "surprising": "Blueberry & thyme — shared terpene molecules"
+  },
+  {
+   "id": "apricot",
+   "name": "Apricot",
+   "category": "fruit",
+   "emoji": "🍑",
+   "aromas": [
+    "fruity",
+    "floral",
+    "caramel",
+    "honey",
+    "woody"
+   ],
+   "description": "Lactones give peach-like fruity notes. Gamma-decalactone imparts a creamy, peachy quality.",
+   "pairings": [
+    "almond",
+    "vanilla",
+    "cardamom",
+    "rum",
+    "cheese-brie"
+   ],
+   "classic": "Apricot & almond — classic French patisserie pairing",
+   "surprising": "Apricot & foie gras — shared fruity lactones"
+  },
+  {
+   "id": "orange",
+   "name": "Orange",
+   "category": "fruit",
+   "emoji": "🍊",
+   "aromas": [
+    "citrus",
+    "floral",
+    "fruity",
+    "spicy"
+   ],
+   "description": "Dominated by limonene and myrcene. Floral notes from linalool. Rich and complex terpene profile.",
+   "pairings": [
+    "chocolate",
+    "rum",
+    "coriander",
+    "balsamic",
+    "fennel",
+    "cardamom"
+   ],
+   "classic": "Orange & chocolate — citrus lifts the bitterness",
+   "surprising": "Orange & fennel — shared anise-terpene molecules"
+  },
+  {
+   "id": "mango",
+   "name": "Mango",
+   "category": "fruit",
+   "emoji": "🥭",
+   "aromas": [
+    "tropical",
+    "fruity",
+    "floral",
+    "citrus",
+    "fatty"
+   ],
+   "description": "Tropical fruity esters with floral, citrus and green notes. Lactones add creamy richness.",
+   "pairings": [
+    "chilli",
+    "lime",
+    "coriander",
+    "coconut",
+    "rum",
+    "jasmine"
+   ],
+   "classic": "Mango & chilli — tropical sweetness and heat",
+   "surprising": "Mango & foie gras — shared fruity lactones"
+  },
+  {
+   "id": "pineapple",
+   "name": "Pineapple",
+   "category": "fruit",
+   "emoji": "🍍",
+   "aromas": [
+    "tropical",
+    "fruity",
+    "caramel",
+    "floral"
+   ],
+   "description": "Fruity esters including methyl butanoate. Sweet, caramellic with floral hints.",
+   "pairings": [
+    "rum",
+    "coconut",
+    "ginger",
+    "pork",
+    "vanilla",
+    "coriander"
+   ],
+   "classic": "Pineapple & rum — tropical classic",
+   "surprising": "Pineapple & pork — shared ester compounds"
+  },
+  {
+   "id": "raspberry",
+   "name": "Raspberry",
+   "category": "fruit",
+   "emoji": "🫐",
+   "aromas": [
+    "fruity",
+    "floral",
+    "woody",
+    "caramel"
+   ],
+   "description": "Raspberry ketone gives the characteristic fruity-floral aroma. Earthy, woody depth.",
+   "pairings": [
+    "chocolate",
+    "rose",
+    "vanilla",
+    "lemon",
+    "almond",
+    "peach"
+   ],
+   "classic": "Raspberry & chocolate — fruity-bitter harmony",
+   "surprising": "Raspberry & black pepper — shared terpene notes"
+  },
+  {
+   "id": "banana",
+   "name": "Banana",
+   "category": "fruit",
+   "emoji": "🍌",
+   "aromas": [
+    "fruity",
+    "floral",
+    "caramel",
+    "fatty"
+   ],
+   "description": "Isoamyl acetate gives the sweet, fruity banana aroma. Caramellic notes develop when ripe.",
+   "pairings": [
+    "rum",
+    "chocolate",
+    "vanilla",
+    "cinnamon",
+    "caramel",
+    "cardamom"
+   ],
+   "classic": "Banana & rum — shared ester compounds",
+   "surprising": "Banana & miso — shared caramellic Maillard products"
+  },
+  {
+   "id": "pear",
+   "name": "Pear",
+   "category": "fruit",
+   "emoji": "🍐",
+   "aromas": [
+    "fruity",
+    "floral",
+    "green",
+    "fatty",
+    "honey"
+   ],
+   "description": "Ethyl decadienoate gives the characteristic floral-fruity pear aroma. Green and honey notes.",
+   "pairings": [
+    "cheese-brie",
+    "gorgonzola",
+    "walnut",
+    "ginger",
+    "cardamom",
+    "vanilla"
+   ],
+   "classic": "Pear & Brie — classic cheese board pairing",
+   "surprising": "Pear & Gorgonzola — contrasting yet aromatic harmony"
+  },
+  {
+   "id": "grapefruit",
+   "name": "Grapefruit",
+   "category": "fruit",
+   "emoji": "🍊",
+   "aromas": [
+    "citrus",
+    "green",
+    "floral",
+    "woody",
+    "sulfurous"
+   ],
+   "description": "Nootkatone gives the distinctive bitter grapefruit aroma. Sulfurous thiols add complexity.",
+   "pairings": [
+    "gin",
+    "avocado",
+    "seafood",
+    "fennel",
+    "coriander"
+   ],
+   "classic": "Grapefruit & gin — shared citrus terpenes",
+   "surprising": "Grapefruit & avocado — fatty-bitter contrast"
+  },
+  {
+   "id": "avocado",
+   "name": "Avocado",
+   "category": "fruit",
+   "emoji": "🥑",
+   "aromas": [
+    "fatty",
+    "green",
+    "fruity",
+    "floral"
+   ],
+   "description": "Green, fatty notes from cis-3-hexenol and hexanal. Subtle floral and fruity undertones.",
+   "pairings": [
+    "lemon",
+    "coriander",
+    "chilli",
+    "grapefruit",
+    "shrimp",
+    "sesame"
+   ],
+   "classic": "Avocado & lime — classic guacamole base",
+   "surprising": "Avocado & grapefruit — both contain terpene bitter notes"
+  },
+  {
+   "id": "pomegranate",
+   "name": "Pomegranate",
+   "category": "fruit",
+   "emoji": "🍎",
+   "aromas": [
+    "fruity",
+    "floral",
+    "citrus",
+    "woody"
+   ],
+   "description": "Fruity esters with floral and citrus notes. Tannins add astringency.",
+   "pairings": [
+    "rose",
+    "lamb",
+    "cardamom",
+    "yogurt",
+    "walnut"
+   ],
+   "classic": "Pomegranate & lamb — fruity-savory contrast",
+   "surprising": "Pomegranate & walnut — shared phenolic compounds"
+  },
+  {
+   "id": "peach",
+   "name": "Peach",
+   "category": "fruit",
+   "emoji": "🍑",
+   "aromas": [
+    "fruity",
+    "floral",
+    "caramel",
+    "honey",
+    "fatty"
+   ],
+   "description": "Gamma-decalactone and other lactones dominate. Creamy, honeyed, floral peach character.",
+   "pairings": [
+    "vanilla",
+    "almond",
+    "basil",
+    "crab",
+    "prosciutto",
+    "cognac"
+   ],
+   "classic": "Peach & cognac — shared fruity lactones",
+   "surprising": "Peach & basil — shared linalool and floral notes"
+  },
+  {
+   "id": "celeriac",
+   "name": "Celeriac",
+   "category": "vegetable",
+   "emoji": "🥬",
+   "aromas": [
+    "citrus",
+    "woody",
+    "minty",
+    "honey",
+    "floral"
+   ],
+   "description": "Raw: citrusy and woody, pine-like. Cooked: minty, honey-scented, vanillin notes develop.",
+   "pairings": [
+    "apple",
+    "langoustine",
+    "chocolate",
+    "strawberry",
+    "cheddar",
+    "lavender",
+    "vanilla"
+   ],
+   "classic": "Celeriac & apple remoulade — classic French pairing",
+   "surprising": "Celeriac & chocolate — shared vanillin and woody compounds"
+  },
+  {
+   "id": "cauliflower",
+   "name": "Cauliflower",
+   "category": "vegetable",
+   "emoji": "🥦",
+   "aromas": [
+    "sulfurous",
+    "green",
+    "citrus",
+    "earthy"
+   ],
+   "description": "Sulphurous glucosinolates with green grassy and citrusy orange notes. Roasting adds earthy depth.",
+   "pairings": [
+    "chocolate",
+    "grapes",
+    "nutmeg",
+    "turbot",
+    "strawberry",
+    "cheese"
+   ],
+   "classic": "Cauliflower & cheese — classic béchamel companion",
+   "surprising": "Cauliflower & chocolate — shared sulphurous compounds"
+  },
+  {
+   "id": "red-bell-pepper",
+   "name": "Red Bell Pepper",
+   "category": "vegetable",
+   "emoji": "🫑",
+   "aromas": [
+    "green",
+    "fruity",
+    "floral",
+    "spicy"
+   ],
+   "description": "Methoxypyrazines give grassy, green notes. Fruity and floral aromas develop with ripening.",
+   "pairings": [
+    "tomato",
+    "garlic",
+    "olive-oil",
+    "anchovy",
+    "egg",
+    "feta"
+   ],
+   "classic": "Bell pepper & tomato — classic ratatouille",
+   "surprising": "Bell pepper & raspberry — shared floral molecules"
+  },
+  {
+   "id": "garlic",
+   "name": "Garlic",
+   "category": "vegetable",
+   "emoji": "🧄",
+   "aromas": [
+    "sulfurous",
+    "spicy",
+    "earthy"
+   ],
+   "description": "Allicin and other organosulfur compounds. Roasting transforms into sweet, caramellic complexity.",
+   "pairings": [
+    "olive-oil",
+    "tomato",
+    "lemon",
+    "herb",
+    "mushroom",
+    "seafood"
+   ],
+   "classic": "Garlic & olive oil — the base of Mediterranean cooking",
+   "surprising": "Black garlic & chocolate — shared caramellic Maillard notes"
+  },
+  {
+   "id": "sweet-potato",
+   "name": "Sweet Potato",
+   "category": "vegetable",
+   "emoji": "🍠",
+   "aromas": [
+    "caramel",
+    "fruity",
+    "earthy",
+    "floral"
+   ],
+   "description": "Caramellic and slightly fruity with earthy sweetness. Baking enhances caramel and floral notes.",
+   "pairings": [
+    "cinnamon",
+    "vanilla",
+    "orange",
+    "ginger",
+    "coconut"
+   ],
+   "classic": "Sweet potato & cinnamon — warming spice harmony",
+   "surprising": "Sweet potato & orange — shared terpene-citrus molecules"
+  },
+  {
+   "id": "butternut-squash",
+   "name": "Butternut Squash",
+   "category": "vegetable",
+   "emoji": "🎃",
+   "aromas": [
+    "earthy",
+    "caramel",
+    "fruity",
+    "green"
+   ],
+   "description": "Sweet, earthy and caramellic with mild fruity and green notes.",
+   "pairings": [
+    "sage",
+    "nutmeg",
+    "ginger",
+    "apple",
+    "cinnamon",
+    "cheese"
+   ],
+   "classic": "Butternut squash & sage — Italian classic",
+   "surprising": "Butternut squash & dark chocolate — shared earthy notes"
+  },
+  {
+   "id": "beetroot",
+   "name": "Beetroot",
+   "category": "vegetable",
+   "emoji": "🟣",
+   "aromas": [
+    "earthy",
+    "green",
+    "minty",
+    "caramel"
+   ],
+   "description": "Geosmin gives the characteristic earthy, soil-like aroma. Also minty and sweet notes.",
+   "pairings": [
+    "goat-cheese",
+    "orange",
+    "walnut",
+    "chocolate",
+    "smoked-salmon"
+   ],
+   "classic": "Beetroot & goat cheese — earthy meets creamy tang",
+   "surprising": "Beetroot & chocolate — shared earthy geosmin notes"
+  },
+  {
+   "id": "carrot",
+   "name": "Carrot",
+   "category": "vegetable",
+   "emoji": "🥕",
+   "aromas": [
+    "earthy",
+    "green",
+    "spicy",
+    "fruity",
+    "caramel"
+   ],
+   "description": "Terpinolene and other terpenes give carrots their distinctive aroma. Earthy and slightly spicy.",
+   "pairings": [
+    "ginger",
+    "orange",
+    "coriander",
+    "honey",
+    "cumin",
+    "cream"
+   ],
+   "classic": "Carrot & ginger — warming root vegetable pairing",
+   "surprising": "Carrot & mango — shared terpene-fruity molecules"
+  },
+  {
+   "id": "tomato",
+   "name": "Tomato",
+   "category": "vegetable",
+   "emoji": "🍅",
+   "aromas": [
+    "green",
+    "fruity",
+    "earthy",
+    "floral",
+    "sulfurous"
+   ],
+   "description": "Cis-3-hexenal gives the green tomato note. Geranylacetone adds fruity floral complexity.",
+   "pairings": [
+    "basil",
+    "mozzarella",
+    "olive-oil",
+    "vanilla",
+    "balsamic",
+    "strawberry"
+   ],
+   "classic": "Tomato & basil — aromatic Mediterranean harmony",
+   "surprising": "Tomato & vanilla — shared smoky, woody benzaldehyde"
+  },
+  {
+   "id": "green-beans",
+   "name": "Green Beans",
+   "category": "vegetable",
+   "emoji": "🫘",
+   "aromas": [
+    "green",
+    "earthy",
+    "fatty",
+    "floral"
+   ],
+   "description": "Cis-3-hexenol gives the green grassy aroma. Subtle floral and earthy notes.",
+   "pairings": [
+    "almond",
+    "garlic",
+    "lemon",
+    "hazelnut",
+    "tomato"
+   ],
+   "classic": "Green beans & almond — French amandine classic",
+   "surprising": "Green beans & bergamot — shared green-floral molecules"
+  },
+  {
+   "id": "cucumber",
+   "name": "Cucumber",
+   "category": "vegetable",
+   "emoji": "🥒",
+   "aromas": [
+    "green",
+    "fatty",
+    "floral",
+    "marine"
+   ],
+   "description": "Nona-2,6-dienal gives the fresh green-cucumber aroma. Subtle fatty and marine notes.",
+   "pairings": [
+    "watermelon",
+    "dill",
+    "yogurt",
+    "gin",
+    "mint",
+    "salmon"
+   ],
+   "classic": "Cucumber & dill — classic pairing in Nordic cuisine",
+   "surprising": "Cucumber & oyster — shared marine-green aldehydes"
+  },
+  {
+   "id": "artichoke",
+   "name": "Artichoke",
+   "category": "vegetable",
+   "emoji": "🌿",
+   "aromas": [
+    "earthy",
+    "green",
+    "spicy",
+    "sulfurous"
+   ],
+   "description": "Complex artichoke flavor from cynarine, which makes water taste sweet. Earthy, green-sulfurous.",
+   "pairings": [
+    "lemon",
+    "garlic",
+    "olive-oil",
+    "parmesan",
+    "mint"
+   ],
+   "classic": "Artichoke & lemon — acidity cuts the earthiness",
+   "surprising": "Artichoke & mint — shared green terpene molecules"
+  },
+  {
+   "id": "basil",
+   "name": "Basil",
+   "category": "herb",
+   "emoji": "🌿",
+   "aromas": [
+    "spicy",
+    "citrus",
+    "woody",
+    "floral",
+    "minty"
+   ],
+   "description": "Linalool, eucalyptol, alpha-pinene, eugenol and estragole create the complex spicy-citrus-floral profile.",
+   "pairings": [
+    "tomato",
+    "mozzarella",
+    "strawberry",
+    "watermelon",
+    "gin",
+    "pineapple",
+    "lemon"
+   ],
+   "classic": "Basil & tomato — aromatic pesto and caprese",
+   "surprising": "Basil & boysenberry — shared floral linalool"
+  },
+  {
+   "id": "coriander",
+   "name": "Coriander",
+   "category": "herb",
+   "emoji": "🌿",
+   "aromas": [
+    "green",
+    "citrus",
+    "woody",
+    "floral"
+   ],
+   "description": "Aldehydes give green-fatty flavour. Linalool adds woody-floral notes. Seeds have different profile from leaves.",
+   "pairings": [
+    "chilli",
+    "lime",
+    "mango",
+    "coconut",
+    "ginger",
+    "avocado"
+   ],
+   "classic": "Coriander, chilli & lime — Thai/Mexican holy trinity",
+   "surprising": "Coriander & morel mushroom — shared woody notes"
+  },
+  {
+   "id": "cinnamon",
+   "name": "Cinnamon",
+   "category": "spice",
+   "emoji": "🫙",
+   "aromas": [
+    "spicy",
+    "woody",
+    "caramel",
+    "floral"
+   ],
+   "description": "Cinnamaldehyde dominates. Eugenol adds clove-like spice. Warm, sweet-woody profile.",
+   "pairings": [
+    "apple",
+    "chocolate",
+    "orange",
+    "vanilla",
+    "banana",
+    "cardamom",
+    "coffee"
+   ],
+   "classic": "Cinnamon & apple — warming autumn classic",
+   "surprising": "Cinnamon & oyster — shared eugenol-spice notes"
+  },
+  {
+   "id": "ginger",
+   "name": "Ginger",
+   "category": "spice",
+   "emoji": "🫚",
+   "aromas": [
+    "spicy",
+    "citrus",
+    "woody",
+    "floral"
+   ],
+   "description": "Gingerol and shogaol give the warming pungency. Citrusy and floral top notes from linalool.",
+   "pairings": [
+    "lemon",
+    "mango",
+    "carrot",
+    "coconut",
+    "pineapple",
+    "soy-sauce"
+   ],
+   "classic": "Ginger & carrot soup — warming root harmony",
+   "surprising": "Ginger & pear — shared citrus-woody terpenes"
+  },
+  {
+   "id": "makrut-lime",
+   "name": "Makrut Lime",
+   "category": "herb",
+   "emoji": "🍃",
+   "aromas": [
+    "citrus",
+    "floral",
+    "spicy",
+    "green"
+   ],
+   "description": "Intense citrus-floral with spicy notes. Key aromatic in Thai and Southeast Asian cuisines.",
+   "pairings": [
+    "coconut",
+    "lemongrass",
+    "ginger",
+    "chilli",
+    "seafood",
+    "chicken"
+   ],
+   "classic": "Makrut lime & coconut milk — Thai curry base",
+   "surprising": "Makrut lime & gin — shared citrus terpene compounds"
+  },
+  {
+   "id": "lemongrass",
+   "name": "Lemongrass",
+   "category": "herb",
+   "emoji": "🌾",
+   "aromas": [
+    "citrus",
+    "floral",
+    "green",
+    "spicy"
+   ],
+   "description": "Citral gives the dominant lemon-like aroma. Fresh, clean citrus-floral character.",
+   "pairings": [
+    "coconut",
+    "ginger",
+    "lime",
+    "seafood",
+    "chicken",
+    "jasmine"
+   ],
+   "classic": "Lemongrass & coconut — Southeast Asian pairing",
+   "surprising": "Lemongrass & Sauvignon Blanc — shared citral-geraniol"
+  },
+  {
+   "id": "cumin",
+   "name": "Cumin",
+   "category": "spice",
+   "emoji": "🫙",
+   "aromas": [
+    "spicy",
+    "earthy",
+    "woody",
+    "green"
+   ],
+   "description": "Cuminaldehyde gives the distinctive warm, earthy-spicy aroma. Complex and cumin-like.",
+   "pairings": [
+    "lamb",
+    "tomato",
+    "coriander",
+    "carrot",
+    "chickpea",
+    "yogurt"
+   ],
+   "classic": "Cumin & lamb — Middle Eastern classic",
+   "surprising": "Cumin & dark chocolate — shared earthy notes"
+  },
+  {
+   "id": "black-pepper",
+   "name": "Black Peppercorns",
+   "category": "spice",
+   "emoji": "🫙",
+   "aromas": [
+    "spicy",
+    "woody",
+    "citrus",
+    "floral",
+    "earthy"
+   ],
+   "description": "Piperine gives the pungency. Beta-caryophyllene adds woody, spicy depth. Citrus and floral notes.",
+   "pairings": [
+    "iberico-ham",
+    "strawberry",
+    "mango",
+    "cognac",
+    "cheese"
+   ],
+   "classic": "Black pepper & steak — essential",
+   "surprising": "Black pepper & strawberry — shared woody-spicy molecules"
+  },
+  {
+   "id": "cardamom",
+   "name": "Cardamom",
+   "category": "spice",
+   "emoji": "🫙",
+   "aromas": [
+    "spicy",
+    "citrus",
+    "floral",
+    "minty",
+    "woody"
+   ],
+   "description": "1,8-cineole (eucalyptol) and terpinyl acetate give the cool-spicy, floral-citrus character.",
+   "pairings": [
+    "coffee",
+    "rose",
+    "orange",
+    "apricot",
+    "mango",
+    "milk-chocolate"
+   ],
+   "classic": "Cardamom & coffee — Middle Eastern tradition",
+   "surprising": "Cardamom & peach — shared floral terpene notes"
+  },
+  {
+   "id": "sesame",
+   "name": "Sesame Seeds",
+   "category": "spice",
+   "emoji": "🌰",
+   "aromas": [
+    "nutty",
+    "smoky",
+    "earthy",
+    "fatty"
+   ],
+   "description": "Toasting creates pyrazines and other roasted, nutty compounds. Rich, fatty base notes.",
+   "pairings": [
+    "soy-sauce",
+    "cucumber",
+    "eggplant",
+    "chocolate",
+    "avocado"
+   ],
+   "classic": "Sesame & soy sauce — East Asian umami base",
+   "surprising": "Sesame & chocolate — shared roasted pyrazines"
+  },
+  {
+   "id": "jasmine",
+   "name": "Jasmine Blossom",
+   "category": "herb",
+   "emoji": "🌸",
+   "aromas": [
+    "floral",
+    "fruity",
+    "spicy",
+    "earthy"
+   ],
+   "description": "Indole and benzyl acetate dominate. Also found in liver — Benzi's famous jasmine-liver pairing discovery.",
+   "pairings": [
+    "tequila",
+    "honey",
+    "rice",
+    "white-chocolate",
+    "peach",
+    "rum"
+   ],
+   "classic": "Jasmine & honey tea — classic floral-sweet",
+   "surprising": "Jasmine & liver — shared indole compound"
+  },
+  {
+   "id": "elderflower",
+   "name": "Elderflower Blossom",
+   "category": "herb",
+   "emoji": "🌼",
+   "aromas": [
+    "floral",
+    "fruity",
+    "honey",
+    "green"
+   ],
+   "description": "Hotrienol and linalool give the delicate floral, fruity notes. Honey-like sweetness.",
+   "pairings": [
+    "gooseberry",
+    "lemon",
+    "gin",
+    "cucumber",
+    "pear",
+    "champagne"
+   ],
+   "classic": "Elderflower & gooseberry — English summer classic",
+   "surprising": "Elderflower & gin — shared linalool and terpene notes"
+  },
+  {
+   "id": "fish",
+   "name": "Fish",
+   "category": "protein",
+   "emoji": "🐟",
+   "aromas": [
+    "marine",
+    "fatty",
+    "green",
+    "earthy"
+   ],
+   "description": "TMAO breaks down to TMA (fishy). Fresh fish has clean marine, fatty green aldehydes.",
+   "pairings": [
+    "lemon",
+    "dill",
+    "capers",
+    "coriander",
+    "ginger",
+    "miso"
+   ],
+   "classic": "Fish & lemon — acidity cuts the fattiness",
+   "surprising": "Fish & vanilla — shared smoky benzaldehyde compounds"
+  },
+  {
+   "id": "oyster",
+   "name": "Oyster",
+   "category": "protein",
+   "emoji": "🦪",
+   "aromas": [
+    "marine",
+    "green",
+    "fatty",
+    "mineral"
+   ],
+   "description": "Green aldehydes like nonadienal. Mineral sea-brine character unique to bivalves.",
+   "pairings": [
+    "kiwi",
+    "cucumber",
+    "lemon",
+    "cinnamon",
+    "hay"
+   ],
+   "classic": "Oyster & lemon — classic mignonette",
+   "surprising": "Oyster & kiwi — shared grassy green aldehydes (Degeimbre's kiwi-tre)"
+  },
+  {
+   "id": "crustaceans",
+   "name": "Crustaceans",
+   "category": "protein",
+   "emoji": "🦞",
+   "aromas": [
+    "marine",
+    "fatty",
+    "caramel",
+    "earthy"
+   ],
+   "description": "Boiled lobster/langoustine: sweet, caramellic, briny notes. Pyrazines from shell roasting.",
+   "pairings": [
+    "vanilla",
+    "cognac",
+    "tomato",
+    "tarragon",
+    "mango",
+    "saffron"
+   ],
+   "classic": "Lobster bisque — cognac and tomato harmony",
+   "surprising": "Langoustine & vanilla — shared caramellic notes"
+  },
+  {
+   "id": "pork",
+   "name": "Pork",
+   "category": "protein",
+   "emoji": "🥩",
+   "aromas": [
+    "fatty",
+    "caramel",
+    "earthy",
+    "fruity"
+   ],
+   "description": "Fatty, caramellic and earthy. Pork's mild sweetness makes it versatile with both sweet and savory.",
+   "pairings": [
+    "apple",
+    "mustard",
+    "sage",
+    "pineapple",
+    "soy-sauce",
+    "ginger"
+   ],
+   "classic": "Pork & apple — roasting classic",
+   "surprising": "Pork & pineapple — shared ester compounds"
+  },
+  {
+   "id": "beef",
+   "name": "Beef",
+   "category": "protein",
+   "emoji": "🥩",
+   "aromas": [
+    "smoky",
+    "caramel",
+    "earthy",
+    "fatty",
+    "nutty"
+   ],
+   "description": "Roasting and grilling develop deep Maillard pyrazines — roasted, nutty and caramellic — over a fatty, umami-rich base.",
+   "pairings": [
+    "black-pepper",
+    "truffle",
+    "shiitake",
+    "cabernet-sauvignon",
+    "syrah",
+    "tomato",
+    "cheese-blue",
+    "chocolate"
+   ],
+   "classic": "Beef & black pepper — steakhouse essential",
+   "surprising": "Beef & blue cheese — shared earthy, umami depth"
+  },
+  {
+   "id": "lamb",
+   "name": "Lamb",
+   "category": "protein",
+   "emoji": "🍖",
+   "aromas": [
+    "fatty",
+    "earthy",
+    "spicy",
+    "smoky",
+    "floral"
+   ],
+   "description": "Distinctive branched-chain fatty acids give lamb its characteristic gamey richness, balanced by warm spice affinities.",
+   "pairings": [
+    "cumin",
+    "pomegranate",
+    "yogurt",
+    "garlic",
+    "apricot",
+    "syrah",
+    "coriander",
+    "mint"
+   ],
+   "classic": "Lamb & cumin — Middle Eastern classic",
+   "surprising": "Lamb & apricot — shared fatty, fruity lactones in tagines"
+  },
+  {
+   "id": "duck",
+   "name": "Duck",
+   "category": "protein",
+   "emoji": "🦆",
+   "aromas": [
+    "fatty",
+    "caramel",
+    "earthy",
+    "fruity",
+    "smoky"
+   ],
+   "description": "Rich, fatty dark meat with roasted caramellic notes that bridge naturally to fruit and warm spice.",
+   "pairings": [
+    "orange",
+    "cherry",
+    "pinot-noir",
+    "cinnamon",
+    "soy-sauce",
+    "pomegranate"
+   ],
+   "classic": "Duck à l'orange — fat cut by bright citrus",
+   "surprising": "Duck & cherry — shared fruity, caramel notes"
+  },
+  {
+   "id": "chicken",
+   "name": "Chicken",
+   "category": "protein",
+   "emoji": "🍗",
+   "aromas": [
+    "fatty",
+    "caramel",
+    "earthy",
+    "floral"
+   ],
+   "description": "Mild fatty and caramellic notes with floral undertones from cooked chicken.",
+   "pairings": [
+    "lemon",
+    "basil",
+    "watermelon",
+    "tarragon",
+    "mushroom",
+    "saffron"
+   ],
+   "classic": "Chicken & tarragon — French classic",
+   "surprising": "Poached chicken & watermelon — shared citrus-green notes"
+  },
+  {
+   "id": "iberico-ham",
+   "name": "Ibérico Ham",
+   "category": "protein",
+   "emoji": "🥩",
+   "aromas": [
+    "nutty",
+    "fatty",
+    "earthy",
+    "caramel",
+    "spicy"
+   ],
+   "description": "Complex cured notes from long aging. Nutty, fatty, earthy with sweet caramellic depth.",
+   "pairings": [
+    "black-pepper",
+    "melon",
+    "fig",
+    "manchego",
+    "olive-oil"
+   ],
+   "classic": "Ibérico ham & melon — Spanish classic",
+   "surprising": "Ibérico ham & dark chocolate — shared phenolic notes"
+  },
+  {
+   "id": "chorizo",
+   "name": "Chorizo",
+   "category": "protein",
+   "emoji": "🌭",
+   "aromas": [
+    "spicy",
+    "smoky",
+    "fatty",
+    "earthy"
+   ],
+   "description": "Smoked paprika gives the characteristic red colour and smoky-spicy aroma profile.",
+   "pairings": [
+    "chickpea",
+    "tomato",
+    "red-wine",
+    "potato",
+    "egg"
+   ],
+   "classic": "Chorizo & chickpea — Spanish comfort classic",
+   "surprising": "Chorizo & dark chocolate — shared smoked phenolic notes"
+  },
+  {
+   "id": "cheese-goat",
+   "name": "Goat's Cheese",
+   "category": "dairy",
+   "emoji": "🧀",
+   "aromas": [
+    "cheesy",
+    "fatty",
+    "earthy",
+    "citrus",
+    "floral"
+   ],
+   "description": "Caprylic and capric acids give the distinctive goaty tang. Citrus and floral notes complement.",
+   "pairings": [
+    "beetroot",
+    "lemon",
+    "fig",
+    "honey",
+    "walnut",
+    "blueberry"
+   ],
+   "classic": "Goat cheese & beetroot — restaurant classic",
+   "surprising": "Goat cheese & blueberry — shared floral linalool"
+  },
+  {
+   "id": "cheese-blue",
+   "name": "Blue Cheese",
+   "category": "dairy",
+   "emoji": "🧀",
+   "aromas": [
+    "cheesy",
+    "earthy",
+    "spicy",
+    "floral",
+    "fatty"
+   ],
+   "description": "Methylketones give the pungent blue cheese character. Rich, complex aging aromas.",
+   "pairings": [
+    "pear",
+    "walnut",
+    "honey",
+    "port",
+    "fig",
+    "kiwi"
+   ],
+   "classic": "Blue cheese & pear — sweet-savory classic",
+   "surprising": "Blue cheese & kiwi — shared minty terpene notes"
+  },
+  {
+   "id": "cheese-brie",
+   "name": "Brie",
+   "category": "dairy",
+   "emoji": "🧀",
+   "aromas": [
+    "cheesy",
+    "fatty",
+    "earthy",
+    "mushroom",
+    "floral"
+   ],
+   "description": "Earthy-mushroom character from Penicillium camemberti. Creamy, fatty with floral notes.",
+   "pairings": [
+    "apple",
+    "pear",
+    "truffle",
+    "champagne",
+    "honey",
+    "walnut"
+   ],
+   "classic": "Brie & apple — French cheese board classic",
+   "surprising": "Brie & truffle — shared earthy dimethyl sulfide"
+  },
+  {
+   "id": "cheese-parmesan",
+   "name": "Parmigiano-Reggiano",
+   "category": "dairy",
+   "emoji": "🧀",
+   "aromas": [
+    "cheesy",
+    "nutty",
+    "caramel",
+    "fatty",
+    "earthy"
+   ],
+   "description": "Long aging produces free amino acids and fatty acids. Umami-rich with nutty, caramellic depth.",
+   "pairings": [
+    "basil",
+    "truffle",
+    "honey",
+    "apple",
+    "balsamic",
+    "prosciutto"
+   ],
+   "classic": "Parmesan & balsamic vinegar — Modena tradition",
+   "surprising": "Parmesan & honey — shared caramellic compounds"
+  },
+  {
+   "id": "yogurt",
+   "name": "Yogurt",
+   "category": "dairy",
+   "emoji": "🥛",
+   "aromas": [
+    "cheesy",
+    "fatty",
+    "floral",
+    "caramel"
+   ],
+   "description": "Lactic acid fermentation produces acetaldehyde and diacetyl. Clean, creamy, slightly sour.",
+   "pairings": [
+    "cucumber",
+    "mint",
+    "lamb",
+    "cumin",
+    "honey",
+    "berry"
+   ],
+   "classic": "Yogurt & cucumber tzatziki — fresh Greek classic",
+   "surprising": "Yogurt & mango lassi — shared lactone compounds"
+  },
+  {
+   "id": "tequila",
+   "name": "Tequila",
+   "category": "beverage",
+   "emoji": "🥃",
+   "aromas": [
+    "spicy",
+    "green",
+    "earthy",
+    "floral",
+    "fruity"
+   ],
+   "description": "Blue agave gives smoky, spicy and floral notes. Watermelon, citrus and green connections.",
+   "pairings": [
+    "lime",
+    "watermelon",
+    "horseradish",
+    "honey",
+    "jasmine"
+   ],
+   "classic": "Tequila & lime margarita — classic cocktail",
+   "surprising": "Tequila & watermelon — shared green-fatty aldehydes"
+  },
+  {
+   "id": "cognac",
+   "name": "Cognac",
+   "category": "beverage",
+   "emoji": "🥃",
+   "aromas": [
+    "fruity",
+    "floral",
+    "caramel",
+    "woody",
+    "spicy"
+   ],
+   "description": "Esters from fermentation and aging create complex fruity-floral-woody notes.",
+   "pairings": [
+    "foie-gras",
+    "dark-chocolate",
+    "peach",
+    "black-pepper",
+    "lobster"
+   ],
+   "classic": "Cognac & dark chocolate — classic digestif pairing",
+   "surprising": "Cognac & black pepper — shared woody terpene notes"
+  },
+  {
+   "id": "gin",
+   "name": "Gin",
+   "category": "beverage",
+   "emoji": "🍸",
+   "aromas": [
+    "woody",
+    "citrus",
+    "floral",
+    "spicy",
+    "green"
+   ],
+   "description": "Juniper berry dominates with piney, resinous notes. Botanical complexity adds floral, citrus depth.",
+   "pairings": [
+    "lemon",
+    "cucumber",
+    "elderflower",
+    "basil",
+    "grapefruit",
+    "tonic"
+   ],
+   "classic": "Gin & tonic with cucumber — botanical harmony",
+   "surprising": "Gin & basil (Gin Basil Smash) — shared linalool"
+  },
+  {
+   "id": "rum",
+   "name": "Rum",
+   "category": "beverage",
+   "emoji": "🥃",
+   "aromas": [
+    "caramel",
+    "fruity",
+    "spicy",
+    "woody"
+   ],
+   "description": "Esters from fermented molasses. Isoamyl acetate and other fruity esters with caramellic depth.",
+   "pairings": [
+    "pineapple",
+    "coconut",
+    "banana",
+    "vanilla",
+    "orange",
+    "lime"
+   ],
+   "classic": "White rum & lime mojito — Cuban classic",
+   "surprising": "Rum & mango — shared fruity ester compounds"
+  },
+  {
+   "id": "bourbon",
+   "name": "Bourbon Whiskey",
+   "category": "beverage",
+   "emoji": "🥃",
+   "aromas": [
+    "caramel",
+    "woody",
+    "spicy",
+    "smoky",
+    "fruity",
+    "vanilla"
+   ],
+   "description": "Oak aging creates vanilla, caramel and woody notes. Spicy rye-like character.",
+   "pairings": [
+    "chocolate",
+    "peach",
+    "honey",
+    "cherry",
+    "smoked-meat"
+   ],
+   "classic": "Bourbon & chocolate — caramellic harmony",
+   "surprising": "Bourbon & peach — shared gamma-decalactone lactone"
+  },
+  {
+   "id": "coffee",
+   "name": "Coffee",
+   "category": "beverage",
+   "emoji": "☕",
+   "aromas": [
+    "smoky",
+    "caramel",
+    "earthy",
+    "fruity",
+    "spicy"
+   ],
+   "description": "Roasting creates hundreds of volatile compounds. Pyrazines (roasted), furans (caramel) dominate.",
+   "pairings": [
+    "chocolate",
+    "cardamom",
+    "vanilla",
+    "rum",
+    "cinnamon",
+    "orange"
+   ],
+   "classic": "Coffee & chocolate — mocha classic",
+   "surprising": "Coffee & coriander seeds — shared terpene molecules"
+  },
+  {
+   "id": "tea",
+   "name": "Tea",
+   "category": "beverage",
+   "emoji": "🍵",
+   "aromas": [
+    "floral",
+    "green",
+    "woody",
+    "caramel",
+    "earthy"
+   ],
+   "description": "Green tea: fresh, grassy, vegetal. Black tea: malty, floral, astringent.",
+   "pairings": [
+    "jasmine",
+    "milk",
+    "lemon",
+    "honey",
+    "ginger",
+    "peach"
+   ],
+   "classic": "Green tea & jasmine — Chinese classic blending",
+   "surprising": "Tea & smoked salmon — shared phenolic compounds"
+  },
+  {
+   "id": "sauvignon-blanc",
+   "name": "Sauvignon Blanc",
+   "category": "beverage",
+   "emoji": "🍾",
+   "aromas": [
+    "citrus",
+    "green",
+    "fruity",
+    "floral",
+    "sulfurous"
+   ],
+   "description": "Methoxypyrazines give grassy, green pepper notes. Thiols add passion fruit and grapefruit.",
+   "pairings": [
+    "goat-cheese",
+    "asparagus",
+    "oyster",
+    "lemon",
+    "coriander"
+   ],
+   "classic": "Sauvignon Blanc & goat cheese — Loire Valley classic",
+   "surprising": "Sauvignon Blanc & lemongrass — shared citral-geraniol"
+  },
+  {
+   "id": "pilsner",
+   "name": "Pilsner",
+   "category": "beverage",
+   "emoji": "🍺",
+   "aromas": [
+    "green",
+    "citrus",
+    "floral",
+    "caramel"
+   ],
+   "description": "Hop-derived linalool and geraniol add floral notes. Malt provides caramellic sweetness.",
+   "pairings": [
+    "cured-meats",
+    "kiwi",
+    "lemon",
+    "cheese"
+   ],
+   "classic": "Pilsner & bratwurst — German beer garden classic",
+   "surprising": "Pilsner & kiwi — shared fruity esters"
+  },
+  {
+   "id": "lambic",
+   "name": "Lambic Beer",
+   "category": "beverage",
+   "emoji": "🍺",
+   "aromas": [
+    "fruity",
+    "earthy",
+    "cheesy",
+    "fermented",
+    "floral"
+   ],
+   "description": "Wild fermentation produces complex fruity and funky notes. Gueuze blending adds complexity.",
+   "pairings": [
+    "cherry",
+    "raspberry",
+    "cheese",
+    "chocolate",
+    "duck"
+   ],
+   "classic": "Lambic & kriek (cherry) — Belgian classic",
+   "surprising": "Lambic & cheese — shared fermentation aromas"
+  },
+  {
+   "id": "cabernet-sauvignon",
+   "name": "Cabernet Sauvignon",
+   "category": "wine",
+   "emoji": "🍷",
+   "aromas": [
+    "fruity",
+    "woody",
+    "spicy",
+    "earthy",
+    "green"
+   ],
+   "description": "Full-bodied red with blackcurrant fruit, cedar and tobacco from oak, and green bell-pepper pyrazines.",
+   "pairings": [
+    "pork",
+    "chocolate",
+    "cheese-blue",
+    "truffle",
+    "black-pepper",
+    "cheese-parmesan"
+   ],
+   "classic": "Cabernet & red meat — tannins cut through fat and protein",
+   "surprising": "Cabernet & dark chocolate — shared woody, fruity depth"
+  },
+  {
+   "id": "pinot-noir",
+   "name": "Pinot Noir",
+   "category": "wine",
+   "emoji": "🍷",
+   "aromas": [
+    "fruity",
+    "floral",
+    "earthy",
+    "woody"
+   ],
+   "description": "Light, elegant red with red-cherry and raspberry fruit, rose-petal florals and forest-floor earthiness.",
+   "pairings": [
+    "chicken",
+    "truffle",
+    "shiitake",
+    "cheese-brie",
+    "beetroot",
+    "raspberry"
+   ],
+   "classic": "Pinot Noir & duck — fruit and earth mirror the bird",
+   "surprising": "Pinot Noir & mushroom — shared earthy compounds"
+  },
+  {
+   "id": "syrah",
+   "name": "Syrah / Shiraz",
+   "category": "wine",
+   "emoji": "🍷",
+   "aromas": [
+    "spicy",
+    "fruity",
+    "smoky",
+    "woody",
+    "earthy"
+   ],
+   "description": "Bold red with blackberry, cracked black pepper, smoked meat and violet notes.",
+   "pairings": [
+    "pork",
+    "black-pepper",
+    "chorizo",
+    "iberico-ham",
+    "chocolate"
+   ],
+   "classic": "Syrah & grilled lamb — pepper and char in harmony",
+   "surprising": "Syrah & black olive — shared savoury, peppery notes"
+  },
+  {
+   "id": "chardonnay",
+   "name": "Chardonnay",
+   "category": "wine",
+   "emoji": "🥂",
+   "aromas": [
+    "fruity",
+    "fatty",
+    "woody",
+    "citrus",
+    "tropical"
+   ],
+   "description": "Full white with apple and tropical fruit, buttery diacetyl from malolactic, and vanilla-oak when barrel-aged.",
+   "pairings": [
+    "crustaceans",
+    "chicken",
+    "cheese-brie",
+    "butternut-squash",
+    "coconut",
+    "vanilla"
+   ],
+   "classic": "Chardonnay & lobster — buttery richness on both sides",
+   "surprising": "Chardonnay & popcorn — shared buttery diacetyl"
+  },
+  {
+   "id": "riesling",
+   "name": "Riesling",
+   "category": "wine",
+   "emoji": "🥂",
+   "aromas": [
+    "floral",
+    "citrus",
+    "fruity",
+    "honey"
+   ],
+   "description": "Aromatic white with lime, green apple, white flowers and honeyed petrol notes with age.",
+   "pairings": [
+    "fish",
+    "pork",
+    "ginger",
+    "makrut-lime",
+    "apricot",
+    "kimchi"
+   ],
+   "classic": "Riesling & spicy Asian food — sweetness tames heat",
+   "surprising": "Riesling & pork belly — acidity cuts the fat"
+  },
+  {
+   "id": "champagne",
+   "name": "Champagne",
+   "category": "wine",
+   "emoji": "🍾",
+   "aromas": [
+    "fruity",
+    "floral",
+    "caramel",
+    "citrus",
+    "fermented"
+   ],
+   "description": "Sparkling wine with citrus and green-apple fruit, brioche and toast from lees ageing, fine florals.",
+   "pairings": [
+    "oyster",
+    "crustaceans",
+    "cheese-parmesan",
+    "strawberry",
+    "almond"
+   ],
+   "classic": "Champagne & oysters — minerality and brine align",
+   "surprising": "Champagne & fried chicken — bubbles cut the richness"
+  },
+  {
+   "id": "port",
+   "name": "Port",
+   "category": "wine",
+   "emoji": "🍷",
+   "aromas": [
+    "fruity",
+    "caramel",
+    "woody",
+    "spicy",
+    "nutty"
+   ],
+   "description": "Sweet fortified red with dried-fruit, fig, caramel and warm spice from cask ageing.",
+   "pairings": [
+    "cheese-blue",
+    "chocolate",
+    "hazelnut",
+    "fig",
+    "almond"
+   ],
+   "classic": "Port & Stilton — the definitive sweet-savoury pairing",
+   "surprising": "Port & dark chocolate — shared caramel and dried fruit"
+  },
+  {
+   "id": "sherry",
+   "name": "Sherry",
+   "category": "wine",
+   "emoji": "🥃",
+   "aromas": [
+    "nutty",
+    "caramel",
+    "fermented",
+    "fruity",
+    "earthy"
+   ],
+   "description": "Fortified wine ranging from bone-dry fino (yeasty, almond) to rich oloroso (walnut, toffee).",
+   "pairings": [
+    "iberico-ham",
+    "almond",
+    "hazelnut",
+    "cheese-parmesan",
+    "olive-oil",
+    "fish"
+   ],
+   "classic": "Fino sherry & jamón — Andalusian perfection",
+   "surprising": "Oloroso sherry & miso — shared umami, nutty depth"
+  },
+  {
+   "id": "sake",
+   "name": "Sake",
+   "category": "wine",
+   "emoji": "🍶",
+   "aromas": [
+    "fruity",
+    "floral",
+    "fermented",
+    "tropical"
+   ],
+   "description": "Brewed rice wine with melon, banana and white-flower esters and a clean umami finish.",
+   "pairings": [
+    "fish",
+    "oyster",
+    "seaweed",
+    "soy-sauce",
+    "miso",
+    "shiitake"
+   ],
+   "classic": "Sake & sashimi — clean umami amplifies the fish",
+   "surprising": "Sake & oyster — shared marine-fermented notes"
+  },
+  {
+   "id": "rose-wine",
+   "name": "Rosé Wine",
+   "category": "wine",
+   "emoji": "🌷",
+   "aromas": [
+    "fruity",
+    "floral",
+    "citrus",
+    "green"
+   ],
+   "description": "Crisp pink wine with strawberry, watermelon, citrus and delicate floral notes.",
+   "pairings": [
+    "watermelon",
+    "strawberry",
+    "cheese-goat",
+    "tomato",
+    "fish"
+   ],
+   "classic": "Rosé & salade niçoise — Provençal summer classic",
+   "surprising": "Rosé & watermelon — shared fresh fruity-green notes"
+  },
+  {
+   "id": "cider",
+   "name": "Cider",
+   "category": "beverage",
+   "emoji": "🍏",
+   "aromas": [
+    "fruity",
+    "fermented",
+    "floral",
+    "caramel"
+   ],
+   "description": "Fermented apple with green-apple esters, light funk and a touch of caramel in aged styles.",
+   "pairings": [
+    "pork",
+    "apple",
+    "cheese-cheddar",
+    "chicken",
+    "cinnamon"
+   ],
+   "classic": "Cider & roast pork — apple and pork in the glass and on the plate",
+   "surprising": "Cider & blue cheese — shared fermented fruity notes"
+  },
+  {
+   "id": "vermouth",
+   "name": "Vermouth",
+   "category": "beverage",
+   "emoji": "🍸",
+   "aromas": [
+    "spicy",
+    "woody",
+    "floral",
+    "fruity",
+    "minty"
+   ],
+   "description": "Aromatised fortified wine infused with wormwood, gentian, citrus peel and warm baking spices.",
+   "pairings": [
+    "orange",
+    "olive-oil",
+    "gin",
+    "black-olive",
+    "bergamot"
+   ],
+   "classic": "Vermouth & olives — the aperitivo ritual",
+   "surprising": "Vermouth & dark chocolate — shared bittersweet botanicals"
+  },
+  {
+   "id": "chocolate",
+   "name": "Chocolate",
+   "category": "other",
+   "emoji": "🍫",
+   "aromas": [
+    "caramel",
+    "earthy",
+    "fruity",
+    "spicy",
+    "fatty",
+    "smoky"
+   ],
+   "description": "Complex roasted profile from fermentation and Maillard reactions. 600+ volatile compounds.",
+   "pairings": [
+    "vanilla",
+    "strawberry",
+    "raspberry",
+    "orange",
+    "coffee",
+    "chilli",
+    "cauliflower"
+   ],
+   "classic": "Chocolate & orange — shared citrus-bitter notes",
+   "surprising": "Chocolate & cauliflower — shared sulphurous compounds"
+  },
+  {
+   "id": "vanilla",
+   "name": "Vanilla",
+   "category": "other",
+   "emoji": "🌿",
+   "aromas": [
+    "caramel",
+    "spicy",
+    "fruity",
+    "woody",
+    "smoky"
+   ],
+   "description": "82% vanillin. Phenols add woody-balsamic notes. Cheesy, fruity-coconut and peach rounding notes.",
+   "pairings": [
+    "chocolate",
+    "cream",
+    "asparagus",
+    "lobster",
+    "tomato",
+    "crab"
+   ],
+   "classic": "Vanilla & cream — vanillin solubility in fat",
+   "surprising": "Vanilla & asparagus — shared spicy vanillin-like molecules"
+  },
+  {
+   "id": "truffle",
+   "name": "Truffle",
+   "category": "other",
+   "emoji": "🍄",
+   "aromas": [
+    "earthy",
+    "sulfurous",
+    "fatty",
+    "floral"
+   ],
+   "description": "Dimethyl sulfide and other sulfurous compounds. Also fatty acids and earthy terpenoids.",
+   "pairings": [
+    "parmesan",
+    "egg",
+    "pasta",
+    "brie",
+    "pork",
+    "potato"
+   ],
+   "classic": "Truffle & egg — dimethyl sulfide shared aromatic",
+   "surprising": "Truffle & chocolate — shared earthy/umami depth"
+  },
+  {
+   "id": "olive-oil",
+   "name": "Olive Oil",
+   "category": "other",
+   "emoji": "🫙",
+   "aromas": [
+    "green",
+    "fatty",
+    "fruity",
+    "floral",
+    "spicy"
+   ],
+   "description": "Hexanal and other aldehydes give grassy, green notes. Fruity and floral complexity varies by variety.",
+   "pairings": [
+    "tomato",
+    "garlic",
+    "lemon",
+    "basil",
+    "fish"
+   ],
+   "classic": "Olive oil & tomato — Mediterranean heart",
+   "surprising": "Olive oil & vanilla — shared woody hexanal"
+  },
+  {
+   "id": "balsamic",
+   "name": "Balsamic Vinegar",
+   "category": "other",
+   "emoji": "🫙",
+   "aromas": [
+    "caramel",
+    "fruity",
+    "woody",
+    "spicy",
+    "earthy"
+   ],
+   "description": "Long aging creates syrupy concentration of fruit sugars with complex caramellic-woody notes.",
+   "pairings": [
+    "strawberry",
+    "parmesan",
+    "fig",
+    "gelato",
+    "tomato"
+   ],
+   "classic": "Balsamic & strawberry — Italian summer classic",
+   "surprising": "Balsamic & gelato — Modena tradition of sweet-sour"
+  },
+  {
+   "id": "soy-sauce",
+   "name": "Soy Sauce",
+   "category": "other",
+   "emoji": "🫙",
+   "aromas": [
+    "caramel",
+    "earthy",
+    "spicy",
+    "fruity",
+    "smoky"
+   ],
+   "description": "Fermentation creates pyrazines, furanones and other complex roasted-caramellic notes.",
+   "pairings": [
+    "ginger",
+    "sesame",
+    "chocolate",
+    "caramel",
+    "vanilla"
+   ],
+   "classic": "Soy sauce & ginger — Asian base",
+   "surprising": "Soy sauce & vanilla — shared caramellic furanone"
+  },
+  {
+   "id": "kimchi",
+   "name": "Kimchi",
+   "category": "other",
+   "emoji": "🥬",
+   "aromas": [
+    "fermented",
+    "spicy",
+    "sulfurous",
+    "earthy"
+   ],
+   "description": "Lactic acid fermentation. Garlic, ginger, chilli and cabbage create complex sulfurous-spicy.",
+   "pairings": [
+    "pork",
+    "egg",
+    "cheese",
+    "fried-rice",
+    "oyster"
+   ],
+   "classic": "Kimchi & pork belly — Korean classic",
+   "surprising": "Kimchi & blue cheese — shared fermentation aromas"
+  },
+  {
+   "id": "miso",
+   "name": "Doenjang/Miso",
+   "category": "other",
+   "emoji": "🍜",
+   "aromas": [
+    "earthy",
+    "caramel",
+    "spicy",
+    "fermented",
+    "floral"
+   ],
+   "description": "Korean/Japanese fermented soybean paste. Complex umami, sweet-savory depth from aging.",
+   "pairings": [
+    "celeriac",
+    "butter",
+    "eggplant",
+    "chocolate",
+    "honey"
+   ],
+   "classic": "Miso & butter — umami-fat pairing",
+   "surprising": "Miso & chocolate — shared Maillard-caramellic compounds"
+  },
+  {
+   "id": "coconut",
+   "name": "Coconut",
+   "category": "other",
+   "emoji": "🥥",
+   "aromas": [
+    "fatty",
+    "fruity",
+    "floral",
+    "caramel"
+   ],
+   "description": "Delta-decalactone gives the creamy coconut note. Sweet, fatty richness with floral notes.",
+   "pairings": [
+    "mango",
+    "pineapple",
+    "lime",
+    "ginger",
+    "lemongrass",
+    "chilli",
+    "vanilla"
+   ],
+   "classic": "Coconut & lime — tropical classic",
+   "surprising": "Coconut & coffee — shared creamy lactone notes"
+  },
+  {
+   "id": "seaweed",
+   "name": "Seaweed",
+   "category": "other",
+   "emoji": "🌊",
+   "aromas": [
+    "marine",
+    "earthy",
+    "green",
+    "fatty"
+   ],
+   "description": "DMS (dimethyl sulfide) from marine algae. Unique iodine-mineral character. Umami from glutamates.",
+   "pairings": [
+    "fish",
+    "cucumber",
+    "sesame",
+    "miso",
+    "rice"
+   ],
+   "classic": "Seaweed & rice — Japanese staple",
+   "surprising": "Seaweed & watermelon — shared green nonadienal"
+  },
+  {
+   "id": "bergamot",
+   "name": "Bergamot",
+   "category": "fruit",
+   "emoji": "🍋",
+   "aromas": [
+    "citrus",
+    "floral",
+    "woody",
+    "spicy"
+   ],
+   "description": "Linalyl acetate and linalool. Famous as the Earl Grey tea flavour. Intense citrus-floral.",
+   "pairings": [
+    "chocolate",
+    "green-beans",
+    "lemon",
+    "honey",
+    "lavender"
+   ],
+   "classic": "Bergamot & black tea — Earl Grey",
+   "surprising": "Bergamot & dark chocolate — shared linalool-floral"
+  },
+  {
+   "id": "durian",
+   "name": "Durian",
+   "category": "fruit",
+   "emoji": "🌵",
+   "aromas": [
+    "sulfurous",
+    "fatty",
+    "caramel",
+    "fruity"
+   ],
+   "description": "Sulfur compounds give the infamous pungency. Underneath: creamy, fruity, caramellic sweetness.",
+   "pairings": [
+    "chocolate",
+    "coconut",
+    "vanilla",
+    "condensed-milk"
+   ],
+   "classic": "Durian & sticky rice with coconut milk — Thai classic",
+   "surprising": "Durian & coffee — shared sulfurous roasting notes"
+  },
+  {
+   "id": "hazelnut",
+   "name": "Hazelnut",
+   "category": "other",
+   "emoji": "🌰",
+   "aromas": [
+    "nutty",
+    "fatty",
+    "caramel",
+    "floral",
+    "green"
+   ],
+   "description": "Filbertone gives the characteristic hazelnut note. Roasted complexity from pyrazines.",
+   "pairings": [
+    "chocolate",
+    "coffee",
+    "caramel",
+    "apple",
+    "pear",
+    "fig"
+   ],
+   "classic": "Hazelnut & chocolate — Nutella foundation",
+   "surprising": "Hazelnut & pear — shared green-floral notes"
+  },
+  {
+   "id": "almond",
+   "name": "Almond",
+   "category": "other",
+   "emoji": "🌰",
+   "aromas": [
+    "nutty",
+    "floral",
+    "fruity",
+    "fatty"
+   ],
+   "description": "Benzaldehyde gives the characteristic bitter almond note. Shared with stone fruits.",
+   "pairings": [
+    "apricot",
+    "cherry",
+    "peach",
+    "chocolate",
+    "green-beans",
+    "honey"
+   ],
+   "classic": "Almond & apricot — marzipan classic",
+   "surprising": "Almond & cherry — benzaldehyde shared compound"
+  },
+  {
+   "id": "sourdough-rye",
+   "name": "Sourdough Rye Bread",
+   "category": "other",
+   "emoji": "🍞",
+   "aromas": [
+    "earthy",
+    "caramel",
+    "fermented",
+    "spicy"
+   ],
+   "description": "Lactic and acetic fermentation. Rye brings earthy-spicy depth. Complex Maillard crust aromas.",
+   "pairings": [
+    "butter",
+    "caraway",
+    "smoked-salmon",
+    "cheese",
+    "honey"
+   ],
+   "classic": "Sourdough & butter — fermented richness",
+   "surprising": "Sourdough & smoked salmon — shared phenolic-smoky notes"
+  }
+ ],
+ "aromas": {
+  "fruity": {
+   "label": "Fruity",
+   "color": "#FF6B6B",
+   "icon": "🍓"
+  },
+  "floral": {
+   "label": "Floral",
+   "color": "#FF9FF3",
+   "icon": "🌸"
+  },
+  "citrus": {
+   "label": "Citrus",
+   "color": "#FFA502",
+   "icon": "🍋"
+  },
+  "green": {
+   "label": "Green/Grassy",
+   "color": "#2ED573",
+   "icon": "🌿"
+  },
+  "woody": {
+   "label": "Woody/Pine",
+   "color": "#8B6914",
+   "icon": "🪵"
+  },
+  "spicy": {
+   "label": "Spicy",
+   "color": "#FF4757",
+   "icon": "🌶️"
+  },
+  "smoky": {
+   "label": "Smoky/Roasted",
+   "color": "#57606F",
+   "icon": "💨"
+  },
+  "earthy": {
+   "label": "Earthy/Mushroom",
+   "color": "#6D4C41",
+   "icon": "🍄"
+  },
+  "caramel": {
+   "label": "Caramel/Sweet",
+   "color": "#F9CA24",
+   "icon": "🍮"
+  },
+  "nutty": {
+   "label": "Nutty",
+   "color": "#D4A017",
+   "icon": "🥜"
+  },
+  "cheesy": {
+   "label": "Cheesy/Dairy",
+   "color": "#FFF176",
+   "icon": "🧀"
+  },
+  "sulfurous": {
+   "label": "Sulfurous/Onion",
+   "color": "#C8E6C9",
+   "icon": "🧅"
+  },
+  "marine": {
+   "label": "Marine/Ocean",
+   "color": "#54A0FF",
+   "icon": "🌊"
+  },
+  "minty": {
+   "label": "Minty/Camphor",
+   "color": "#00D2D3",
+   "icon": "🌱"
+  },
+  "fermented": {
+   "label": "Fermented/Yeasty",
+   "color": "#A29BFE",
+   "icon": "🍶"
+  },
+  "fatty": {
+   "label": "Fatty/Buttery",
+   "color": "#FFEAA7",
+   "icon": "🧈"
+  },
+  "honey": {
+   "label": "Honey/Beeswax",
+   "color": "#FDCB6E",
+   "icon": "🍯"
+  },
+  "tropical": {
+   "label": "Tropical",
+   "color": "#00B894",
+   "icon": "🥭"
+  }
+ },
+ "categoryLabels": {
+  "fruit": "Fruit",
+  "vegetable": "Vegetable",
+  "herb": "Herb",
+  "spice": "Spice",
+  "protein": "Protein",
+  "dairy": "Dairy",
+  "beverage": "Beverage",
+  "wine": "Wine & Fortified",
+  "other": "Other"
+ }
+}

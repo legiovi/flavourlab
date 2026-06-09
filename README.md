@@ -10,6 +10,7 @@ A science-based tool for discovering ingredient pairings and generating recipes 
 - 🌸 **Aroma explorer** — browse 17 aroma note categories and the ingredients that share them
 - 📖 **Culinary foundations** — 27 classical base recipes & techniques (stocks, mother sauces, doughs, emulsions)
 - 🤖 **MCP server** — 10 tools for AI agents to query pairing data, browse foundations, and generate recipes
+- 🧩 **Claude Code skill** — drop-in `skill/flavourlab/` with a dependency-free CLI (see below)
 
 ---
 
@@ -23,6 +24,20 @@ npm run serve
 ```
 
 No build step. Pure HTML/JS with D3.js loaded from CDN.
+
+---
+
+## Claude Code Skill (drop-in)
+
+A self-contained skill lives in [`skill/flavourlab/`](skill/flavourlab). No dependencies (Python 3 stdlib only).
+
+```bash
+cp -r skill/flavourlab ~/.claude/skills/
+```
+
+Then just ask Claude: *"what pairs with lamb?"*, *"wine for grilled beef"*,
+*"generate a braised lamb and apricot recipe"*, *"how do I make hollandaise?"* —
+it auto-runs the bundled `flavourlab.py` CLI. See [skill/flavourlab/INSTALL.md](skill/flavourlab/INSTALL.md).
 
 ---
 

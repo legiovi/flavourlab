@@ -1,0 +1,486 @@
+[
+{
+  "id": "base_white_stock",
+  "name": "White Stock (Fond Blanc)",
+  "category": "Stock",
+  "type": "foundation",
+  "description": "A clear, neutral stock made from un-roasted bones. The backbone of light soups, velouté sauces and braises.",
+  "yields": "About 3 litres",
+  "ingredients": ["2 kg veal or chicken bones", "1 onion, halved", "2 carrots", "2 celery stalks", "1 leek", "1 bouquet garni (thyme, bay, parsley)", "4 litres cold water"],
+  "method": [
+    "Blanch the bones: cover with cold water, bring to a boil, drain and rinse to remove impurities.",
+    "Return bones to a clean pot, cover with 4 litres cold water and bring slowly to a bare simmer.",
+    "Skim the surface continuously to keep the stock clear; never let it boil hard.",
+    "Add the vegetables and bouquet garni after the first hour of simmering.",
+    "Simmer gently 4–6 hours (chicken) or 6–8 hours (veal), skimming as needed.",
+    "Strain through a fine sieve or muslin, cool quickly, and refrigerate. Remove set fat before use."
+  ],
+  "technique_notes": "Cold-water start and gentle simmering are essential for clarity. Boiling emulsifies fat and clouds the stock.",
+  "linked_ingredients": ["chicken", "carrot"]
+},
+{
+  "id": "base_brown_stock",
+  "name": "Brown Stock (Fond Brun)",
+  "category": "Stock",
+  "type": "foundation",
+  "description": "A deep, savoury stock made from roasted bones and vegetables. The base of espagnole, demi-glace and rich gravies.",
+  "yields": "About 3 litres",
+  "ingredients": ["2 kg beef or veal bones", "1 onion", "2 carrots", "2 celery stalks", "2 tbsp tomato paste", "1 bouquet garni", "4 litres cold water"],
+  "method": [
+    "Roast the bones in a hot oven (220°C/425°F) until deep brown, about 45 minutes.",
+    "Add roughly chopped vegetables and tomato paste; roast 15 minutes more for colour and depth.",
+    "Transfer everything to a stockpot. Deglaze the roasting tray with water and add the scrapings.",
+    "Cover with cold water, bring to a gentle simmer and skim.",
+    "Add the bouquet garni and simmer 6–8 hours, skimming regularly.",
+    "Strain, cool quickly and chill. The Maillard browning gives colour and roasted aroma compounds."
+  ],
+  "technique_notes": "Roasting develops Maillard reaction products — pyrazines and melanoidins — for caramel and roasted aromas.",
+  "linked_ingredients": ["pork", "carrot", "tomato"]
+},
+{
+  "id": "base_fish_fumet",
+  "name": "Fish Fumet",
+  "category": "Stock",
+  "type": "foundation",
+  "description": "A quick, delicate stock from white fish bones, used for seafood sauces and risottos.",
+  "yields": "About 2 litres",
+  "ingredients": ["1 kg white fish bones and heads (gills removed)", "1 onion, sliced", "1 fennel or celery stalk", "100 ml dry white wine", "1 bouquet garni", "2 litres cold water"],
+  "method": [
+    "Rinse the bones well in cold water to remove blood.",
+    "Sweat the vegetables gently in a little butter without colouring.",
+    "Add the bones and sweat a few minutes more.",
+    "Add the white wine and reduce by half.",
+    "Cover with cold water, bring to a bare simmer and skim.",
+    "Simmer only 20–30 minutes — longer makes it bitter. Strain gently without pressing."
+  ],
+  "technique_notes": "Fish fumet must be cooked briefly; over-extraction releases bitter compounds from the bones.",
+  "linked_ingredients": ["fish"]
+},
+{
+  "id": "base_dashi",
+  "name": "Dashi (Japanese Stock)",
+  "category": "Stock",
+  "type": "foundation",
+  "description": "The umami foundation of Japanese cuisine, made from kombu seaweed and bonito flakes. Rich in glutamates and inosinates.",
+  "yields": "1 litre",
+  "ingredients": ["1 litre cold water", "10 g kombu (dried kelp)", "20 g katsuobushi (bonito flakes)"],
+  "method": [
+    "Wipe the kombu and soak it in the cold water for 30 minutes (or several hours for cold-brew).",
+    "Heat slowly and remove the kombu just before the water boils to avoid sliminess and bitterness.",
+    "Bring to a brief boil, then add the bonito flakes and immediately turn off the heat.",
+    "Let the flakes steep 1–2 minutes, then strain through muslin without pressing.",
+    "The result (ichiban dashi) is the prized first stock; the spent ingredients make a second, milder dashi."
+  ],
+  "technique_notes": "Kombu provides glutamate and bonito provides inosinate — together they create a powerful umami synergy.",
+  "linked_ingredients": ["seaweed", "fish"]
+},
+{
+  "id": "base_vegetable_stock",
+  "name": "Vegetable Stock",
+  "category": "Stock",
+  "type": "foundation",
+  "description": "A clean, aromatic plant-based stock for soups, risottos and vegetarian sauces.",
+  "yields": "About 2 litres",
+  "ingredients": ["2 onions", "3 carrots", "3 celery stalks", "1 leek", "2 garlic cloves", "1 bouquet garni", "10 peppercorns", "2.5 litres cold water"],
+  "method": [
+    "Roughly chop all vegetables to expose maximum surface area.",
+    "Optionally sweat them in a little oil for a sweeter, rounder flavour.",
+    "Cover with cold water, add aromatics and bring to a gentle simmer.",
+    "Simmer 45 minutes — vegetables give up their flavour quickly and turn bitter if overcooked.",
+    "Strain and use, or reduce for a more concentrated base."
+  ],
+  "technique_notes": "Avoid brassicas (cabbage, broccoli) and starchy potatoes which cloud and sour the stock.",
+  "linked_ingredients": ["carrot", "garlic"]
+},
+{
+  "id": "base_roux",
+  "name": "Roux",
+  "category": "Thickener",
+  "type": "foundation",
+  "description": "Equal parts fat and flour cooked together — the thickening base for the classic mother sauces and gumbos.",
+  "yields": "Thickens ~500 ml liquid",
+  "ingredients": ["50 g butter (or oil)", "50 g plain flour"],
+  "method": [
+    "Melt the butter over medium heat until foaming.",
+    "Whisk in the flour to form a smooth paste.",
+    "Cook to the desired colour: white roux (2 min, for béchamel), blond roux (5 min, for velouté), or brown roux (15+ min, for espagnole and gumbo).",
+    "Cook out the raw-flour taste before adding liquid.",
+    "Add liquid gradually off the heat, whisking to prevent lumps, then return to the heat to thicken."
+  ],
+  "technique_notes": "The darker the roux, the more flavour and the less thickening power, as toasting breaks down starch.",
+  "linked_ingredients": []
+},
+{
+  "id": "base_bechamel",
+  "name": "Béchamel (White Mother Sauce)",
+  "category": "Mother Sauce",
+  "type": "foundation",
+  "description": "Milk thickened with a white roux — the base for Mornay, soubise, cream and cheese sauces.",
+  "yields": "500 ml",
+  "ingredients": ["50 g butter", "50 g flour", "500 ml warm milk", "1 onion piqué (studded with clove and bay)", "nutmeg, salt, white pepper"],
+  "method": [
+    "Make a white roux with the butter and flour, cooking 2 minutes without colour.",
+    "Gradually whisk in the warm milk off the heat to keep it smooth.",
+    "Add the onion piqué and simmer gently 15–20 minutes, stirring, to cook out the flour.",
+    "Season with grated nutmeg, salt and white pepper.",
+    "Strain for a silky finish. For Mornay, whisk in grated Gruyère and Parmesan off the heat."
+  ],
+  "technique_notes": "Warm milk and constant whisking prevent lumps. Nutmeg is the classic aromatic partner.",
+  "linked_ingredients": ["cheese-parmesan"]
+},
+{
+  "id": "base_veloute",
+  "name": "Velouté (Blond Mother Sauce)",
+  "category": "Mother Sauce",
+  "type": "foundation",
+  "description": "A light stock-based sauce thickened with blond roux — base for suprême, allemande and white wine sauces.",
+  "yields": "500 ml",
+  "ingredients": ["50 g butter", "50 g flour", "500 ml white stock (chicken, veal or fish)", "salt, white pepper"],
+  "method": [
+    "Make a blond roux, cooking the flour until lightly golden with a faint nutty aroma.",
+    "Gradually whisk in the warm white stock off the heat.",
+    "Simmer gently 20 minutes, skimming any impurities that rise to the surface.",
+    "Season and strain.",
+    "Enrich with a liaison of egg yolk and cream (for allemande) or with cream and reduction (for suprême)."
+  ],
+  "technique_notes": "The quality of the velouté depends entirely on the stock — it carries the sauce.",
+  "linked_ingredients": ["chicken"]
+},
+{
+  "id": "base_espagnole",
+  "name": "Espagnole & Demi-Glace (Brown Mother Sauce)",
+  "category": "Mother Sauce",
+  "type": "foundation",
+  "description": "A rich brown sauce from brown stock and brown roux; reduced with more stock it becomes demi-glace.",
+  "yields": "750 ml espagnole",
+  "ingredients": ["50 g brown roux", "1 litre brown stock", "2 tbsp tomato paste", "mirepoix (onion, carrot, celery)", "1 bouquet garni"],
+  "method": [
+    "Brown the mirepoix in fat until caramelised.",
+    "Stir in tomato paste and cook to deepen the colour (pinçage).",
+    "Add the brown roux, then gradually whisk in the brown stock.",
+    "Add the bouquet garni and simmer 1–2 hours, skimming constantly.",
+    "Strain. For demi-glace, combine equal parts espagnole and brown stock and reduce by half until glossy and coating."
+  ],
+  "technique_notes": "Long, slow reduction and diligent skimming give demi-glace its deep colour and silky body.",
+  "linked_ingredients": ["pork", "carrot", "tomato"]
+},
+{
+  "id": "base_hollandaise",
+  "name": "Hollandaise (Emulsified Mother Sauce)",
+  "category": "Mother Sauce",
+  "type": "foundation",
+  "description": "A warm emulsion of egg yolk and butter sharpened with acid — base for béarnaise, maltaise and mousseline.",
+  "yields": "300 ml",
+  "ingredients": ["3 egg yolks", "1 tbsp water", "200 g warm clarified butter", "1 tbsp lemon juice or reduction", "salt, cayenne"],
+  "method": [
+    "Whisk the yolks and water in a bowl over a bain-marie (gently simmering water).",
+    "Whisk vigorously until pale, thick and ribbon-like (sabayon stage), keeping the heat gentle to avoid scrambling.",
+    "Off the heat, slowly drizzle in the warm clarified butter while whisking to build the emulsion.",
+    "Loosen with lemon juice and season with salt and a pinch of cayenne.",
+    "Hold warm (not hot). For béarnaise, replace lemon with a tarragon-shallot-vinegar reduction."
+  ],
+  "technique_notes": "Temperature control is everything: too hot scrambles the yolks, too cold breaks the emulsion.",
+  "linked_ingredients": ["lemon"]
+},
+{
+  "id": "base_tomato_sauce",
+  "name": "Tomato Sauce (Mother Sauce)",
+  "category": "Mother Sauce",
+  "type": "foundation",
+  "description": "The classical tomato-based mother sauce; the foundation of countless Italian and Provençal dishes.",
+  "yields": "750 ml",
+  "ingredients": ["800 g ripe or canned tomatoes", "1 onion", "2 garlic cloves", "3 tbsp olive oil", "1 carrot", "basil and bay", "salt, sugar"],
+  "method": [
+    "Sweat finely diced onion, carrot and garlic in olive oil until soft and sweet.",
+    "Add the tomatoes, crushing them, with basil and bay.",
+    "Simmer gently 30–45 minutes until thickened and the raw edge has cooked off.",
+    "Season with salt and a pinch of sugar to balance acidity.",
+    "Pass through a food mill for a smooth sauce, or leave rustic."
+  ],
+  "technique_notes": "Slow cooking concentrates glutamates and develops the sweet, jammy depth of cooked tomato.",
+  "linked_ingredients": ["tomato", "garlic", "basil", "carrot", "olive-oil"]
+},
+{
+  "id": "base_mayonnaise",
+  "name": "Mayonnaise",
+  "category": "Cold Emulsion",
+  "type": "foundation",
+  "description": "A cold, stable emulsion of egg yolk and oil — base for aïoli, rémoulade, tartare and countless dressings.",
+  "yields": "300 ml",
+  "ingredients": ["2 egg yolks", "1 tsp Dijon mustard", "250 ml neutral oil", "1 tbsp vinegar or lemon juice", "salt"],
+  "method": [
+    "Whisk the yolks with mustard and a pinch of salt until smooth (all at room temperature).",
+    "Add the oil drop by drop at first, whisking constantly to start the emulsion.",
+    "Once thickened, add the oil in a slow steady stream.",
+    "Loosen with vinegar or lemon juice and adjust seasoning.",
+    "For aïoli, pound garlic into the base. If it splits, restart with a fresh yolk and whisk the broken sauce back in slowly."
+  ],
+  "technique_notes": "Lecithin in the yolk binds water and oil. Add oil slowly and keep ingredients at one temperature.",
+  "linked_ingredients": ["lemon", "garlic"]
+},
+{
+  "id": "base_vinaigrette",
+  "name": "Vinaigrette",
+  "category": "Cold Emulsion",
+  "type": "foundation",
+  "description": "The classic 3:1 oil-to-acid dressing — the most versatile cold sauce in the kitchen.",
+  "yields": "150 ml",
+  "ingredients": ["3 parts oil (90 ml)", "1 part vinegar or citrus (30 ml)", "1 tsp Dijon mustard", "1 small shallot, minced", "salt, pepper"],
+  "method": [
+    "Combine the acid, mustard, shallot, salt and pepper and whisk to dissolve the salt.",
+    "Slowly whisk in the oil to form a light, temporary emulsion.",
+    "Taste and balance — add more oil if too sharp, more acid if flat.",
+    "Mustard helps hold the emulsion; whisk again before dressing."
+  ],
+  "technique_notes": "Salt dissolves in the acid, not the oil — season the acid first.",
+  "linked_ingredients": ["olive-oil", "lemon"]
+},
+{
+  "id": "base_beurre_blanc",
+  "name": "Beurre Blanc",
+  "category": "Butter Sauce",
+  "type": "foundation",
+  "description": "A warm butter emulsion built on an acidic shallot reduction — classic with fish and vegetables.",
+  "yields": "250 ml",
+  "ingredients": ["2 shallots, minced", "100 ml dry white wine", "50 ml white wine vinegar", "200 g cold butter, cubed", "salt"],
+  "method": [
+    "Simmer the shallots with wine and vinegar until reduced to about 2 tablespoons of syrupy liquid.",
+    "Reduce the heat to low.",
+    "Whisk in the cold butter a few cubes at a time, never letting it boil, to build a creamy emulsion (monter au beurre).",
+    "Season and strain if a smooth sauce is desired.",
+    "Hold at a warm, gentle temperature; it will break if overheated or chilled."
+  ],
+  "technique_notes": "The emulsion relies on the milk solids in butter; keep the heat low and whisk constantly.",
+  "linked_ingredients": ["fish", "lemon"]
+},
+{
+  "id": "base_pasta_dough",
+  "name": "Fresh Egg Pasta Dough",
+  "category": "Dough",
+  "type": "foundation",
+  "description": "The foundation of fresh Italian pasta — tagliatelle, ravioli, lasagne and more.",
+  "yields": "4 servings",
+  "ingredients": ["300 g '00' flour (or 200 g '00' + 100 g semola)", "3 whole eggs", "pinch of salt", "drizzle of olive oil (optional)"],
+  "method": [
+    "Mound the flour and make a well; crack in the eggs and add salt.",
+    "Beat the eggs with a fork, gradually drawing in flour until a shaggy dough forms.",
+    "Knead 8–10 minutes until smooth, elastic and silky.",
+    "Wrap and rest at least 30 minutes so the gluten relaxes.",
+    "Roll thinly with a machine or pin, then cut or shape as needed. Dust with semola to prevent sticking."
+  ],
+  "technique_notes": "Kneading develops gluten for bite; resting makes the dough easier to roll thin.",
+  "linked_ingredients": []
+},
+{
+  "id": "base_bread_dough",
+  "name": "Basic Lean Bread Dough",
+  "category": "Dough",
+  "type": "foundation",
+  "description": "A simple flour-water-yeast-salt dough — the foundation of most everyday breads.",
+  "yields": "1 large loaf",
+  "ingredients": ["500 g strong bread flour", "350 ml water (70% hydration)", "10 g salt", "7 g instant yeast (or 100 g active sourdough starter)"],
+  "method": [
+    "Mix flour and water and rest 30 minutes (autolyse) to hydrate the flour.",
+    "Add salt and yeast and mix to a cohesive dough.",
+    "Develop the gluten by kneading or by a series of stretch-and-folds over the first hours of fermentation.",
+    "Bulk ferment until roughly doubled, 2–4 hours depending on temperature.",
+    "Shape, then proof until puffy.",
+    "Bake in a very hot oven (230–250°C) with steam for the first 15 minutes to set the crust and crumb."
+  ],
+  "technique_notes": "Time and temperature drive fermentation flavour. Steam allows full oven-spring before the crust sets.",
+  "linked_ingredients": []
+},
+{
+  "id": "base_pizza_dough",
+  "name": "Neapolitan Pizza Dough",
+  "category": "Dough",
+  "type": "foundation",
+  "description": "A long-fermented, high-extensibility dough for blistered, tender pizza bases.",
+  "yields": "4 pizzas",
+  "ingredients": ["500 g '00' or bread flour", "325 ml water (65%)", "10 g salt", "1 g fresh yeast (long ferment)"],
+  "method": [
+    "Dissolve yeast in the water, add flour and mix to a rough dough; rest 20 minutes.",
+    "Add salt and knead until smooth and elastic.",
+    "Bulk ferment 2 hours at room temperature, then divide into balls.",
+    "Cold-ferment the dough balls 24–72 hours in the fridge for flavour and digestibility.",
+    "Bring to room temperature, stretch by hand (never roll), top sparingly, and bake as hot as possible."
+  ],
+  "technique_notes": "Long cold fermentation builds complex flavour and a more digestible, extensible dough.",
+  "linked_ingredients": ["tomato"]
+},
+{
+  "id": "base_pate_brisee",
+  "name": "Shortcrust Pastry (Pâte Brisée)",
+  "category": "Dough",
+  "type": "foundation",
+  "description": "A crisp, tender butter pastry for tarts, quiches and pies.",
+  "yields": "1 tart shell",
+  "ingredients": ["250 g plain flour", "125 g cold butter, cubed", "1 egg", "pinch of salt", "2–3 tbsp ice water"],
+  "method": [
+    "Rub the cold butter into the flour and salt until it resembles breadcrumbs (sablage).",
+    "Add the egg and just enough ice water to bring it together — do not overwork.",
+    "Form a disc, wrap and chill at least 30 minutes.",
+    "Roll out, line the tin, and chill again before baking.",
+    "Blind-bake with weights for a crisp base."
+  ],
+  "technique_notes": "Keeping the butter cold and the handling minimal prevents gluten toughening for a short, tender crust.",
+  "linked_ingredients": []
+},
+{
+  "id": "base_choux",
+  "name": "Choux Pastry (Pâte à Choux)",
+  "category": "Dough",
+  "type": "foundation",
+  "description": "A twice-cooked paste that puffs hollow — the base for éclairs, profiteroles, gougères and churros.",
+  "yields": "About 24 puffs",
+  "ingredients": ["125 ml water", "125 ml milk", "100 g butter", "150 g flour", "4 eggs", "pinch of salt and sugar"],
+  "method": [
+    "Bring water, milk, butter, salt and sugar to a boil.",
+    "Add all the flour at once and beat over heat until the paste forms a ball and films the pan (panade).",
+    "Cool slightly, then beat in the eggs one at a time until the paste is glossy and drops in a thick ribbon.",
+    "Pipe shapes onto a lined tray.",
+    "Bake hot (200°C) until puffed and deep golden; do not open the oven early or they collapse."
+  ],
+  "technique_notes": "The water in the paste turns to steam and inflates the pastry; thorough drying keeps it crisp.",
+  "linked_ingredients": []
+},
+{
+  "id": "base_pastry_cream",
+  "name": "Pastry Cream (Crème Pâtissière)",
+  "category": "Pastry Base",
+  "type": "foundation",
+  "description": "A thick vanilla custard set with starch — the filling for tarts, éclairs and mille-feuille.",
+  "yields": "600 ml",
+  "ingredients": ["500 ml milk", "1 vanilla pod", "4 egg yolks", "100 g sugar", "40 g cornflour", "25 g butter"],
+  "method": [
+    "Infuse the milk with split vanilla and bring to a simmer.",
+    "Whisk the yolks, sugar and cornflour to a pale paste.",
+    "Temper by whisking in the hot milk gradually, then return to the pan.",
+    "Cook over medium heat, whisking constantly, until it thickens and boils for 1–2 minutes to cook the starch.",
+    "Off the heat, whisk in the butter. Cover with cling film on the surface and chill."
+  ],
+  "technique_notes": "The starch protects the yolks from curdling, allowing the custard to be boiled to set fully.",
+  "linked_ingredients": ["vanilla"]
+},
+{
+  "id": "base_caramel",
+  "name": "Caramel",
+  "category": "Pastry Base",
+  "type": "foundation",
+  "description": "Sugar cooked to develop colour and flavour — the base for sauces, candies, and praline.",
+  "yields": "250 g",
+  "ingredients": ["200 g sugar", "60 ml water (for wet method)", "optional: 100 ml cream + 30 g butter for caramel sauce"],
+  "method": [
+    "Wet method: dissolve sugar in water, then boil without stirring until amber.",
+    "Dry method: melt sugar gradually in a pan, stirring gently as it liquefies and colours.",
+    "Watch closely — caramel goes from amber to burnt in seconds.",
+    "Stop the cooking by adding warm cream and butter (stand back, it spatters) for a sauce, or pour out for brittle.",
+    "Caramelisation produces hundreds of new aroma compounds — buttery, nutty, bitter and fruity notes."
+  ],
+  "technique_notes": "Do not stir a wet caramel before it colours or it can crystallise; brush down sugar crystals with water.",
+  "linked_ingredients": []
+},
+{
+  "id": "base_mirepoix",
+  "name": "Mirepoix & Sofrito",
+  "category": "Aromatic Base",
+  "type": "foundation",
+  "description": "The aromatic vegetable foundation of countless cuisines: onion, carrot and celery (French mirepoix) or onion, garlic, tomato and pepper (Spanish sofrito).",
+  "yields": "Base for one pot",
+  "ingredients": ["2 onions", "1 carrot (mirepoix)", "1 celery stalk (mirepoix)", "garlic, tomato, red pepper (sofrito)", "olive oil or butter"],
+  "method": [
+    "Dice the vegetables evenly — fine for quick dishes, larger for long braises.",
+    "Sweat slowly in fat over low-medium heat without colouring (mirepoix) for a sweet, mellow base.",
+    "For sofrito, cook longer until jammy and deeply caramelised, building rich savoury depth.",
+    "This aromatic base is the first layer of flavour for soups, stews, sauces and braises."
+  ],
+  "technique_notes": "Low and slow sweating draws out natural sugars and builds a sweet foundation without bitterness.",
+  "linked_ingredients": ["carrot", "garlic", "tomato", "red-bell-pepper", "olive-oil"]
+},
+{
+  "id": "base_court_bouillon",
+  "name": "Court-Bouillon",
+  "category": "Stock",
+  "type": "foundation",
+  "description": "An aromatic acidulated poaching liquid for fish, shellfish and vegetables.",
+  "yields": "2 litres",
+  "ingredients": ["2 litres water", "200 ml white wine", "1 onion", "1 carrot", "1 bouquet garni", "peppercorns", "1 tbsp vinegar or lemon", "salt"],
+  "method": [
+    "Combine all ingredients and bring to a simmer.",
+    "Simmer 20–30 minutes to extract the aromatics.",
+    "Strain, then use to gently poach fish or shellfish.",
+    "The acid firms delicate proteins and brightens the flavour."
+  ],
+  "technique_notes": "Unlike stock, court-bouillon is built from aromatics and acid, not bones, and cooks quickly.",
+  "linked_ingredients": ["fish", "carrot", "lemon"]
+},
+{
+  "id": "base_clarified_butter",
+  "name": "Clarified Butter & Ghee",
+  "category": "Fat",
+  "type": "foundation",
+  "description": "Butter with the water and milk solids removed, giving a high smoke point and pure butter flavour.",
+  "yields": "350 g from 500 g butter",
+  "ingredients": ["500 g unsalted butter"],
+  "method": [
+    "Melt the butter slowly over low heat without stirring.",
+    "Skim the white foam (whey proteins) from the surface.",
+    "Pour off the clear golden fat, leaving the milky solids behind.",
+    "For ghee, continue cooking until the milk solids brown for a nutty, caramelised aroma, then strain.",
+    "Store at room temperature; it keeps far longer than fresh butter."
+  ],
+  "technique_notes": "Removing milk solids raises the smoke point to ~250°C, ideal for high-heat cooking and emulsified sauces.",
+  "linked_ingredients": []
+},
+{
+  "id": "base_vegetable_brunoise",
+  "name": "Knife Cuts (Brunoise, Julienne, Chiffonade)",
+  "category": "Technique",
+  "type": "foundation",
+  "description": "Foundational knife cuts that determine cooking speed, texture and presentation.",
+  "yields": "Technique",
+  "ingredients": ["any firm vegetable", "fresh herbs (for chiffonade)"],
+  "method": [
+    "Julienne: square off the vegetable, slice into thin planks, stack and cut into fine matchsticks (≈2 mm).",
+    "Brunoise: gather the julienne and cut crosswise into tiny, even dice (≈2 mm cubes).",
+    "Chiffonade: stack herb or leafy greens, roll tightly, and slice into fine ribbons.",
+    "Even cuts cook at the same rate and signal care and precision on the plate."
+  ],
+  "technique_notes": "Uniformity is the goal — equal sizes cook evenly and look professional.",
+  "linked_ingredients": []
+},
+{
+  "id": "base_brining",
+  "name": "Brining & Curing",
+  "category": "Technique",
+  "type": "foundation",
+  "description": "Salt-based techniques that season, tenderise and preserve proteins.",
+  "yields": "Technique",
+  "ingredients": ["water", "salt (5–8% for wet brine)", "sugar", "aromatics (bay, peppercorns, garlic, herbs)"],
+  "method": [
+    "Wet brine: dissolve salt and sugar in water with aromatics; submerge the protein and refrigerate (1 hour per 500 g).",
+    "Dry brine: rub salt directly onto the surface and rest uncovered in the fridge for seasoning and crisp skin.",
+    "Brining lets proteins absorb water and salt, keeping them juicy through cooking.",
+    "Curing with higher salt concentrations and time draws out moisture for preservation (gravlax, bacon)."
+  ],
+  "technique_notes": "Salt denatures proteins so they retain more moisture and season throughout, not just on the surface.",
+  "linked_ingredients": ["pork", "fish"]
+},
+{
+  "id": "base_emulsified_vinaigrette_gastrique",
+  "name": "Gastrique",
+  "category": "Sauce Base",
+  "type": "foundation",
+  "description": "A sweet-and-sour reduction of caramelised sugar and vinegar, used to balance rich and fruity sauces.",
+  "yields": "150 ml",
+  "ingredients": ["100 g sugar", "100 ml vinegar", "optional: fruit juice, stock"],
+  "method": [
+    "Caramelise the sugar to a light amber in a dry pan.",
+    "Carefully deglaze with the vinegar (it will spatter and seize, then dissolve).",
+    "Simmer until smooth and syrupy.",
+    "Add fruit juice or stock to build a sauce; the gastrique balances richness with bright acidity and caramel sweetness."
+  ],
+  "technique_notes": "The caramel adds depth while the vinegar cuts richness — a classic sweet-sour-bitter balance.",
+  "linked_ingredients": ["balsamic"]
+}
+]
