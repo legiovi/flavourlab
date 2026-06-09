@@ -793,6 +793,16 @@ function generateRecipe() {
     <div class="pairing-science">${scienceNote}</div>
 
     ${(() => {
+      const d = suggestDrink(selected_ings);
+      return d ? `<div class="recipe-section" style="margin-top:12px">
+        <h3>🍷 Suggested Drink Pairing</h3>
+        <div class="sim-card" onclick="selectIng('${d.drink.id}');nav('network',document.querySelectorAll('.nav-btn')[0])">
+          <div class="si-em">${d.drink.emoji}</div>
+          <div class="si-info"><div class="si-nm">${d.drink.name}</div><div class="si-cu">${d.shared.length?'shares '+d.shared.slice(0,3).map(a=>AROMA_NOTES[a]?.label||a).join(', '):'complementary profile'}</div></div>
+        </div></div>` : '';
+    })()}
+
+    ${(() => {
       const recBase = suggestBase(method, course, selected_ings);
       return recBase ? `<div class="recipe-section" style="margin-top:12px">
         <h3>📖 Suggested Foundation</h3>
@@ -863,6 +873,24 @@ function buildSteps(ings, base, pair, method, course, aromas, refRec) {
 function topAromas(a, b) {
   const shared = a.aromas.filter(ar=>b.aromas.includes(ar));
   return shared.length ? (AROMA_NOTES[shared[0]]?.label||shared[0]) : 'aromatic';
+}
+
+function suggestDrink(ings) {
+  // Score every wine/beverage by shared aromas with the (non-drink) recipe ingredients
+  const foodIngs = ings.filter(i => i.category !== 'wine' && i.category !== 'beverage');
+  if (!foodIngs.length) return null;
+  const drinks = INGREDIENTS.filter(i => i.category === 'wine' || i.category === 'beverage');
+  let best = null, bestScore = 0, bestShared = [];
+  drinks.forEach(d => {
+    if (ings.find(x => x.id === d.id)) return;
+    let score = 0; const shared = new Set();
+    foodIngs.forEach(f => {
+      f.aromas.filter(a => d.aromas.includes(a)).forEach(a => { score += 1; shared.add(a); });
+      if (f.pairings.includes(d.id) || d.pairings.includes(f.id)) score += 3;
+    });
+    if (score > bestScore) { bestScore = score; best = d; bestShared = [...shared]; }
+  });
+  return best ? { drink: best, shared: bestShared, score: bestScore } : null;
 }
 
 function suggestBase(method, course, ings) {

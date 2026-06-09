@@ -282,6 +282,19 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       },
     },
     {
+      name: "suggest_drink_pairing",
+      description: "Suggest the best wine or beverage pairing for a set of food ingredients, ranked by shared aroma compounds. Returns top matches with the shared aromas.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          ingredient_ids: { type: "array", items: { type: "string" }, description: "Food ingredient IDs to pair a drink with" },
+          drink_type: { type: "string", description: "Optional filter: 'wine' or 'beverage'. Omit for both." },
+          top_n: { type: "number", description: "Number of drink suggestions (default 5)" },
+        },
+        required: ["ingredient_ids"],
+      },
+    },
+    {
       name: "list_culinary_bases",
       description: "List the foundational culinary base recipes & techniques (stocks, mother sauces, doughs, emulsions, knife cuts, etc.), optionally filtered by category.",
       inputSchema: {
@@ -427,6 +440,33 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             method: r.method,
             linkedIngredients: r.linked_ingredients,
           })), null, 2),
+        }],
+      };
+    }
+
+    case "suggest_drink_pairing": {
+      const ids = args.ingredient_ids || [];
+      const topN = args.top_n || 5;
+      const foodIngs = ids.map(id => ingMap[id]).filter(i => i && i.category !== "wine" && i.category !== "beverage");
+      if (!foodIngs.length) return { content: [{ type: "text", text: "Provide at least one food ingredient id." }] };
+      let drinks = INGREDIENTS.filter(i => i.category === "wine" || i.category === "beverage");
+      if (args.drink_type) drinks = drinks.filter(d => d.category === args.drink_type);
+      const scored = drinks.filter(d => !ids.includes(d.id)).map(d => {
+        let score = 0; const shared = new Set();
+        foodIngs.forEach(f => {
+          f.aromas.filter(a => d.aromas.includes(a)).forEach(a => { score += 1; shared.add(a); });
+          if (f.pairings.includes(d.id) || d.pairings.includes(f.id)) score += 3;
+        });
+        return { id: d.id, name: d.name, emoji: d.emoji, category: d.category, score,
+                 sharedAromas: [...shared].map(a => AROMA_NOTES[a]?.label || a) };
+      }).filter(x => x.score > 0).sort((a, b) => b.score - a.score).slice(0, topN);
+      return {
+        content: [{
+          type: "text",
+          text: JSON.stringify({
+            food: foodIngs.map(f => `${f.emoji} ${f.name}`),
+            drinkPairings: scored,
+          }, null, 2),
         }],
       };
     }

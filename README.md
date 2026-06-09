@@ -9,7 +9,7 @@ A science-based tool for discovering ingredient pairings and generating recipes 
 - ✨ **Recipe generator** — generate complete recipes using flavour pairing science + 800+ real recipes
 - 🌸 **Aroma explorer** — browse 17 aroma note categories and the ingredients that share them
 - 📖 **Culinary foundations** — 27 classical base recipes & techniques (stocks, mother sauces, doughs, emulsions)
-- 🤖 **MCP server** — 9 tools for AI agents to query pairing data, browse foundations, and generate recipes
+- 🤖 **MCP server** — 10 tools for AI agents to query pairing data, browse foundations, and generate recipes
 
 ---
 
@@ -75,12 +75,13 @@ Or if cloned locally:
 | Tool | Description |
 |------|-------------|
 | `get_ingredient` | Full ingredient details: aroma profile, pairings, description |
-| `list_ingredients` | All 60+ ingredients, filterable by category or search |
+| `list_ingredients` | All 90 ingredients, filterable by category or search |
 | `get_pairings` | Best matches for an ingredient ranked by shared aroma compounds |
 | `check_harmony` | Aromatic harmony score (0–100) for a set of ingredients |
 | `generate_recipe` | Full recipe with ingredients, method, aroma science, real-world references |
 | `find_recipes` | Search 800+ real recipes (full ingredients + method) by ingredient and cuisine |
 | `get_aroma_ingredients` | All ingredients sharing a specific aroma note |
+| `suggest_drink_pairing` | Best wine / beverage pairing for a set of food ingredients |
 | `list_culinary_bases` | List the 27 foundational base recipes & techniques |
 | `get_culinary_base` | Full method for a base (béchamel, brown stock, pasta dough, mayonnaise…) |
 
@@ -104,9 +105,10 @@ Agent: [calls generate_recipe({base:"strawberry", pair:"basil", cuisine:"Spanish
 
 ## Data
 
-- **Ingredients** across 8 categories (fruit, vegetable, herb, spice, protein, dairy, beverage, other)
+- **Ingredients** across 9 categories (fruit, vegetable, herb, spice, protein, dairy, beverage, wine & fortified, other)
 - **17 aroma note categories** derived from volatile organic compound analysis
 - **800+ real recipes** (with full ingredients & methods) across Italian, Middle Eastern, Mexican, Baking, Catalan, Spanish, Nordic, American, Cambodian, Asian, Seafood, French and more
+- **22 drinks** — 10 wines & fortified (Cabernet, Pinot Noir, Chardonnay, Riesling, Champagne, Port, Sherry, Sake, Rosé, Syrah) + 12 beverages, all aroma-linked to food
 - **27 culinary foundations** — stocks, the five mother sauces, doughs, emulsions, pastry bases and core techniques
 - All recipe text is English-only and self-contained (no external attribution)
 - Pairing data based on shared volatile aroma compounds (flavour pairing science)
@@ -118,12 +120,12 @@ Agent: [calls generate_recipe({base:"strawberry", pair:"basil", cuisine:"Spanish
 ```
 flavourlab/
 ├── public/                   # Visual web app (deployable as static site)
-│   ├── index.html            # Single-file visual app (5 views)
+│   ├── index.html            # Single-file visual app (5 views: network, builder, generator, aroma, foundations)
 │   ├── data.js               # Ingredient + aroma database
 │   ├── recipes.json          # 800+ extracted real recipes
 │   └── culinary_bases.json   # 27 culinary foundations
 ├── src/
-│   └── mcp-server.js         # MCP server (9 tools)
+│   └── mcp-server.js         # MCP server (10 tools)
 ├── data/                     # Source datasets (mirrored to public)
 │   ├── data.js
 │   ├── recipes.json
