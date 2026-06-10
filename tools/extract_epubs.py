@@ -121,13 +121,23 @@ def get_html_files(z):
 
 def _cls(el):
     c = el.get('class')
-    return ' '.join(c).lower() if c else ''
+    if not c:
+        return ''
+    # normalise: lowercase, strip separators so 'recipe-head' == 'recipehead'
+    return ' '.join(c).lower().replace('-', '').replace('_', '')
+
+TITLE_CLASSES = ('recipetitle', 'rectitle', 'ilsubheader', 'recipehead',
+                 'repttl', 'recipename', 'titlerecipe', 'recttl', 'recipehd',
+                 'recipettl', 'dishname')
+ING_CLASSES = ('ingred', 'ilitem', 'recipeing', 'hang', 'inglist', 'ingtxt')
+METHOD_CLASSES = ('method', 'step', 'instruction', 'direction', 'restxt', 'prep')
+SERV_RE = re.compile(r'\b(serves|makes|yields?|portions?)\b', re.I)
 
 def _looks_ingredient(el, txt):
     if len(txt) > 170:
         return False
     cls = _cls(el)
-    if any(k in cls for k in ('ingred', 'il_item', 'ilitem', 'recipe-ing')):
+    if any(k in cls for k in ING_CLASSES):
         return True
     if el.name == 'li' and len(txt) < 170:
         return True
@@ -135,17 +145,21 @@ def _looks_ingredient(el, txt):
 
 def _looks_method(el, txt):
     cls = _cls(el)
-    if any(k in cls for k in ('method', 'step', 'instruction', 'direction', 'restxt', 'prep')):
+    if any(k in cls for k in METHOD_CLASSES):
         return len(txt) > 25
     return len(txt) > 70
 
 def _looks_heading(el, txt):
-    if el.name in ('h1', 'h2', 'h3', 'h4'):
-        return 3 < len(txt) < 70
     cls = _cls(el)
-    if any(k in cls for k in ('recipe-title', 'recipetitle', 'rectitle', 'il_subheader',
-                              'recipe_title', 'recipehead')):
-        return 3 < len(txt) < 70
+    class_title = any(k in cls for k in TITLE_CLASSES)
+    if class_title:
+        return 3 < len(txt) < 75          # trust the class even if ALL-CAPS
+    if el.name in ('h1', 'h2', 'h3', 'h4'):
+        if not (3 < len(txt) < 70):
+            return False
+        if txt.isupper() and len(txt) > 28:   # likely a section banner
+            return False
+        return True
     return False
 
 BLOCK_TAGS = ['p', 'li', 'div', 'h1', 'h2', 'h3', 'h4']
@@ -156,54 +170,55 @@ def extract_from_html(html, cuisine, book_id, counter):
     for t in soup(['script', 'style']):
         t.decompose()
 
-    # Collect heading anchors (real headings + class-based recipe titles)
-    anchors = []
-    for el in soup.find_all(BLOCK_TAGS):
-        txt = el.get_text(' ', strip=True)
-        if not txt:
-            continue
-        if _looks_heading(el, txt):
-            if txt.isupper() and len(txt) > 28:
-                continue
-            anchors.append(el)
+    anchors = [el for el in soup.find_all(BLOCK_TAGS)
+               if (txt := el.get_text(' ', strip=True)) and _looks_heading(el, txt)]
 
     for h in anchors:
         title = h.get_text(' ', strip=True)
-        ings, method, servings = [], [], ''
-        steps_collected = 0
+        ings, method, servings, desc = [], [], '', ''
+        seen_ing = False
         for el in h.find_all_next(BLOCK_TAGS):
             t2 = el.get_text(' ', strip=True)
             if not t2:
                 continue
             if _looks_heading(el, t2) and el is not h:
                 break
-            low = t2.lower()
-            if re.match(r'^(serves|makes|yield|for \d|preparation|prep time|cook time|total time)', low):
-                if not servings and len(t2) < 45:
-                    servings = t2
-                continue
-            # avoid double-counting nested divs: only leaf-ish blocks
+            # leaf-ish blocks only (avoid nested-div double counting)
             if el.find(BLOCK_TAGS):
                 continue
-            if steps_collected == 0 and _looks_ingredient(el, t2):
+            cls = _cls(el)
+            # servings / yield line (allow leading symbols like '° Makes 1 cup')
+            if (SERV_RE.search(t2[:24]) or 'yield' in cls or 'serving' in cls) and len(t2) < 60:
+                if not servings:
+                    servings = re.sub(r'^[^A-Za-z]+', '', t2)
+                continue
+            if _looks_ingredient(el, t2):
                 ings.append(t2)
+                seen_ing = True
             elif _looks_method(el, t2):
-                method.append(t2)
-                steps_collected += 1
-            if steps_collected > 14 or len(ings) > 28:
+                if seen_ing:
+                    method.append(t2)            # real instructions follow ingredients
+                elif not desc and 'headnote' not in cls:
+                    desc = t2                    # first long para before ings = description
+                elif 'headnote' in cls and not desc:
+                    desc = t2
+            if len(method) > 14 or len(ings) > 28:
                 break
         if len(ings) >= 3 and len(method) >= 1:
             full = title + ' ' + ' '.join(ings) + ' ' + ' '.join(method)
             if detect_lang(full) != 'en':
                 continue
+            # fix ALL-CAPS titles for display
+            disp = title.title() if title.isupper() else title
             counter[0] += 1
             recs.append({
                 'id': f"{book_id}_{counter[0]}",
-                'name': title,
+                'name': disp,
                 'cuisine': cuisine,
                 'servings': servings,
-                'ingredients': [re.sub(r'\s+', ' ', i)[:140] for i in ings[:16]],
-                'method': [re.sub(r'\s+', ' ', m)[:400] for m in method[:8]],
+                'description': re.sub(r'\s+', ' ', desc)[:280],
+                'ingredients': [re.sub(r'\s+', ' ', i)[:140] for i in ings[:18]],
+                'method': [re.sub(r'\s+', ' ', m)[:450] for m in method[:10]],
                 'linked_ingredients': link_ingredients(full),
                 'source': 'epub',
             })

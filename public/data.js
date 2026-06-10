@@ -255,8 +255,104 @@ const INGREDIENTS = [
     classic: "Artichoke & lemon — acidity cuts the earthiness",
     surprising: "Artichoke & mint — shared green terpene molecules",
   },
+  {
+    id: "fennel", name: "Fennel", category: "vegetable", emoji: "🌱",
+    aromas: ["spicy", "green", "citrus", "woody", "floral"],
+    description: "Anethole gives the sweet anise note; fresh bulb adds green, citrus crispness. Mellows to silky sweetness when braised.",
+    pairings: ["fish", "orange", "olive-oil", "lemon", "tomato", "pork"],
+    classic: "Fennel & fish — Provençal classic",
+    surprising: "Fennel & strawberry — shared anise-fruity notes",
+  },
+  {
+    id: "leek", name: "Leek", category: "vegetable", emoji: "🥬",
+    aromas: ["sulfurous", "green", "fatty", "caramel"],
+    description: "Milder, sweeter allium than onion. Slow cooking converts sulfur compounds into deep, silky sweetness.",
+    pairings: ["potato", "cream", "chicken", "fish", "cheese-parmesan", "egg"],
+    classic: "Leek & potato — vichyssoise foundation",
+    surprising: "Leek & vanilla — caramelised leeks share sweet notes",
+  },
+  {
+    id: "onion", name: "Onion", category: "vegetable", emoji: "🧅",
+    aromas: ["sulfurous", "caramel", "green", "spicy"],
+    description: "Raw: pungent sulfur volatiles. Caramelised: deeply sweet Maillard and caramel compounds. The universal aromatic base.",
+    pairings: ["garlic", "beef", "tomato", "cheese-parmesan", "balsamic", "thyme"],
+    classic: "French onion soup — caramelised depth with Gruyère",
+    surprising: "Onion & strawberry — shared sweet sulfur-fruity volatiles",
+  },
+  {
+    id: "potato", name: "Potato", category: "vegetable", emoji: "🥔",
+    aromas: ["earthy", "fatty", "caramel", "nutty"],
+    description: "Earthy methoxypyrazines raw; boiled is clean and buttery; roasted develops nutty, caramellic Maillard crust.",
+    pairings: ["leek", "butter", "truffle", "rosemary", "cheese-cheddar", "fish"],
+    classic: "Potato & butter — pommes purée richness",
+    surprising: "Potato & coffee — shared roasted earthy pyrazines",
+  },
+  {
+    id: "shiitake", name: "Mushroom", category: "vegetable", emoji: "🍄",
+    aromas: ["earthy", "smoky", "fatty", "caramel"],
+    description: "Octenol gives the forest-floor note; drying and roasting concentrate umami glutamates and smoky depth.",
+    pairings: ["beef", "chicken", "truffle", "soy-sauce", "garlic", "pinot-noir", "thyme"],
+    classic: "Mushroom & beef — umami synergy",
+    surprising: "Mushroom & kiwi — shared minty-earthy notes",
+  },
+  {
+    id: "egg", name: "Egg", category: "protein", emoji: "🥚",
+    aromas: ["fatty", "sulfurous", "caramel"],
+    description: "Gentle sulfur notes and rich, fatty yolk. The kitchen's great emulsifier and binder.",
+    pairings: ["truffle", "bacon", "asparagus", "cheese-parmesan", "soy-sauce", "potato"],
+    classic: "Egg & truffle — dimethyl sulfide affinity",
+    surprising: "Egg & oyster — shared marine-sulfur minerality",
+  },
+  {
+    id: "cherry", name: "Cherry", category: "fruit", emoji: "🍒",
+    aromas: ["fruity", "floral", "nutty", "caramel"],
+    description: "Benzaldehyde links cherry to almond; sweet-tart flesh with floral, marzipan depth.",
+    pairings: ["almond", "chocolate", "duck", "lambic", "vanilla", "port"],
+    classic: "Cherry & almond — benzaldehyde twins (clafoutis)",
+    surprising: "Cherry & duck — fruity acidity cuts rich fat",
+  },
+  {
+    id: "fig", name: "Fig", category: "fruit", emoji: "🫐",
+    aromas: ["fruity", "honey", "green", "woody", "caramel"],
+    description: "Honeyed jammy sweetness with green, coconut-lactone freshness in the skin.",
+    pairings: ["cheese-blue", "iberico-ham", "port", "honey", "walnut", "balsamic"],
+    classic: "Fig & blue cheese — sweet-savoury board classic",
+    surprising: "Fig & coconut — shared lactone creaminess",
+  },
+  {
+    id: "honey", name: "Honey", category: "other", emoji: "🍯",
+    aromas: ["honey", "floral", "caramel", "fruity"],
+    description: "Floral phenylacetic notes over caramel sweetness; varietal honeys range from citrus-bright to malty-dark.",
+    pairings: ["cheese-goat", "yogurt", "lemon", "fig", "lavender", "tea"],
+    classic: "Honey & goat cheese — tang meets floral sweetness",
+    surprising: "Honey & tequila — earthy agave echoes buckwheat honey",
+  },
 
   // HERBS & SPICES
+  {
+    id: "mint", name: "Mint", category: "herb", emoji: "🌿",
+    aromas: ["minty", "green", "citrus", "floral"],
+    description: "Menthol cooling with bright green top notes; spearmint is sweeter, peppermint sharper.",
+    pairings: ["lamb", "chocolate", "cucumber", "yogurt", "watermelon", "pear"],
+    classic: "Mint & lamb — the classic sauce pairing",
+    surprising: "Mint & chocolate — menthol lifts roasted cocoa",
+  },
+  {
+    id: "rosemary", name: "Rosemary", category: "herb", emoji: "🌿",
+    aromas: ["woody", "minty", "spicy", "green"],
+    description: "Pine-camphor terpenes with eucalyptus freshness; stands up to high heat and fat.",
+    pairings: ["lamb", "potato", "garlic", "olive-oil", "lemon", "honey"],
+    classic: "Rosemary & roast lamb — Mediterranean staple",
+    surprising: "Rosemary & apricot — shared woody-fruity terpenes",
+  },
+  {
+    id: "thyme", name: "Thyme", category: "herb", emoji: "🌿",
+    aromas: ["woody", "spicy", "green", "earthy"],
+    description: "Thymol's warm phenolic spice; the quiet backbone of stocks, braises and roasts.",
+    pairings: ["chicken", "lemon", "shiitake", "onion", "honey", "blueberry"],
+    classic: "Thyme & chicken — the roast's best friend",
+    surprising: "Thyme & blueberry — shared terpene aromatics",
+  },
   {
     id: "basil", name: "Basil", category: "herb", emoji: "🌿",
     aromas: ["spicy", "citrus", "woody", "floral", "minty"],
@@ -468,6 +564,30 @@ const INGREDIENTS = [
     pairings: ["basil", "truffle", "honey", "apple", "balsamic", "prosciutto"],
     classic: "Parmesan & balsamic vinegar — Modena tradition",
     surprising: "Parmesan & honey — shared caramellic compounds",
+  },
+  {
+    id: "cheese-cheddar", name: "Cheddar", category: "dairy", emoji: "🧀",
+    aromas: ["cheesy", "nutty", "fatty", "caramel", "earthy"],
+    description: "Aged cheddar develops sharp, savoury, slightly crystalline complexity over a buttery base.",
+    pairings: ["apple", "celeriac", "onion", "potato", "chive", "bourbon"],
+    classic: "Cheddar & apple — sweet-savoury ploughman's",
+    surprising: "Cheddar & celeriac — shared roasted, nutty notes",
+  },
+  {
+    id: "butter", name: "Butter", category: "dairy", emoji: "🧈",
+    aromas: ["fatty", "caramel", "cheesy", "nutty"],
+    description: "Diacetyl gives the buttery aroma; browning (beurre noisette) adds nutty, caramellic depth.",
+    pairings: ["potato", "fish", "vanilla", "hazelnut", "leek", "sage"],
+    classic: "Beurre noisette & fish — nutty brown-butter sauce",
+    surprising: "Brown butter & chardonnay — shared diacetyl richness",
+  },
+  {
+    id: "cream", name: "Cream", category: "dairy", emoji: "🥛",
+    aromas: ["fatty", "caramel", "floral", "cheesy"],
+    description: "Rich dairy fat that carries fat-soluble aromas and rounds out sauces and desserts.",
+    pairings: ["vanilla", "leek", "shiitake", "strawberry", "coffee", "cardamom"],
+    classic: "Cream & vanilla — the base of crème anglaise",
+    surprising: "Cream & cauliflower — silky velouté affinity",
   },
   {
     id: "yogurt", name: "Yogurt", category: "dairy", emoji: "🥛",
@@ -818,6 +938,33 @@ function buildPairingGraph() {
     }
   }
   return connections;
+}
+
+// Variation engine: substitute an ingredient with same-role alternatives,
+// ranked by aroma similarity. E.g. fennel velouté -> leek / celeriac velouté.
+// Proteins can swap within meat/seafood families; produce swaps within category.
+const SWAP_FAMILY = {
+  // treat these protein sub-groups as interchangeable roles
+  meat: ["pork", "beef", "lamb", "duck", "chicken", "iberico-ham", "chorizo"],
+  seafood: ["fish", "oyster", "crustaceans"],
+};
+function familyOf(id) {
+  for (const k in SWAP_FAMILY) if (SWAP_FAMILY[k].includes(id)) return k;
+  return null;
+}
+function getVariations(id, n = 6) {
+  const ing = (typeof ingredientMap !== "undefined" ? ingredientMap : Object.fromEntries(INGREDIENTS.map(i => [i.id, i])))[id];
+  if (!ing) return [];
+  const fam = familyOf(id);
+  const pool = INGREDIENTS.filter(o => {
+    if (o.id === id) return false;
+    if (fam) return familyOf(o.id) === fam;      // swap within protein family
+    return o.category === ing.category;          // otherwise same category
+  });
+  return pool.map(o => {
+    const shared = ing.aromas.filter(a => o.aromas.includes(a));
+    return { ing: o, shared, score: shared.length };
+  }).sort((a, b) => b.score - a.score).slice(0, n);
 }
 
 const CATEGORY_COLORS = {

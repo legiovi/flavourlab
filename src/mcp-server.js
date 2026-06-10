@@ -22,16 +22,33 @@ const dataPath = join(__dirname, "../data");
 // Inline the ingredients data (parsed from data.js)
 const dataJs = readFileSync(join(dataPath, "data.js"), "utf-8");
 // Extract INGREDIENTS array via regex-free eval in Node context
-let INGREDIENTS, AROMA_NOTES, CATEGORY_COLORS, CATEGORY_LABELS;
+let INGREDIENTS, AROMA_NOTES, CATEGORY_COLORS, CATEGORY_LABELS, SWAP_FAMILY;
 const evalScope = {};
 new Function(
   "module", "exports",
-  dataJs + "\nmodule.INGREDIENTS=INGREDIENTS;module.AROMA_NOTES=AROMA_NOTES;module.CATEGORY_COLORS=CATEGORY_COLORS;module.CATEGORY_LABELS=CATEGORY_LABELS;"
+  dataJs + "\nmodule.INGREDIENTS=INGREDIENTS;module.AROMA_NOTES=AROMA_NOTES;module.CATEGORY_COLORS=CATEGORY_COLORS;module.CATEGORY_LABELS=CATEGORY_LABELS;module.SWAP_FAMILY=typeof SWAP_FAMILY!=='undefined'?SWAP_FAMILY:{};"
 )(evalScope, {});
 INGREDIENTS = evalScope.INGREDIENTS;
 AROMA_NOTES = evalScope.AROMA_NOTES;
 CATEGORY_COLORS = evalScope.CATEGORY_COLORS;
 CATEGORY_LABELS = evalScope.CATEGORY_LABELS;
+SWAP_FAMILY = evalScope.SWAP_FAMILY || {};
+
+function familyOf(id) {
+  for (const k in SWAP_FAMILY) if (SWAP_FAMILY[k].includes(id)) return k;
+  return null;
+}
+function getVariations(id, n = 6) {
+  const ing = ingMap[id];
+  if (!ing) return [];
+  const fam = familyOf(id);
+  return INGREDIENTS.filter(o => o.id !== id && (fam ? familyOf(o.id) === fam : o.category === ing.category))
+    .map(o => {
+      const shared = ing.aromas.filter(a => o.aromas.includes(a));
+      return { id: o.id, name: o.name, category: o.category, sharedAromas: shared.map(a => AROMA_NOTES[a]?.label || a), score: shared.length };
+    })
+    .sort((a, b) => b.score - a.score).slice(0, n);
+}
 
 const RECIPES = JSON.parse(readFileSync(join(dataPath, "recipes.json"), "utf-8"));
 const BASES = JSON.parse(readFileSync(join(dataPath, "culinary_bases.json"), "utf-8"));
@@ -244,6 +261,18 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       },
     },
     {
+      name: "get_variations",
+      description: "Get same-role substitute ingredients ranked by aroma similarity, for creating recipe variations. E.g. fennel -> leek/celeriac (turn a fennel velouté into a leek velouté). Proteins swap within meat/seafood families; other ingredients swap within their category.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          ingredient_id: { type: "string", description: "The ingredient to find substitutes for" },
+          top_n: { type: "number", description: "Number of substitutes (default 6)" },
+        },
+        required: ["ingredient_id"],
+      },
+    },
+    {
       name: "check_harmony",
       description: "Check the aromatic harmony score between multiple ingredients. Returns a 0-100 score and shared aroma notes.",
       inputSchema: {
@@ -387,6 +416,22 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
               ...p,
               sharedAromaLabels: p.sharedAromas.map(a => AROMA_NOTES[a]?.label || a),
             })),
+          }, null, 2),
+        }],
+      };
+    }
+
+    case "get_variations": {
+      const ing = ingMap[args.ingredient_id];
+      if (!ing) return { content: [{ type: "text", text: `Unknown ingredient: ${args.ingredient_id}` }] };
+      const vars = getVariations(args.ingredient_id, args.top_n || 6);
+      return {
+        content: [{
+          type: "text",
+          text: JSON.stringify({
+            ingredient: { id: ing.id, name: ing.name },
+            note: "Swap any of these into a recipe for an aroma-compatible variation.",
+            variations: vars,
           }, null, 2),
         }],
       };

@@ -42,7 +42,17 @@ INGREDIENT_MAP = {
     r'coconut':'coconut', r'seaweed':'seaweed', r'\bnori\b':'seaweed', r'kombu':'seaweed',
     r'wakame':'seaweed', r'bergamot':'bergamot', r'hazelnut':'hazelnut', r'almond':'almond',
     r'\brye\b':'sourdough-rye', r'\bmiso\b':'miso', r'kimchi':'kimchi',
-    r'mushroom':'shiitake', r'shiitake':'shiitake',
+    r'mushroom':'shiitake', r'shiitake':'shiitake', r'porcini':'shiitake', r'cep\b':'shiitake',
+    # newly-added ingredients
+    r'fennel':'fennel', r'\bleek':'leek', r'onion':'onion', r'shallot':'onion',
+    r'potato':'potato', r'\begg\b':'egg', r'\beggs\b':'egg', r'cherry|cherries':'cherry',
+    r'\bfig\b|\bfigs\b':'fig', r'honey':'honey', r'\bmint\b':'mint', r'rosemary':'rosemary',
+    r'thyme':'thyme', r'cheddar':'cheese-cheddar', r'\bbutter\b':'butter', r'\bcream\b':'cream',
+    # wines / drinks
+    r'cabernet':'cabernet-sauvignon', r'pinot noir':'pinot-noir', r'syrah|shiraz':'syrah',
+    r'chardonnay':'chardonnay', r'riesling':'riesling', r'champagne':'champagne',
+    r'\bport\b':'port', r'sherry':'sherry', r'\bsake\b':'sake', r'\bcider\b':'cider',
+    r'vermouth':'vermouth',
 }
 COMPILED = [(re.compile(r'\b' + pat if not pat.startswith(r'\b') else pat, re.I), iid)
             for pat, iid in INGREDIENT_MAP.items()]
@@ -52,7 +62,7 @@ def link_ingredients(text):
     for rx, iid in COMPILED:
         if iid not in found and rx.search(text):
             found.append(iid)
-    return found[:10]
+    return found[:12]
 
 # ── Junk title filter ─────────────────────────────────────────────────────────
 JUNK_TITLE = re.compile(
@@ -62,23 +72,27 @@ JUNK_TITLE = re.compile(
 
 def is_good_recipe(r):
     name = (r.get('name') or '').strip()
-    if not (4 <= len(name) <= 65):
+    if not (4 <= len(name) <= 72):
         return False
     if JUNK_TITLE.match(name):
         return False
-    if name.isupper() and len(name) > 20:
+    if name.isupper() and len(name) > 28:
         return False
     if sum(c.isdigit() for c in name) > 4:
         return False
     ings = r.get('ingredients') or r.get('ingredients_raw') or []
     if len(ings) < 3:
         return False
+    method = r.get('method') or []
+    if isinstance(method, str):
+        method = [method]
+    if len(method) < 1:
+        return False
     return True
 
 # ── Normalise a record to unified schema ──────────────────────────────────────
 def normalise(r):
     name = re.sub(r'\s+', ' ', r['name']).strip()
-    # strip trailing yield fragments from title
     name = re.sub(r'\s+(MAKES|SERVES|YIELDS?|FOR)\b.*$', '', name, flags=re.I).strip(' .,–-')
     ings = r.get('ingredients') or r.get('ingredients_raw') or []
     method = r.get('method') or []
@@ -89,16 +103,17 @@ def normalise(r):
         'id': r['id'],
         'name': name,
         'cuisine': r.get('cuisine', 'International'),
-        'servings': r.get('servings', ''),
-        'ingredients': [re.sub(r'\s+', ' ', i).strip()[:140] for i in ings[:16] if i.strip()],
-        'method': [re.sub(r'\s+', ' ', m).strip()[:400] for m in method[:8] if m.strip()],
+        'servings': re.sub(r'\s+', ' ', r.get('servings', '')).strip()[:60],
+        'description': re.sub(r'\s+', ' ', r.get('description', '')).strip()[:300],
+        'ingredients': [re.sub(r'\s+', ' ', i).strip()[:140] for i in ings[:18] if i.strip()],
+        'method': [re.sub(r'\s+', ' ', m).strip()[:450] for m in method[:10] if m.strip()],
         'linked_ingredients': link_ingredients(full),
-        'source': r.get('source', 'book'),
+        'source': 'book',  # no per-book attribution retained
     }
 
 def main():
     epub = json.load(open(f'{BASE}/data/recipes_epub.json'))
-    pdf = json.load(open(f'{BASE}/data/recipes_final.json'))
+    pdf = json.load(open(f'{BASE}/data/recipes_pdf.json'))
     print(f"EPUB raw: {len(epub)}  ·  PDF raw: {len(pdf)}")
 
     merged, seen = [], set()
@@ -109,7 +124,6 @@ def main():
         key = rec['name'].lower()
         if key in seen or len(key) < 4:
             continue
-        # require it to map to at least one known ingredient (keeps it pairing-relevant)
         if not rec['linked_ingredients']:
             continue
         seen.add(key)
@@ -122,7 +136,6 @@ def main():
 
     out = f'{BASE}/data/recipes.json'
     json.dump(merged, open(out, 'w'), ensure_ascii=False, indent=1)
-    # mirror to public for the web app
     json.dump(merged, open(f'{BASE}/public/recipes.json', 'w'), ensure_ascii=False, indent=1)
     print(f"\nSaved → {out} (+ public mirror)")
 

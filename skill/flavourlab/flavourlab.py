@@ -24,11 +24,41 @@ AROMA = ING["aromas"]
 CATLABEL = ING["categoryLabels"]
 RECIPES = json.load(open(os.path.join(D, "recipes.json")))
 BASES = json.load(open(os.path.join(D, "culinary_bases.json")))
+SWAP_FAMILY = ING.get("swapFamily", {})
 IMAP = {i["id"]: i for i in INGREDIENTS}
 
 
 def alabel(a):
     return AROMA.get(a, {}).get("label", a)
+
+
+def _family(iid):
+    for k, members in SWAP_FAMILY.items():
+        if iid in members:
+            return k
+    return None
+
+
+def variations(iid, n=6):
+    """Same-role substitutes ranked by aroma similarity (e.g. fennel velouté -> leek velouté)."""
+    ing = IMAP.get(iid)
+    if not ing:
+        return {"error": f"Unknown ingredient '{iid}'"}
+    fam = _family(iid)
+    pool = []
+    for o in INGREDIENTS:
+        if o["id"] == iid:
+            continue
+        same_role = (_family(o["id"]) == fam) if fam else (o["category"] == ing["category"])
+        if not same_role:
+            continue
+        sh = [a for a in ing["aromas"] if a in o["aromas"]]
+        pool.append({"id": o["id"], "name": o["name"], "category": o["category"],
+                     "sharedAromas": [alabel(a) for a in sh], "score": len(sh)})
+    pool.sort(key=lambda x: -x["score"])
+    return {"ingredient": ing["name"],
+            "note": "Swap any of these in a recipe for an aroma-compatible variation.",
+            "variations": pool[:n]}
 
 
 def pairings(iid, top=10):
@@ -205,6 +235,7 @@ def main():
     sub = p.add_subparsers(dest="cmd")
 
     a = sub.add_parser("pairings"); a.add_argument("id"); a.add_argument("--top", type=int, default=10)
+    a = sub.add_parser("variations"); a.add_argument("id"); a.add_argument("--top", type=int, default=6)
     a = sub.add_parser("harmony"); a.add_argument("ids", nargs="+")
     a = sub.add_parser("generate"); a.add_argument("base"); a.add_argument("--pair"); a.add_argument("--cuisine", default="any")
     a.add_argument("--course", default="any"); a.add_argument("--method", default="any"); a.add_argument("--complexity", default="medium")
@@ -219,6 +250,8 @@ def main():
     args = p.parse_args()
     if args.cmd == "pairings":
         out = pairings(args.id, args.top)
+    elif args.cmd == "variations":
+        out = variations(args.id, args.top)
     elif args.cmd == "harmony":
         out = harmony(args.ids)
     elif args.cmd == "generate":
