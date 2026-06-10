@@ -465,6 +465,7 @@ main{flex:1;display:flex;flex-direction:column;overflow:hidden;position:relative
 let RECIPES = [];
 let BASES = [];
 let BOOK_PAIRINGS = {};
+let THESAURUS = {pairs:[], ingredients:[]};
 let recipeIngredients = [];
 let selectedId = null;
 let showLabels = true;
@@ -500,6 +501,38 @@ async function loadRecipes() {
     console.warn('Book pairings not loaded:', e);
     BOOK_PAIRINGS = {};
   }
+  try {
+    const tp = await fetch('thesaurus_pairings.json');
+    THESAURUS = await tp.json();
+  } catch(e) {
+    console.warn('Thesaurus not loaded:', e);
+    THESAURUS = {pairs:[], ingredients:[]};
+  }
+}
+
+// aliases: our ingredient id → names used by the thesaurus
+const THES_ALIAS = {
+  'lemon': ['lemon', 'lime'], 'cheese-blue': ['blue cheese'], 'cheese-goat': ["goat's cheese"],
+  'cheese-brie': ['washed-rind cheese', 'cheese'], 'cheese-parmesan': ['parmesan', 'hard cheese'],
+  'cheese-cheddar': ['cheddar', 'hard cheese'], 'black-pepper': ['black pepper'],
+  'red-bell-pepper': ['bell pepper'], 'chilli': ['chilli'], 'shiitake': ['mushroom'],
+  'crustaceans': ['lobster', 'shellfish', 'prawn'], 'fish': ['white fish', 'oily fish', 'anchovy'],
+  'iberico-ham': ['prosciutto', 'bacon'], 'butternut-squash': ['butternut squash'],
+  'green-beans': ['green bean'], 'sweet-potato': ['sweet potato'], 'soy-sauce': ['soy sauce'],
+  'olive-oil': ['olive oil', 'olive'], 'black-olive': ['olive'], 'sourdough-rye': ['rye'],
+  'coriander': ['coriander leaf', 'coriander seed'], 'makrut-lime': ['lime'],
+  'bourbon': ['whisky'], 'miso': ['miso'], 'durum-pasta': ['pasta'],
+};
+function thesaurusPartners(id) {
+  const ing = ingMap[id];
+  if (!ing || !THESAURUS.pairs) return [];
+  const names = THES_ALIAS[id] || [ing.name.toLowerCase()];
+  const out = [];
+  THESAURUS.pairs.forEach(([a, b]) => {
+    if (names.includes(a) && !out.includes(b)) out.push(b);
+    else if (names.includes(b) && !out.includes(a)) out.push(a);
+  });
+  return out;
 }
 
 // ═══════════════════════════════════════
@@ -720,6 +753,21 @@ function showDetail(id) {
             : `<div class="a-tag" style="background:var(--s2);color:var(--t2);border:1px solid var(--s3)">${p}</div>`;
         }).join('')}
         ${all.length > 60 ? `<div class="a-tag" style="color:var(--t3)">+${all.length-60} more…</div>` : ''}
+        </div></div>`;
+    })()}
+    ${(() => {
+      const tp = thesaurusPartners(id);
+      if (!tp.length) return '';
+      const nameToId = {};
+      INGREDIENTS.forEach(i => { nameToId[i.name.toLowerCase()] = i.id; });
+      return `<div class="sec"><h4>📚 Thesaurus Pairings (${tp.length})</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:4px;max-height:130px;overflow-y:auto">
+        ${tp.map(p => {
+          const match = nameToId[p];
+          return match
+            ? `<div class="a-tag" style="background:var(--s2);color:var(--acc3);border:1px solid var(--s3);cursor:pointer" onclick="selectIng('${match}')">${p}</div>`
+            : `<div class="a-tag" style="background:var(--s2);color:var(--t2);border:1px solid var(--s3)">${p}</div>`;
+        }).join('')}
         </div></div>`;
     })()}
     ${recs.length?`<div class="sec"><h4>In ${recs.length} Recipes</h4>

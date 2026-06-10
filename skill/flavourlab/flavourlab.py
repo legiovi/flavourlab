@@ -28,6 +28,36 @@ try:
     BOOK_PAIRINGS = json.load(open(os.path.join(D, "book_pairings.json")))
 except Exception:
     BOOK_PAIRINGS = {}
+try:
+    THESAURUS = json.load(open(os.path.join(D, "thesaurus_pairings.json")))
+except Exception:
+    THESAURUS = {"pairs": [], "ingredients": []}
+
+THES_ALIAS = {
+    'lemon': ['lemon', 'lime'], 'cheese-blue': ['blue cheese'], 'cheese-goat': ["goat's cheese"],
+    'cheese-brie': ['washed-rind cheese', 'cheese'], 'cheese-parmesan': ['parmesan', 'hard cheese'],
+    'cheese-cheddar': ['cheddar', 'hard cheese'], 'black-pepper': ['black pepper'],
+    'red-bell-pepper': ['bell pepper'], 'shiitake': ['mushroom'],
+    'crustaceans': ['lobster', 'shellfish', 'prawn'], 'fish': ['white fish', 'oily fish', 'anchovy'],
+    'iberico-ham': ['prosciutto', 'bacon'], 'butternut-squash': ['butternut squash'],
+    'green-beans': ['green bean'], 'sweet-potato': ['sweet potato'], 'soy-sauce': ['soy sauce'],
+    'olive-oil': ['olive oil', 'olive'], 'black-olive': ['olive'], 'sourdough-rye': ['rye'],
+    'coriander': ['coriander leaf', 'coriander seed'], 'makrut-lime': ['lime'],
+    'bourbon': ['whisky'], 'durum-pasta': ['pasta'],
+}
+
+def thesaurus_partners(iid):
+    ing = IMAP.get(iid)
+    if not ing:
+        return []
+    names = THES_ALIAS.get(iid, [ing["name"].lower()])
+    out = []
+    for a, b in THESAURUS.get("pairs", []):
+        if a in names and b not in out:
+            out.append(b)
+        elif b in names and a not in out:
+            out.append(a)
+    return out
 SWAP_FAMILY = ING.get("swapFamily", {})
 IMAP = {i["id"]: i for i in INGREDIENTS}
 
@@ -84,10 +114,13 @@ def pairings(iid, top=10):
     out.sort(key=lambda x: (x["strength"], x["verified"]), reverse=True)
     bp = BOOK_PAIRINGS.get(iid, {})
     book_list = (bp.get("named", []) + bp.get("grid", []))
+    thes = thesaurus_partners(iid)
     return {"ingredient": ing["name"], "classic": ing.get("classic"),
             "surprising": ing.get("surprising"), "pairings": out[:top],
             "bookPairings": book_list,
-            "bookPairingCount": len(book_list)}
+            "bookPairingCount": len(book_list),
+            "thesaurusPairings": thes,
+            "thesaurusPairingCount": len(thes)}
 
 
 def harmony(ids):

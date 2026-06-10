@@ -54,6 +54,31 @@ const RECIPES = JSON.parse(readFileSync(join(dataPath, "recipes.json"), "utf-8")
 const BASES = JSON.parse(readFileSync(join(dataPath, "culinary_bases.json"), "utf-8"));
 let BOOK_PAIRINGS = {};
 try { BOOK_PAIRINGS = JSON.parse(readFileSync(join(dataPath, "book_pairings.json"), "utf-8")); } catch {}
+let THESAURUS = { pairs: [], ingredients: [] };
+try { THESAURUS = JSON.parse(readFileSync(join(dataPath, "thesaurus_pairings.json"), "utf-8")); } catch {}
+
+const THES_ALIAS = {
+  "lemon": ["lemon", "lime"], "cheese-blue": ["blue cheese"], "cheese-goat": ["goat's cheese"],
+  "cheese-parmesan": ["parmesan", "hard cheese"], "cheese-cheddar": ["cheddar", "hard cheese"],
+  "black-pepper": ["black pepper"], "red-bell-pepper": ["bell pepper"], "shiitake": ["mushroom"],
+  "crustaceans": ["lobster", "shellfish", "prawn"], "fish": ["white fish", "oily fish", "anchovy"],
+  "iberico-ham": ["prosciutto", "bacon"], "butternut-squash": ["butternut squash"],
+  "green-beans": ["green bean"], "sweet-potato": ["sweet potato"], "soy-sauce": ["soy sauce"],
+  "olive-oil": ["olive oil", "olive"], "black-olive": ["olive"], "sourdough-rye": ["rye"],
+  "coriander": ["coriander leaf", "coriander seed"], "makrut-lime": ["lime"],
+  "bourbon": ["whisky"], "durum-pasta": ["pasta"],
+};
+function thesaurusPartners(id) {
+  const ing = ingMap[id];
+  if (!ing) return [];
+  const names = THES_ALIAS[id] || [ing.name.toLowerCase()];
+  const out = [];
+  for (const [a, b] of THESAURUS.pairs || []) {
+    if (names.includes(a) && !out.includes(b)) out.push(b);
+    else if (names.includes(b) && !out.includes(a)) out.push(a);
+  }
+  return out;
+}
 const ingMap = Object.fromEntries(INGREDIENTS.map(i => [i.id, i]));
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -422,6 +447,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
               ...(BOOK_PAIRINGS[ing.id]?.named || []),
               ...(BOOK_PAIRINGS[ing.id]?.grid || []),
             ],
+            thesaurusPairings: thesaurusPartners(ing.id),
           }, null, 2),
         }],
       };
