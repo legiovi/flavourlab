@@ -464,6 +464,7 @@ main{flex:1;display:flex;flex-direction:column;overflow:hidden;position:relative
 // ═══════════════════════════════════════
 let RECIPES = [];
 let BASES = [];
+let BOOK_PAIRINGS = {};
 let recipeIngredients = [];
 let selectedId = null;
 let showLabels = true;
@@ -491,6 +492,13 @@ async function loadRecipes() {
   } catch(e) {
     console.warn('Bases not loaded:', e);
     BASES = [];
+  }
+  try {
+    const bp = await fetch('book_pairings.json');
+    BOOK_PAIRINGS = await bp.json();
+  } catch(e) {
+    console.warn('Book pairings not loaded:', e);
+    BOOK_PAIRINGS = {};
   }
 }
 
@@ -694,6 +702,26 @@ function showDetail(id) {
       <div class="pair-list">${conns.map(c=>`<div class="pair-row" onclick="selectIng('${c.ing.id}')">
         <div class="pr-name">${c.ing.emoji} ${c.ing.name} ${c.fromBook?'📖':''}</div>
         <div class="pr-shared">${c.shared.map(a=>AROMA_NOTES[a]?.icon||'').join('')} ${c.shared.map(a=>AROMA_NOTES[a]?.label||a).join(', ')}</div></div>`).join('')}</div></div>
+    ${(() => {
+      const bp = BOOK_PAIRINGS[id];
+      if (!bp) return '';
+      const all = [...(bp.named||[]), ...(bp.grid||[])];
+      if (!all.length) return '';
+      const nameToId = {};
+      INGREDIENTS.forEach(i => { nameToId[i.name.toLowerCase()] = i.id; });
+      const shown = all.slice(0, 60);
+      return `<div class="sec"><h4>📖 Book Pairings (${all.length})</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:4px;max-height:160px;overflow-y:auto">
+        ${shown.map(p => {
+          const match = nameToId[p.toLowerCase()] ||
+            Object.keys(nameToId).find(n => p.toLowerCase().includes(n)) && nameToId[Object.keys(nameToId).find(n => p.toLowerCase().includes(n))];
+          return match
+            ? `<div class="a-tag" style="background:var(--s2);color:var(--acc);border:1px solid var(--s3);cursor:pointer" onclick="selectIng('${match}')">${p}</div>`
+            : `<div class="a-tag" style="background:var(--s2);color:var(--t2);border:1px solid var(--s3)">${p}</div>`;
+        }).join('')}
+        ${all.length > 60 ? `<div class="a-tag" style="color:var(--t3)">+${all.length-60} more…</div>` : ''}
+        </div></div>`;
+    })()}
     ${recs.length?`<div class="sec"><h4>In ${recs.length} Recipes</h4>
       <div class="rec-list">${recs.map(r=>`<div class="rec-row" onclick="loadRecipeInGenerator('${r.id}')">
         <div class="rr-name">${r.name}</div><div class="rr-cuisine">${r.cuisine}</div></div>`).join('')}</div></div>`:''}

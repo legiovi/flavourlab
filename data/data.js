@@ -256,6 +256,14 @@ const INGREDIENTS = [
     surprising: "Artichoke & mint — shared green terpene molecules",
   },
   {
+    id: "chilli", name: "Chilli Pepper", category: "vegetable", emoji: "🌶️",
+    aromas: ["spicy", "green", "fruity", "floral", "fatty"],
+    description: "A nightshade like the bell pepper, sharing bell-peppery notes. Green chillies are green-fatty and grassy; ripe red ones lose green notes and gain concentrated floral, fruity-citrus aromas (heat from capsaicin).",
+    pairings: ["lime", "coriander", "mango", "chocolate", "beef", "tomato", "garlic"],
+    classic: "Chilli & lime — Thai/Mexican balance of heat and acid",
+    surprising: "Chilli & chocolate — Oaxacan mole, shared fruity-spicy depth",
+  },
+  {
     id: "fennel", name: "Fennel", category: "vegetable", emoji: "🌱",
     aromas: ["spicy", "green", "citrus", "woody", "floral"],
     description: "Anethole gives the sweet anise note; fresh bulb adds green, citrus crispness. Mellows to silky sweetness when braised.",

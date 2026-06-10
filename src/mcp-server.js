@@ -52,6 +52,8 @@ function getVariations(id, n = 6) {
 
 const RECIPES = JSON.parse(readFileSync(join(dataPath, "recipes.json"), "utf-8"));
 const BASES = JSON.parse(readFileSync(join(dataPath, "culinary_bases.json"), "utf-8"));
+let BOOK_PAIRINGS = {};
+try { BOOK_PAIRINGS = JSON.parse(readFileSync(join(dataPath, "book_pairings.json"), "utf-8")); } catch {}
 const ingMap = Object.fromEntries(INGREDIENTS.map(i => [i.id, i]));
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -416,6 +418,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
               ...p,
               sharedAromaLabels: p.sharedAromas.map(a => AROMA_NOTES[a]?.label || a),
             })),
+            bookPairings: [
+              ...(BOOK_PAIRINGS[ing.id]?.named || []),
+              ...(BOOK_PAIRINGS[ing.id]?.grid || []),
+            ],
           }, null, 2),
         }],
       };

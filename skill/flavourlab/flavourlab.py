@@ -24,6 +24,10 @@ AROMA = ING["aromas"]
 CATLABEL = ING["categoryLabels"]
 RECIPES = json.load(open(os.path.join(D, "recipes.json")))
 BASES = json.load(open(os.path.join(D, "culinary_bases.json")))
+try:
+    BOOK_PAIRINGS = json.load(open(os.path.join(D, "book_pairings.json")))
+except Exception:
+    BOOK_PAIRINGS = {}
 SWAP_FAMILY = ING.get("swapFamily", {})
 IMAP = {i["id"]: i for i in INGREDIENTS}
 
@@ -78,8 +82,12 @@ def pairings(iid, top=10):
                 "strength": len(shared), "verified": verified,
             })
     out.sort(key=lambda x: (x["strength"], x["verified"]), reverse=True)
+    bp = BOOK_PAIRINGS.get(iid, {})
+    book_list = (bp.get("named", []) + bp.get("grid", []))
     return {"ingredient": ing["name"], "classic": ing.get("classic"),
-            "surprising": ing.get("surprising"), "pairings": out[:top]}
+            "surprising": ing.get("surprising"), "pairings": out[:top],
+            "bookPairings": book_list,
+            "bookPairingCount": len(book_list)}
 
 
 def harmony(ids):
