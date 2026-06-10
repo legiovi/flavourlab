@@ -22,6 +22,10 @@
   ],
   [
    "almond",
+   "blackberry"
+  ],
+  [
+   "almond",
    "blackcurrant"
   ],
   [
@@ -34,7 +38,27 @@
   ],
   [
    "almond",
+   "cardamom"
+  ],
+  [
+   "almond",
+   "cauliflower"
+  ],
+  [
+   "almond",
+   "cherry"
+  ],
+  [
+   "almond",
    "chicken"
+  ],
+  [
+   "almond",
+   "chilli"
+  ],
+  [
+   "almond",
+   "chocolate"
   ],
   [
    "almond",
@@ -50,11 +74,31 @@
   ],
   [
    "almond",
+   "fig"
+  ],
+  [
+   "almond",
    "garlic"
   ],
   [
    "almond",
+   "ginger"
+  ],
+  [
+   "almond",
    "grape"
+  ],
+  [
+   "almond",
+   "hard cheese"
+  ],
+  [
+   "almond",
+   "hazelnut"
+  ],
+  [
+   "almond",
+   "lamb"
   ],
   [
    "almond",
@@ -74,7 +118,15 @@
   ],
   [
    "almond",
+   "orange"
+  ],
+  [
+   "almond",
    "peach"
+  ],
+  [
+   "almond",
+   "pear"
   ],
   [
    "almond",
@@ -82,11 +134,35 @@
   ],
   [
    "almond",
+   "rhubarb"
+  ],
+  [
+   "almond",
    "rose"
   ],
   [
    "almond",
+   "rosemary"
+  ],
+  [
+   "almond",
    "saffron"
+  ],
+  [
+   "almond",
+   "shellfish"
+  ],
+  [
+   "almond",
+   "strawberry"
+  ],
+  [
+   "almond",
+   "white chocolate"
+  ],
+  [
+   "anchovy",
+   "beef"
   ],
   [
    "anchovy",
@@ -110,7 +186,19 @@
   ],
   [
    "anchovy",
+   "coconut"
+  ],
+  [
+   "anchovy",
+   "egg"
+  ],
+  [
+   "anchovy",
    "garlic"
+  ],
+  [
+   "anchovy",
+   "hard cheese"
   ],
   [
    "anchovy",
@@ -118,7 +206,15 @@
   ],
   [
    "anchovy",
+   "lemon"
+  ],
+  [
+   "anchovy",
    "lime"
+  ],
+  [
+   "anchovy",
+   "olive"
   ],
   [
    "anchovy",
@@ -134,6 +230,14 @@
   ],
   [
    "anchovy",
+   "rosemary"
+  ],
+  [
+   "anchovy",
+   "sage"
+  ],
+  [
+   "anchovy",
    "soft cheese"
   ],
   [
@@ -142,7 +246,15 @@
   ],
   [
    "anchovy",
+   "watercress"
+  ],
+  [
+   "anchovy",
    "white fish"
+  ],
+  [
+   "anise",
+   "apple"
   ],
   [
    "anise",
@@ -158,11 +270,19 @@
   ],
   [
    "anise",
+   "basil"
+  ],
+  [
+   "anise",
    "beef"
   ],
   [
    "anise",
    "blackcurrant"
+  ],
+  [
+   "anise",
+   "carrot"
   ],
   [
    "anise",
@@ -198,6 +318,10 @@
   ],
   [
    "anise",
+   "goat's cheese"
+  ],
+  [
+   "anise",
    "grape"
   ],
   [
@@ -207,6 +331,10 @@
   [
    "anise",
    "lamb"
+  ],
+  [
+   "anise",
+   "lemon"
   ],
   [
    "anise",
@@ -222,7 +350,19 @@
   ],
   [
    "anise",
+   "oily fish"
+  ],
+  [
+   "anise",
+   "olive"
+  ],
+  [
+   "anise",
    "orange"
+  ],
+  [
+   "anise",
+   "oyster"
   ],
   [
    "anise",
@@ -230,7 +370,31 @@
   ],
   [
    "anise",
+   "pea"
+  ],
+  [
+   "anise",
+   "pear"
+  ],
+  [
+   "anise",
+   "pineapple"
+  ],
+  [
+   "anise",
    "pork"
+  ],
+  [
+   "anise",
+   "rhubarb"
+  ],
+  [
+   "anise",
+   "saffron"
+  ],
+  [
+   "anise",
+   "shellfish"
   ],
   [
    "anise",
@@ -238,7 +402,19 @@
   ],
   [
    "anise",
+   "swede"
+  ],
+  [
+   "anise",
+   "tomato"
+  ],
+  [
+   "anise",
    "vanilla"
+  ],
+  [
+   "anise",
+   "walnut"
   ],
   [
    "anise",
@@ -258,11 +434,27 @@
   ],
   [
    "apple",
+   "blackberry"
+  ],
+  [
+   "apple",
+   "blueberry"
+  ],
+  [
+   "apple",
+   "butternut squash"
+  ],
+  [
+   "apple",
    "cabbage"
   ],
   [
    "apple",
    "carrot"
+  ],
+  [
+   "apple",
+   "celery"
   ],
   [
    "apple",
@@ -282,6 +474,10 @@
   ],
   [
    "apple",
+   "hazelnut"
+  ],
+  [
+   "apple",
    "horseradish"
   ],
   [
@@ -291,6 +487,14 @@
   [
    "apple",
    "mango"
+  ],
+  [
+   "apple",
+   "nutmeg"
+  ],
+  [
+   "apple",
+   "orange"
   ],
   [
    "apple",
@@ -306,7 +510,23 @@
   ],
   [
    "apple",
+   "pork"
+  ],
+  [
+   "apple",
+   "rose"
+  ],
+  [
+   "apple",
+   "sage"
+  ],
+  [
+   "apple",
    "shellfish"
+  ],
+  [
+   "apple",
+   "soft cheese"
   ],
   [
    "apple",
@@ -322,6 +542,10 @@
   ],
   [
    "apricot",
+   "chocolate"
+  ],
+  [
+   "apricot",
    "cinnamon"
   ],
   [
@@ -330,7 +554,15 @@
   ],
   [
    "apricot",
+   "ginger"
+  ],
+  [
+   "apricot",
    "goat's cheese"
+  ],
+  [
+   "apricot",
+   "hard cheese"
   ],
   [
    "apricot",
@@ -338,7 +570,35 @@
   ],
   [
    "apricot",
+   "mango"
+  ],
+  [
+   "apricot",
+   "mushroom"
+  ],
+  [
+   "apricot",
+   "orange"
+  ],
+  [
+   "apricot",
+   "peach"
+  ],
+  [
+   "apricot",
+   "pork"
+  ],
+  [
+   "apricot",
+   "raspberry"
+  ],
+  [
+   "apricot",
    "rose"
+  ],
+  [
+   "apricot",
+   "rosemary"
   ],
   [
    "apricot",
@@ -350,6 +610,14 @@
   ],
   [
    "asparagus",
+   "hard cheese"
+  ],
+  [
+   "asparagus",
+   "lemon"
+  ],
+  [
+   "asparagus",
    "mint"
   ],
   [
@@ -358,7 +626,15 @@
   ],
   [
    "asparagus",
+   "oily fish"
+  ],
+  [
+   "asparagus",
    "orange"
+  ],
+  [
+   "asparagus",
+   "pea"
   ],
   [
    "asparagus",
@@ -366,7 +642,15 @@
   ],
   [
    "asparagus",
+   "potato"
+  ],
+  [
+   "asparagus",
    "prosciutto"
+  ],
+  [
+   "asparagus",
+   "shellfish"
   ],
   [
    "asparagus",
@@ -378,7 +662,19 @@
   ],
   [
    "aubergine",
+   "bell pepper"
+  ],
+  [
+   "aubergine",
    "chilli"
+  ],
+  [
+   "aubergine",
+   "garlic"
+  ],
+  [
+   "aubergine",
+   "ginger"
   ],
   [
    "aubergine",
@@ -390,7 +686,19 @@
   ],
   [
    "aubergine",
+   "prosciutto"
+  ],
+  [
+   "aubergine",
+   "soft cheese"
+  ],
+  [
+   "aubergine",
    "tomato"
+  ],
+  [
+   "aubergine",
+   "walnut"
   ],
   [
    "avocado",
@@ -402,7 +710,23 @@
   ],
   [
    "avocado",
+   "chicken"
+  ],
+  [
+   "avocado",
+   "chilli"
+  ],
+  [
+   "avocado",
+   "chocolate"
+  ],
+  [
+   "avocado",
    "coffee"
+  ],
+  [
+   "avocado",
+   "coriander leaf"
   ],
   [
    "avocado",
@@ -414,7 +738,27 @@
   ],
   [
    "avocado",
+   "grape"
+  ],
+  [
+   "avocado",
+   "grapefruit"
+  ],
+  [
+   "avocado",
+   "hazelnut"
+  ],
+  [
+   "avocado",
+   "lime"
+  ],
+  [
+   "avocado",
    "mango"
+  ],
+  [
+   "avocado",
+   "mint"
   ],
   [
    "avocado",
@@ -422,11 +766,43 @@
   ],
   [
    "avocado",
+   "oily fish"
+  ],
+  [
+   "avocado",
+   "pineapple"
+  ],
+  [
+   "avocado",
    "shellfish"
   ],
   [
    "avocado",
+   "soft cheese"
+  ],
+  [
+   "avocado",
+   "strawberry"
+  ],
+  [
+   "avocado",
    "tomato"
+  ],
+  [
+   "bacon",
+   "banana"
+  ],
+  [
+   "bacon",
+   "beef"
+  ],
+  [
+   "bacon",
+   "bell pepper"
+  ],
+  [
+   "bacon",
+   "black pudding"
   ],
   [
    "bacon",
@@ -442,11 +818,35 @@
   ],
   [
    "bacon",
+   "cabbage"
+  ],
+  [
+   "bacon",
+   "cardamom"
+  ],
+  [
+   "bacon",
    "chicken"
   ],
   [
    "bacon",
    "chilli"
+  ],
+  [
+   "bacon",
+   "chocolate"
+  ],
+  [
+   "bacon",
+   "clove"
+  ],
+  [
+   "bacon",
+   "egg"
+  ],
+  [
+   "bacon",
+   "globe artichoke"
   ],
   [
    "bacon",
@@ -458,11 +858,27 @@
   ],
   [
    "bacon",
+   "liver"
+  ],
+  [
+   "bacon",
+   "mushroom"
+  ],
+  [
+   "bacon",
    "onion"
   ],
   [
    "bacon",
    "orange"
+  ],
+  [
+   "bacon",
+   "oyster"
+  ],
+  [
+   "bacon",
+   "parsley"
   ],
   [
    "bacon",
@@ -482,7 +898,31 @@
   ],
   [
    "bacon",
+   "potato"
+  ],
+  [
+   "bacon",
+   "sage"
+  ],
+  [
+   "bacon",
+   "shellfish"
+  ],
+  [
+   "bacon",
    "thyme"
+  ],
+  [
+   "bacon",
+   "tomato"
+  ],
+  [
+   "bacon",
+   "truffle"
+  ],
+  [
+   "bacon",
+   "white fish"
   ],
   [
    "banana",
@@ -490,7 +930,15 @@
   ],
   [
    "banana",
+   "caviar"
+  ],
+  [
+   "banana",
    "cherry"
+  ],
+  [
+   "banana",
+   "chicken"
   ],
   [
    "banana",
@@ -506,7 +954,47 @@
   ],
   [
    "banana",
+   "coffee"
+  ],
+  [
+   "banana",
+   "egg"
+  ],
+  [
+   "banana",
+   "hard cheese"
+  ],
+  [
+   "banana",
+   "hazelnut"
+  ],
+  [
+   "banana",
+   "parsnip"
+  ],
+  [
+   "banana",
+   "peanut"
+  ],
+  [
+   "banana",
+   "pear"
+  ],
+  [
+   "banana",
+   "pineapple"
+  ],
+  [
+   "banana",
+   "vanilla"
+  ],
+  [
+   "banana",
    "walnut"
+  ],
+  [
+   "basil",
+   "chicken"
   ],
   [
    "basil",
@@ -518,6 +1006,10 @@
   ],
   [
    "basil",
+   "egg"
+  ],
+  [
+   "basil",
    "garlic"
   ],
   [
@@ -526,7 +1018,35 @@
   ],
   [
    "basil",
+   "hard cheese"
+  ],
+  [
+   "basil",
+   "lemon"
+  ],
+  [
+   "basil",
+   "lime"
+  ],
+  [
+   "basil",
+   "mint"
+  ],
+  [
+   "basil",
    "raspberry"
+  ],
+  [
+   "basil",
+   "shellfish"
+  ],
+  [
+   "basil",
+   "soft cheese"
+  ],
+  [
+   "basil",
+   "tomato"
   ],
   [
    "basil",
@@ -539,6 +1059,22 @@
   [
    "beef",
    "bell pepper"
+  ],
+  [
+   "beef",
+   "blackberry"
+  ],
+  [
+   "beef",
+   "blue cheese"
+  ],
+  [
+   "beef",
+   "broccoli"
+  ],
+  [
+   "beef",
+   "cabbage"
   ],
   [
    "beef",
@@ -566,7 +1102,15 @@
   ],
   [
    "beef",
+   "coconut"
+  ],
+  [
+   "beef",
    "coffee"
+  ],
+  [
+   "beef",
+   "dill"
   ],
   [
    "beef",
@@ -578,7 +1122,27 @@
   ],
   [
    "beef",
+   "ginger"
+  ],
+  [
+   "beef",
+   "hard cheese"
+  ],
+  [
+   "beef",
+   "horseradish"
+  ],
+  [
+   "beef",
+   "juniper"
+  ],
+  [
+   "beef",
    "lemon"
+  ],
+  [
+   "beef",
+   "lime"
   ],
   [
    "beef",
@@ -602,6 +1166,14 @@
   ],
   [
    "beef",
+   "onion"
+  ],
+  [
+   "beef",
+   "orange"
+  ],
+  [
+   "beef",
    "oyster"
   ],
   [
@@ -611,6 +1183,10 @@
   [
    "beef",
    "parsnip"
+  ],
+  [
+   "beef",
+   "pea"
   ],
   [
    "beef",
@@ -626,7 +1202,23 @@
   ],
   [
    "beef",
+   "potato"
+  ],
+  [
+   "beef",
+   "shellfish"
+  ],
+  [
+   "beef",
+   "swede"
+  ],
+  [
+   "beef",
    "thyme"
+  ],
+  [
+   "beef",
+   "tomato"
   ],
   [
    "beef",
@@ -637,12 +1229,24 @@
    "walnut"
   ],
   [
+   "beef",
+   "watercress"
+  ],
+  [
    "beetroot",
    "caper"
   ],
   [
    "beetroot",
+   "chocolate"
+  ],
+  [
+   "beetroot",
    "coconut"
+  ],
+  [
+   "beetroot",
+   "cumin"
   ],
   [
    "beetroot",
@@ -654,7 +1258,27 @@
   ],
   [
    "beetroot",
+   "goat's cheese"
+  ],
+  [
+   "beetroot",
+   "horseradish"
+  ],
+  [
+   "beetroot",
+   "liver"
+  ],
+  [
+   "beetroot",
+   "oily fish"
+  ],
+  [
+   "beetroot",
    "onion"
+  ],
+  [
+   "beetroot",
+   "orange"
   ],
   [
    "beetroot",
@@ -678,6 +1302,10 @@
   ],
   [
    "bell pepper",
+   "chilli"
+  ],
+  [
+   "bell pepper",
    "egg"
   ],
   [
@@ -689,12 +1317,28 @@
    "onion"
   ],
   [
+   "bell pepper",
+   "shellfish"
+  ],
+  [
+   "bell pepper",
+   "soft cheese"
+  ],
+  [
+   "bell pepper",
+   "tomato"
+  ],
+  [
    "black pudding",
    "chocolate"
   ],
   [
    "black pudding",
    "egg"
+  ],
+  [
+   "black pudding",
+   "lamb"
   ],
   [
    "black pudding",
@@ -711,6 +1355,18 @@
   [
    "black pudding",
    "pork"
+  ],
+  [
+   "black pudding",
+   "potato"
+  ],
+  [
+   "black pudding",
+   "rhubarb"
+  ],
+  [
+   "black pudding",
+   "shellfish"
   ],
   [
    "blackberry",
@@ -739,6 +1395,10 @@
   [
    "blackcurrant",
    "coffee"
+  ],
+  [
+   "blackcurrant",
+   "juniper"
   ],
   [
    "blackcurrant",
@@ -762,6 +1422,14 @@
   ],
   [
    "blue cheese",
+   "butternut squash"
+  ],
+  [
+   "blue cheese",
+   "cabbage"
+  ],
+  [
+   "blue cheese",
    "celery"
   ],
   [
@@ -774,7 +1442,23 @@
   ],
   [
    "blue cheese",
+   "grape"
+  ],
+  [
+   "blue cheese",
+   "grapefruit"
+  ],
+  [
+   "blue cheese",
+   "mushroom"
+  ],
+  [
+   "blue cheese",
    "peach"
+  ],
+  [
+   "blue cheese",
+   "pear"
   ],
   [
    "blue cheese",
@@ -786,6 +1470,10 @@
   ],
   [
    "blue cheese",
+   "truffle"
+  ],
+  [
+   "blue cheese",
    "walnut"
   ],
   [
@@ -794,7 +1482,23 @@
   ],
   [
    "blueberry",
+   "cinnamon"
+  ],
+  [
+   "blueberry",
    "coriander seed"
+  ],
+  [
+   "blueberry",
+   "lemon"
+  ],
+  [
+   "blueberry",
+   "mushroom"
+  ],
+  [
+   "blueberry",
+   "peach"
   ],
   [
    "blueberry",
@@ -802,7 +1506,19 @@
   ],
   [
    "broccoli",
+   "cauliflower"
+  ],
+  [
+   "broccoli",
    "chilli"
+  ],
+  [
+   "broccoli",
+   "garlic"
+  ],
+  [
+   "broccoli",
+   "hard cheese"
   ],
   [
    "broccoli",
@@ -810,7 +1526,15 @@
   ],
   [
    "broccoli",
+   "peanut"
+  ],
+  [
+   "broccoli",
    "pork"
+  ],
+  [
+   "broccoli",
+   "walnut"
   ],
   [
    "butternut squash",
@@ -822,11 +1546,27 @@
   ],
   [
    "butternut squash",
+   "cinnamon"
+  ],
+  [
+   "butternut squash",
    "ginger"
   ],
   [
    "butternut squash",
    "goat's cheese"
+  ],
+  [
+   "butternut squash",
+   "lime"
+  ],
+  [
+   "butternut squash",
+   "mushroom"
+  ],
+  [
+   "butternut squash",
+   "nutmeg"
   ],
   [
    "butternut squash",
@@ -841,6 +1581,22 @@
    "sage"
   ],
   [
+   "butternut squash",
+   "shellfish"
+  ],
+  [
+   "cabbage",
+   "carrot"
+  ],
+  [
+   "cabbage",
+   "chestnut"
+  ],
+  [
+   "cabbage",
+   "chicken"
+  ],
+  [
    "cabbage",
    "chilli"
   ],
@@ -850,7 +1606,15 @@
   ],
   [
    "cabbage",
+   "garlic"
+  ],
+  [
+   "cabbage",
    "ginger"
+  ],
+  [
+   "cabbage",
+   "juniper"
   ],
   [
    "cabbage",
@@ -862,7 +1626,19 @@
   ],
   [
    "cabbage",
+   "onion"
+  ],
+  [
+   "cabbage",
    "pork"
+  ],
+  [
+   "cabbage",
+   "potato"
+  ],
+  [
+   "cabbage",
+   "shellfish"
   ],
   [
    "cabbage",
@@ -886,7 +1662,35 @@
   ],
   [
    "caper",
+   "lamb"
+  ],
+  [
+   "caper",
+   "lemon"
+  ],
+  [
+   "caper",
+   "oily fish"
+  ],
+  [
+   "caper",
+   "olive"
+  ],
+  [
+   "caper",
+   "parsley"
+  ],
+  [
+   "caper",
    "potato"
+  ],
+  [
+   "caper",
+   "shellfish"
+  ],
+  [
+   "caper",
+   "smoked fish"
   ],
   [
    "caper",
@@ -930,6 +1734,18 @@
   ],
   [
    "cardamom",
+   "lamb"
+  ],
+  [
+   "cardamom",
+   "mango"
+  ],
+  [
+   "cardamom",
+   "pear"
+  ],
+  [
+   "cardamom",
    "rose"
   ],
   [
@@ -939,6 +1755,10 @@
   [
    "cardamom",
    "vanilla"
+  ],
+  [
+   "cardamom",
+   "white chocolate"
   ],
   [
    "carrot",
@@ -970,11 +1790,23 @@
   ],
   [
    "carrot",
+   "onion"
+  ],
+  [
+   "carrot",
+   "orange"
+  ],
+  [
+   "carrot",
    "parsley"
   ],
   [
    "carrot",
    "peanut"
+  ],
+  [
+   "carrot",
+   "swede"
   ],
   [
    "carrot",
@@ -990,11 +1822,35 @@
   ],
   [
    "cauliflower",
+   "chocolate"
+  ],
+  [
+   "cauliflower",
+   "cumin"
+  ],
+  [
+   "cauliflower",
+   "garlic"
+  ],
+  [
+   "cauliflower",
+   "hard cheese"
+  ],
+  [
+   "cauliflower",
    "nutmeg"
   ],
   [
    "cauliflower",
+   "potato"
+  ],
+  [
+   "cauliflower",
    "saffron"
+  ],
+  [
+   "cauliflower",
+   "shellfish"
   ],
   [
    "cauliflower",
@@ -1018,11 +1874,31 @@
   ],
   [
    "caviar",
+   "lemon"
+  ],
+  [
+   "caviar",
+   "oyster"
+  ],
+  [
+   "caviar",
    "potato"
   ],
   [
    "caviar",
+   "smoked fish"
+  ],
+  [
+   "caviar",
+   "soft cheese"
+  ],
+  [
+   "caviar",
    "white chocolate"
+  ],
+  [
+   "celery",
+   "chestnut"
   ],
   [
    "celery",
@@ -1042,11 +1918,23 @@
   ],
   [
    "celery",
+   "nutmeg"
+  ],
+  [
+   "celery",
    "onion"
   ],
   [
    "celery",
+   "oyster"
+  ],
+  [
+   "celery",
    "peanut"
+  ],
+  [
+   "celery",
+   "pork"
   ],
   [
    "celery",
@@ -1055,6 +1943,10 @@
   [
    "celery",
    "prosciutto"
+  ],
+  [
+   "celery",
+   "shellfish"
   ],
   [
    "celery",
@@ -1069,8 +1961,28 @@
    "walnut"
   ],
   [
+   "celery",
+   "white fish"
+  ],
+  [
    "cheese",
    "cumin"
+  ],
+  [
+   "cherry",
+   "chocolate"
+  ],
+  [
+   "cherry",
+   "cinnamon"
+  ],
+  [
+   "cherry",
+   "coconut"
+  ],
+  [
+   "cherry",
+   "coffee"
   ],
   [
    "cherry",
@@ -1086,11 +1998,35 @@
   ],
   [
    "cherry",
+   "peach"
+  ],
+  [
+   "cherry",
+   "smoked fish"
+  ],
+  [
+   "cherry",
    "vanilla"
   ],
   [
    "cherry",
    "walnut"
+  ],
+  [
+   "chestnut",
+   "chicken"
+  ],
+  [
+   "chestnut",
+   "chocolate"
+  ],
+  [
+   "chestnut",
+   "lamb"
+  ],
+  [
+   "chestnut",
+   "mushroom"
   ],
   [
    "chestnut",
@@ -1109,6 +2045,14 @@
    "rosemary"
   ],
   [
+   "chestnut",
+   "vanilla"
+  ],
+  [
+   "chicken",
+   "chilli"
+  ],
+  [
    "chicken",
    "coconut"
   ],
@@ -1123,6 +2067,30 @@
   [
    "chicken",
    "garlic"
+  ],
+  [
+   "chicken",
+   "grape"
+  ],
+  [
+   "chicken",
+   "hard cheese"
+  ],
+  [
+   "chicken",
+   "hazelnut"
+  ],
+  [
+   "chicken",
+   "lemon"
+  ],
+  [
+   "chicken",
+   "lime"
+  ],
+  [
+   "chicken",
+   "mushroom"
   ],
   [
    "chicken",
@@ -1142,7 +2110,23 @@
   ],
   [
    "chicken",
+   "peanut"
+  ],
+  [
+   "chicken",
    "pear"
+  ],
+  [
+   "chicken",
+   "potato"
+  ],
+  [
+   "chicken",
+   "rose"
+  ],
+  [
+   "chicken",
+   "saffron"
   ],
   [
    "chicken",
@@ -1154,7 +2138,19 @@
   ],
   [
    "chicken",
+   "thyme"
+  ],
+  [
+   "chicken",
+   "tomato"
+  ],
+  [
+   "chicken",
    "truffle"
+  ],
+  [
+   "chicken",
+   "walnut"
   ],
   [
    "chicken",
@@ -1163,6 +2159,14 @@
   [
    "chilli",
    "chocolate"
+  ],
+  [
+   "chilli",
+   "coconut"
+  ],
+  [
+   "chilli",
+   "coriander leaf"
   ],
   [
    "chilli",
@@ -1178,7 +2182,27 @@
   ],
   [
    "chilli",
+   "goat's cheese"
+  ],
+  [
+   "chilli",
+   "hard cheese"
+  ],
+  [
+   "chilli",
+   "lemon"
+  ],
+  [
+   "chilli",
    "lime"
+  ],
+  [
+   "chilli",
+   "liver"
+  ],
+  [
+   "chilli",
+   "mango"
   ],
   [
    "chilli",
@@ -1190,7 +2214,15 @@
   ],
   [
    "chilli",
+   "olive"
+  ],
+  [
+   "chilli",
    "orange"
+  ],
+  [
+   "chilli",
+   "oyster"
   ],
   [
    "chilli",
@@ -1202,6 +2234,18 @@
   ],
   [
    "chilli",
+   "pork"
+  ],
+  [
+   "chilli",
+   "potato"
+  ],
+  [
+   "chilli",
+   "shellfish"
+  ],
+  [
+   "chilli",
    "tomato"
   ],
   [
@@ -1209,8 +2253,32 @@
    "walnut"
   ],
   [
+   "chilli",
+   "watermelon"
+  ],
+  [
    "chocolate",
    "cinnamon"
+  ],
+  [
+   "chocolate",
+   "coconut"
+  ],
+  [
+   "chocolate",
+   "coffee"
+  ],
+  [
+   "chocolate",
+   "fig"
+  ],
+  [
+   "chocolate",
+   "ginger"
+  ],
+  [
+   "chocolate",
+   "goat's cheese"
   ],
   [
    "chocolate",
@@ -1226,7 +2294,23 @@
   ],
   [
    "chocolate",
+   "mint"
+  ],
+  [
+   "chocolate",
    "nutmeg"
+  ],
+  [
+   "chocolate",
+   "orange"
+  ],
+  [
+   "chocolate",
+   "peanut"
+  ],
+  [
+   "chocolate",
+   "pear"
   ],
   [
    "chocolate",
@@ -1234,7 +2318,19 @@
   ],
   [
    "chocolate",
+   "raspberry"
+  ],
+  [
+   "chocolate",
    "rose"
+  ],
+  [
+   "chocolate",
+   "rosemary"
+  ],
+  [
+   "chocolate",
+   "strawberry"
   ],
   [
    "chocolate",
@@ -1254,6 +2350,10 @@
   ],
   [
    "chocolate",
+   "watermelon"
+  ],
+  [
+   "chocolate",
    "white chocolate"
   ],
   [
@@ -1266,11 +2366,23 @@
   ],
   [
    "cinnamon",
+   "coffee"
+  ],
+  [
+   "cinnamon",
    "fig"
   ],
   [
    "cinnamon",
    "ginger"
+  ],
+  [
+   "cinnamon",
+   "grapefruit"
+  ],
+  [
+   "cinnamon",
+   "lamb"
   ],
   [
    "cinnamon",
@@ -1290,6 +2402,14 @@
   ],
   [
    "cinnamon",
+   "pear"
+  ],
+  [
+   "cinnamon",
+   "pineapple"
+  ],
+  [
+   "cinnamon",
    "pork"
   ],
   [
@@ -1298,11 +2418,27 @@
   ],
   [
    "cinnamon",
+   "strawberry"
+  ],
+  [
+   "cinnamon",
    "thyme"
   ],
   [
    "cinnamon",
+   "tomato"
+  ],
+  [
+   "cinnamon",
    "walnut"
+  ],
+  [
+   "cinnamon",
+   "watermelon"
+  ],
+  [
+   "clove",
+   "coffee"
   ],
   [
    "clove",
@@ -1314,7 +2450,19 @@
   ],
   [
    "clove",
+   "onion"
+  ],
+  [
+   "clove",
+   "orange"
+  ],
+  [
+   "clove",
    "peach"
+  ],
+  [
+   "clove",
+   "pork"
   ],
   [
    "clove",
@@ -1334,6 +2482,10 @@
   ],
   [
    "coconut",
+   "egg"
+  ],
+  [
+   "coconut",
    "lemon"
   ],
   [
@@ -1342,7 +2494,15 @@
   ],
   [
    "coconut",
+   "mango"
+  ],
+  [
+   "coconut",
    "peanut"
+  ],
+  [
+   "coconut",
+   "pineapple"
   ],
   [
    "coconut",
@@ -1350,11 +2510,55 @@
   ],
   [
    "coconut",
+   "raspberry"
+  ],
+  [
+   "coconut",
+   "shellfish"
+  ],
+  [
+   "coconut",
+   "smoked fish"
+  ],
+  [
+   "coconut",
+   "strawberry"
+  ],
+  [
+   "coconut",
+   "vanilla"
+  ],
+  [
+   "coconut",
+   "white chocolate"
+  ],
+  [
+   "coconut",
    "white fish"
   ],
   [
    "coffee",
+   "coriander seed"
+  ],
+  [
+   "coffee",
+   "ginger"
+  ],
+  [
+   "coffee",
+   "goat's cheese"
+  ],
+  [
+   "coffee",
+   "hazelnut"
+  ],
+  [
+   "coffee",
    "orange"
+  ],
+  [
+   "coffee",
+   "rose"
   ],
   [
    "coffee",
@@ -1378,7 +2582,15 @@
   ],
   [
    "coriander leaf",
+   "garlic"
+  ],
+  [
+   "coriander leaf",
    "goat's cheese"
+  ],
+  [
+   "coriander leaf",
+   "lamb"
   ],
   [
    "coriander leaf",
@@ -1394,7 +2606,27 @@
   ],
   [
    "coriander leaf",
+   "mint"
+  ],
+  [
+   "coriander leaf",
+   "orange"
+  ],
+  [
+   "coriander leaf",
+   "parsley"
+  ],
+  [
+   "coriander leaf",
    "peanut"
+  ],
+  [
+   "coriander leaf",
+   "pineapple"
+  ],
+  [
+   "coriander leaf",
+   "pork"
   ],
   [
    "coriander leaf",
@@ -1406,7 +2638,15 @@
   ],
   [
    "coriander leaf",
+   "tomato"
+  ],
+  [
+   "coriander leaf",
    "watermelon"
+  ],
+  [
+   "coriander leaf",
+   "white fish"
   ],
   [
    "coriander seed",
@@ -1414,11 +2654,27 @@
   ],
   [
    "coriander seed",
+   "garlic"
+  ],
+  [
+   "coriander seed",
    "goat's cheese"
   ],
   [
    "coriander seed",
+   "lemon"
+  ],
+  [
+   "coriander seed",
+   "olive"
+  ],
+  [
+   "coriander seed",
    "orange"
+  ],
+  [
+   "coriander seed",
+   "pork"
   ],
   [
    "cucumber",
@@ -1430,7 +2686,27 @@
   ],
   [
    "cucumber",
+   "garlic"
+  ],
+  [
+   "cucumber",
+   "goat's cheese"
+  ],
+  [
+   "cucumber",
+   "melon"
+  ],
+  [
+   "cucumber",
+   "mint"
+  ],
+  [
+   "cucumber",
    "oily fish"
+  ],
+  [
+   "cucumber",
+   "onion"
   ],
   [
    "cucumber",
@@ -1438,7 +2714,15 @@
   ],
   [
    "cucumber",
+   "pork"
+  ],
+  [
+   "cucumber",
    "rhubarb"
+  ],
+  [
+   "cucumber",
+   "rose"
   ],
   [
    "cucumber",
@@ -1449,8 +2733,28 @@
    "strawberry"
   ],
   [
+   "cucumber",
+   "tomato"
+  ],
+  [
+   "cucumber",
+   "watermelon"
+  ],
+  [
+   "cucumber",
+   "white fish"
+  ],
+  [
    "cumin",
    "egg"
+  ],
+  [
+   "cumin",
+   "lamb"
+  ],
+  [
+   "cumin",
+   "lemon"
   ],
   [
    "cumin",
@@ -1458,11 +2762,31 @@
   ],
   [
    "cumin",
+   "mango"
+  ],
+  [
+   "cumin",
+   "mint"
+  ],
+  [
+   "cumin",
    "oily fish"
   ],
   [
    "cumin",
+   "pork"
+  ],
+  [
+   "cumin",
+   "potato"
+  ],
+  [
+   "cumin",
    "shellfish"
+  ],
+  [
+   "dill",
+   "egg"
   ],
   [
    "dill",
@@ -1471,6 +2795,10 @@
   [
    "dill",
    "lemon"
+  ],
+  [
+   "dill",
+   "mint"
   ],
   [
    "dill",
@@ -1490,11 +2818,19 @@
   ],
   [
    "dill",
+   "potato"
+  ],
+  [
+   "dill",
    "shellfish"
   ],
   [
    "dill",
    "smoked fish"
+  ],
+  [
+   "dill",
+   "white fish"
   ],
   [
    "egg",
@@ -1506,6 +2842,10 @@
   ],
   [
    "egg",
+   "mushroom"
+  ],
+  [
+   "egg",
    "nutmeg"
   ],
   [
@@ -1514,7 +2854,19 @@
   ],
   [
    "egg",
+   "onion"
+  ],
+  [
+   "egg",
    "oyster"
+  ],
+  [
+   "egg",
+   "parsley"
+  ],
+  [
+   "egg",
+   "pea"
   ],
   [
    "egg",
@@ -1534,6 +2886,10 @@
   ],
   [
    "egg",
+   "shellfish"
+  ],
+  [
+   "egg",
    "smoked fish"
   ],
   [
@@ -1546,11 +2902,31 @@
   ],
   [
    "egg",
+   "vanilla"
+  ],
+  [
+   "egg",
    "watercress"
   ],
   [
    "fig",
+   "goat's cheese"
+  ],
+  [
+   "fig",
+   "hard cheese"
+  ],
+  [
+   "fig",
+   "hazelnut"
+  ],
+  [
+   "fig",
    "liver"
+  ],
+  [
+   "fig",
+   "mint"
   ],
   [
    "fig",
@@ -1562,7 +2938,23 @@
   ],
   [
    "fig",
+   "raspberry"
+  ],
+  [
+   "fig",
+   "soft cheese"
+  ],
+  [
+   "fig",
+   "vanilla"
+  ],
+  [
+   "fig",
    "walnut"
+  ],
+  [
+   "garlic",
+   "ginger"
   ],
   [
    "garlic",
@@ -1574,11 +2966,39 @@
   ],
   [
    "garlic",
+   "lamb"
+  ],
+  [
+   "garlic",
    "liver"
   ],
   [
    "garlic",
+   "mint"
+  ],
+  [
+   "garlic",
+   "mushroom"
+  ],
+  [
+   "garlic",
+   "oily fish"
+  ],
+  [
+   "garlic",
+   "olive"
+  ],
+  [
+   "garlic",
+   "onion"
+  ],
+  [
+   "garlic",
    "parsley"
+  ],
+  [
+   "garlic",
+   "pork"
   ],
   [
    "garlic",
@@ -1590,6 +3010,14 @@
   ],
   [
    "garlic",
+   "shellfish"
+  ],
+  [
+   "garlic",
+   "soft cheese"
+  ],
+  [
+   "garlic",
    "thyme"
   ],
   [
@@ -1597,8 +3025,36 @@
    "tomato"
   ],
   [
+   "garlic",
+   "truffle"
+  ],
+  [
+   "garlic",
+   "walnut"
+  ],
+  [
+   "garlic",
+   "white fish"
+  ],
+  [
+   "ginger",
+   "lemon"
+  ],
+  [
    "ginger",
    "lime"
+  ],
+  [
+   "ginger",
+   "mango"
+  ],
+  [
+   "ginger",
+   "melon"
+  ],
+  [
+   "ginger",
+   "mint"
   ],
   [
    "ginger",
@@ -1610,11 +3066,27 @@
   ],
   [
    "ginger",
+   "orange"
+  ],
+  [
+   "ginger",
    "pork"
   ],
   [
    "ginger",
+   "rhubarb"
+  ],
+  [
+   "ginger",
    "tomato"
+  ],
+  [
+   "ginger",
+   "vanilla"
+  ],
+  [
+   "ginger",
+   "white fish"
   ],
   [
    "globe artichoke",
@@ -1622,7 +3094,7 @@
   ],
   [
    "globe artichoke",
-   "lamb on"
+   "lamb"
   ],
   [
    "globe artichoke",
@@ -1638,6 +3110,18 @@
   ],
   [
    "globe artichoke",
+   "pea"
+  ],
+  [
+   "globe artichoke",
+   "pork"
+  ],
+  [
+   "globe artichoke",
+   "potato"
+  ],
+  [
+   "globe artichoke",
    "prosciutto"
   ],
   [
@@ -1645,12 +3129,28 @@
    "shellfish"
   ],
   [
+   "globe artichoke",
+   "truffle"
+  ],
+  [
    "goat's cheese",
    "lamb"
   ],
   [
    "goat's cheese",
+   "lemon"
+  ],
+  [
+   "goat's cheese",
+   "mint"
+  ],
+  [
+   "goat's cheese",
    "mushroom"
+  ],
+  [
+   "goat's cheese",
+   "olive"
   ],
   [
    "goat's cheese",
@@ -1662,7 +3162,19 @@
   ],
   [
    "goat's cheese",
+   "rosemary"
+  ],
+  [
+   "goat's cheese",
    "thyme"
+  ],
+  [
+   "goat's cheese",
+   "walnut"
+  ],
+  [
+   "goat's cheese",
+   "watercress"
   ],
   [
    "goat's cheese",
@@ -1670,7 +3182,31 @@
   ],
   [
    "grape",
+   "hard cheese"
+  ],
+  [
+   "grape",
+   "melon"
+  ],
+  [
+   "grape",
+   "peach"
+  ],
+  [
+   "grape",
    "peanut"
+  ],
+  [
+   "grape",
+   "pineapple"
+  ],
+  [
+   "grape",
+   "pork"
+  ],
+  [
+   "grape",
+   "rosemary"
   ],
   [
    "grape",
@@ -1679,6 +3215,30 @@
   [
    "grape",
    "strawberry"
+  ],
+  [
+   "grape",
+   "walnut"
+  ],
+  [
+   "grape",
+   "white fish"
+  ],
+  [
+   "grapefruit",
+   "juniper"
+  ],
+  [
+   "grapefruit",
+   "orange"
+  ],
+  [
+   "grapefruit",
+   "pineapple"
+  ],
+  [
+   "grapefruit",
+   "pork"
   ],
   [
    "grapefruit",
@@ -1690,11 +3250,35 @@
   ],
   [
    "hard cheese",
+   "juniper"
+  ],
+  [
+   "hard cheese",
+   "mushroom"
+  ],
+  [
+   "hard cheese",
+   "nutmeg"
+  ],
+  [
+   "hard cheese",
+   "onion"
+  ],
+  [
+   "hard cheese",
    "orange"
   ],
   [
    "hard cheese",
+   "parsnip"
+  ],
+  [
+   "hard cheese",
    "pea"
+  ],
+  [
+   "hard cheese",
+   "pear"
   ],
   [
    "hard cheese",
@@ -1714,7 +3298,19 @@
   ],
   [
    "hard cheese",
+   "tomato"
+  ],
+  [
+   "hard cheese",
    "walnut"
+  ],
+  [
+   "hard cheese",
+   "white fish"
+  ],
+  [
+   "hazelnut",
+   "pear"
   ],
   [
    "hazelnut",
@@ -1722,7 +3318,27 @@
   ],
   [
    "hazelnut",
+   "rosemary"
+  ],
+  [
+   "hazelnut",
+   "strawberry"
+  ],
+  [
+   "hazelnut",
+   "vanilla"
+  ],
+  [
+   "hazelnut",
    "white fish"
+  ],
+  [
+   "horseradish",
+   "oily fish"
+  ],
+  [
+   "horseradish",
+   "oyster"
   ],
   [
    "horseradish",
@@ -1730,7 +3346,15 @@
   ],
   [
    "horseradish",
+   "potato"
+  ],
+  [
+   "horseradish",
    "smoked fish"
+  ],
+  [
+   "horseradish",
+   "tomato"
   ],
   [
    "horseradish",
@@ -1739,6 +3363,10 @@
   [
    "juniper",
    "lemon"
+  ],
+  [
+   "juniper",
+   "olive"
   ],
   [
    "juniper",
@@ -1750,7 +3378,15 @@
   ],
   [
    "juniper",
+   "prosciutto"
+  ],
+  [
+   "juniper",
    "rhubarb"
+  ],
+  [
+   "juniper",
+   "sage"
   ],
   [
    "lamb",
@@ -1758,7 +3394,19 @@
   ],
   [
    "lamb",
+   "mint"
+  ],
+  [
+   "lamb",
    "nutmeg"
+  ],
+  [
+   "lamb",
+   "onion"
+  ],
+  [
+   "lamb",
+   "pea"
   ],
   [
    "lamb",
@@ -1766,7 +3414,23 @@
   ],
   [
    "lamb",
+   "potato"
+  ],
+  [
+   "lamb",
+   "rhubarb"
+  ],
+  [
+   "lamb",
+   "rosemary"
+  ],
+  [
+   "lamb",
    "saffron"
+  ],
+  [
+   "lamb",
+   "shellfish"
   ],
   [
    "lamb",
@@ -1777,8 +3441,32 @@
    "thyme"
   ],
   [
+   "lamb",
+   "tomato"
+  ],
+  [
+   "lemon",
+   "lime"
+  ],
+  [
+   "lemon",
+   "mint"
+  ],
+  [
+   "lemon",
+   "oily fish"
+  ],
+  [
+   "lemon",
+   "olive"
+  ],
+  [
    "lemon",
    "orange"
+  ],
+  [
+   "lemon",
+   "oyster"
   ],
   [
    "lemon",
@@ -1790,7 +3478,15 @@
   ],
   [
    "lemon",
+   "rose"
+  ],
+  [
+   "lemon",
    "rosemary"
+  ],
+  [
+   "lemon",
+   "saffron"
   ],
   [
    "lemon",
@@ -1798,7 +3494,27 @@
   ],
   [
    "lemon",
+   "smoked fish"
+  ],
+  [
+   "lemon",
+   "thyme"
+  ],
+  [
+   "lemon",
    "tomato"
+  ],
+  [
+   "lemon",
+   "white chocolate"
+  ],
+  [
+   "lemon",
+   "white fish"
+  ],
+  [
+   "lime",
+   "mango"
   ],
   [
    "lime",
@@ -1811,6 +3527,22 @@
   [
    "lime",
    "orange"
+  ],
+  [
+   "lime",
+   "peanut"
+  ],
+  [
+   "lime",
+   "shellfish"
+  ],
+  [
+   "lime",
+   "tomato"
+  ],
+  [
+   "lime",
+   "watermelon"
   ],
   [
    "lime",
@@ -1829,8 +3561,32 @@
    "sage"
   ],
   [
+   "liver",
+   "truffle"
+  ],
+  [
+   "mango",
+   "mint"
+  ],
+  [
+   "mango",
+   "orange"
+  ],
+  [
+   "mango",
+   "peach"
+  ],
+  [
+   "mango",
+   "pineapple"
+  ],
+  [
    "mango",
    "rhubarb"
+  ],
+  [
+   "mango",
+   "shellfish"
   ],
   [
    "mango",
@@ -1839,6 +3595,14 @@
   [
    "melon",
    "mint"
+  ],
+  [
+   "melon",
+   "orange"
+  ],
+  [
+   "melon",
+   "prosciutto"
   ],
   [
    "melon",
@@ -1849,8 +3613,8 @@
    "strawberry"
   ],
   [
-   "mint",
-   "mu m"
+   "melon",
+   "watermelon"
   ],
   [
    "mint",
@@ -1858,7 +3622,31 @@
   ],
   [
    "mint",
+   "oily fish"
+  ],
+  [
+   "mint",
+   "onion"
+  ],
+  [
+   "mint",
+   "orange"
+  ],
+  [
+   "mint",
    "parsley"
+  ],
+  [
+   "mint",
+   "pea"
+  ],
+  [
+   "mint",
+   "peanut"
+  ],
+  [
+   "mint",
+   "potato"
   ],
   [
    "mint",
@@ -1866,7 +3654,15 @@
   ],
   [
    "mint",
+   "strawberry"
+  ],
+  [
+   "mint",
    "watermelon"
+  ],
+  [
+   "mushroom",
+   "oily fish"
   ],
   [
    "mushroom",
@@ -1874,7 +3670,27 @@
   ],
   [
    "mushroom",
+   "oyster"
+  ],
+  [
+   "mushroom",
+   "parsley"
+  ],
+  [
+   "mushroom",
+   "pork"
+  ],
+  [
+   "mushroom",
    "potato"
+  ],
+  [
+   "mushroom",
+   "rosemary"
+  ],
+  [
+   "mushroom",
+   "shellfish"
   ],
   [
    "mushroom",
@@ -1882,7 +3698,19 @@
   ],
   [
    "mushroom",
+   "thyme"
+  ],
+  [
+   "mushroom",
+   "tomato"
+  ],
+  [
+   "mushroom",
    "truffle"
+  ],
+  [
+   "mushroom",
+   "walnut"
   ],
   [
    "mushroom",
@@ -1898,11 +3726,27 @@
   ],
   [
    "nutmeg",
+   "parsnip"
+  ],
+  [
+   "nutmeg",
    "potato"
   ],
   [
    "nutmeg",
+   "saffron"
+  ],
+  [
+   "nutmeg",
+   "shellfish"
+  ],
+  [
+   "nutmeg",
    "swede"
+  ],
+  [
+   "nutmeg",
+   "tomato"
   ],
   [
    "nutmeg",
@@ -1918,6 +3762,18 @@
   ],
   [
    "oily fish",
+   "parsley"
+  ],
+  [
+   "oily fish",
+   "pea"
+  ],
+  [
+   "oily fish",
+   "pork"
+  ],
+  [
+   "oily fish",
    "potato"
   ],
   [
@@ -1930,7 +3786,35 @@
   ],
   [
    "oily fish",
+   "shellfish"
+  ],
+  [
+   "oily fish",
+   "thyme"
+  ],
+  [
+   "oily fish",
    "watercress"
+  ],
+  [
+   "olive",
+   "orange"
+  ],
+  [
+   "olive",
+   "potato"
+  ],
+  [
+   "olive",
+   "prosciutto"
+  ],
+  [
+   "olive",
+   "rosemary"
+  ],
+  [
+   "olive",
+   "shellfish"
   ],
   [
    "olive",
@@ -1942,11 +3826,23 @@
   ],
   [
    "olive",
+   "white chocolate"
+  ],
+  [
+   "olive",
    "white fish"
   ],
   [
    "onion",
+   "orange"
+  ],
+  [
+   "onion",
    "oyster"
+  ],
+  [
+   "onion",
+   "pea"
   ],
   [
    "onion",
@@ -1958,6 +3854,10 @@
   ],
   [
    "onion",
+   "rosemary"
+  ],
+  [
+   "onion",
    "sage"
   ],
   [
@@ -1965,8 +3865,32 @@
    "smoked fish"
   ],
   [
+   "onion",
+   "thyme"
+  ],
+  [
+   "onion",
+   "tomato"
+  ],
+  [
+   "orange",
+   "peach"
+  ],
+  [
+   "orange",
+   "pineapple"
+  ],
+  [
    "orange",
    "rhubarb"
+  ],
+  [
+   "orange",
+   "rose"
+  ],
+  [
+   "orange",
+   "rosemary"
   ],
   [
    "orange",
@@ -1982,6 +3906,14 @@
   ],
   [
    "orange",
+   "vanilla"
+  ],
+  [
+   "orange",
+   "walnut"
+  ],
+  [
+   "orange",
    "watercress"
   ],
   [
@@ -1989,12 +3921,16 @@
    "white fish"
   ],
   [
-   "ouly fish",
-   "watercress"
+   "oyster",
+   "parsley"
   ],
   [
    "oyster",
-   "parsley"
+   "pork"
+  ],
+  [
+   "oyster",
+   "watermelon"
   ],
   [
    "parsley",
@@ -2005,8 +3941,28 @@
    "shellfish"
   ],
   [
+   "parsley",
+   "smoked fish"
+  ],
+  [
+   "parsley",
+   "walnut"
+  ],
+  [
+   "parsley",
+   "white fish"
+  ],
+  [
    "parsnip",
    "pea"
+  ],
+  [
+   "parsnip",
+   "pork"
+  ],
+  [
+   "parsnip",
+   "potato"
   ],
   [
    "parsnip",
@@ -2021,8 +3977,20 @@
    "watercress"
   ],
   [
+   "parsnip",
+   "white fish"
+  ],
+  [
+   "pea",
+   "pork"
+  ],
+  [
    "pea",
    "potato"
+  ],
+  [
+   "pea",
+   "prosciutto"
   ],
   [
    "pea",
@@ -2034,7 +4002,15 @@
   ],
   [
    "pea",
+   "smoked fish"
+  ],
+  [
+   "pea",
    "white fish"
+  ],
+  [
+   "peach",
+   "prosciutto"
   ],
   [
    "peach",
@@ -2050,6 +4026,14 @@
   ],
   [
    "peanut",
+   "pork"
+  ],
+  [
+   "peanut",
+   "potato"
+  ],
+  [
+   "peanut",
    "shellfish"
   ],
   [
@@ -2059,6 +4043,10 @@
   [
    "peanut",
    "vanilla"
+  ],
+  [
+   "pear",
+   "pork"
   ],
   [
    "pear",
@@ -2070,11 +4058,31 @@
   ],
   [
    "pineapple",
-   "pork on"
+   "pork"
+  ],
+  [
+   "pineapple",
+   "prosciutto"
+  ],
+  [
+   "pineapple",
+   "raspberry"
+  ],
+  [
+   "pineapple",
+   "sage"
   ],
   [
    "pineapple",
    "shellfish"
+  ],
+  [
+   "pineapple",
+   "strawberry"
+  ],
+  [
+   "pineapple",
+   "vanilla"
   ],
   [
    "pineapple",
@@ -2086,7 +4094,19 @@
   ],
   [
    "pork",
+   "rhubarb"
+  ],
+  [
+   "pork",
    "rosemary"
+  ],
+  [
+   "pork",
+   "sage"
+  ],
+  [
+   "pork",
+   "shellfish"
   ],
   [
    "pork",
@@ -2103,6 +4123,14 @@
   [
    "pork",
    "truffle"
+  ],
+  [
+   "pork",
+   "watercress"
+  ],
+  [
+   "pork",
+   "watermelon"
   ],
   [
    "potato",
@@ -2133,8 +4161,20 @@
    "truffle"
   ],
   [
+   "potato",
+   "watercress"
+  ],
+  [
+   "potato",
+   "white fish"
+  ],
+  [
    "prosciutto",
    "sage"
+  ],
+  [
+   "prosciutto",
+   "tomato"
   ],
   [
    "prosciutto",
@@ -2142,7 +4182,23 @@
   ],
   [
    "raspberry",
+   "strawberry"
+  ],
+  [
+   "raspberry",
    "vanilla"
+  ],
+  [
+   "raspberry",
+   "white chocolate"
+  ],
+  [
+   "rhubarb",
+   "rosemary"
+  ],
+  [
+   "rhubarb",
+   "saffron"
   ],
   [
    "rhubarb",
@@ -2153,8 +4209,56 @@
    "vanilla"
   ],
   [
+   "rose",
+   "saffron"
+  ],
+  [
+   "rosemary",
+   "watermelon"
+  ],
+  [
+   "saffron",
+   "shellfish"
+  ],
+  [
+   "saffron",
+   "white chocolate"
+  ],
+  [
+   "saffron",
+   "white fish"
+  ],
+  [
+   "sage",
+   "tomato"
+  ],
+  [
+   "shellfish",
+   "smoked fish"
+  ],
+  [
    "shellfish",
    "thyme"
+  ],
+  [
+   "shellfish",
+   "tomato"
+  ],
+  [
+   "shellfish",
+   "truffle"
+  ],
+  [
+   "shellfish",
+   "vanilla"
+  ],
+  [
+   "shellfish",
+   "walnut"
+  ],
+  [
+   "shellfish",
+   "watercress"
   ],
   [
    "shellfish",
@@ -2163,6 +4267,14 @@
   [
    "smoked fish",
    "soft cheese"
+  ],
+  [
+   "smoked fish",
+   "watercress"
+  ],
+  [
+   "soft cheese",
+   "strawberry"
   ],
   [
    "soft cheese",
@@ -2181,8 +4293,36 @@
    "tomato"
   ],
   [
+   "strawberry",
+   "vanilla"
+  ],
+  [
+   "strawberry",
+   "white chocolate"
+  ],
+  [
    "thyme",
    "tomato"
+  ],
+  [
+   "thyme",
+   "white fish"
+  ],
+  [
+   "tomato",
+   "vanilla"
+  ],
+  [
+   "tomato",
+   "watermelon"
+  ],
+  [
+   "tomato",
+   "white fish"
+  ],
+  [
+   "vanilla",
+   "walnut"
   ],
   [
    "walnut",
@@ -2246,21 +4386,18 @@
   "horseradish",
   "juniper",
   "lamb",
-  "lamb on",
   "lemon",
   "lime",
   "liver",
   "mango",
   "melon",
   "mint",
-  "mu m",
   "mushroom",
   "nutmeg",
   "oily fish",
   "olive",
   "onion",
   "orange",
-  "ouly fish",
   "oyster",
   "parsley",
   "parsnip",
@@ -2270,7 +4407,6 @@
   "pear",
   "pineapple",
   "pork",
-  "pork on",
   "potato",
   "prosciutto",
   "raspberry",
