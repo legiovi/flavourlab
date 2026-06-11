@@ -62,6 +62,18 @@ INGREDIENT_MAP = {
     r'saffron':'saffron', r'juniper':'juniper', r'horseradish':'horseradish',
     r'walnut':'walnut', r'chestnut':'chestnut', r'peanut':'peanut', r'\bcaper':'caper',
     r'anchov':'anchovy', r'caviar':'caviar',
+    # remaining thesaurus flavors
+    r'\bgrape\b|grapes':'grape', r'rose water|rosewater|rose petal':'rose',
+    r'white chocolate':'white-chocolate', r'\bpea\b|peas|petit pois':'pea',
+    r'blackcurrant|black currant|cassis':'blackcurrant', r'blackberr':'blackberry',
+    r'\bmelon\b|cantaloupe|honeydew':'melon', r'black pudding|blood sausage':'black-pudding',
+    r'\bliver\b|foie gras':'liver',
+    # common spices
+    r'paprika|piment[oó]n':'paprika', r'turmeric':'turmeric', r'coriander seed':'coriander-seed',
+    r'allspice':'allspice', r'caraway':'caraway', r'\bmustard\b':'mustard',
+    r'\bbay leaf|bay leaves|\bbay\b':'bay-leaf', r'sumac':'sumac', r'fenugreek':'fenugreek',
+    # common herbs
+    r'oregano':'oregano', r'tarragon':'tarragon', r'chive':'chives',
 }
 COMPILED = [(re.compile(r'\b' + pat if not pat.startswith(r'\b') else pat, re.I), iid)
             for pat, iid in INGREDIENT_MAP.items()]

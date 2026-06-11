@@ -3086,6 +3086,486 @@
    ],
    "classic": "Caviar & blini with crème fraîche",
    "surprising": "Caviar & white chocolate — shared creamy amines"
+  },
+  {
+   "id": "grape",
+   "name": "Grape",
+   "category": "fruit",
+   "emoji": "🍇",
+   "aromas": [
+    "fruity",
+    "floral",
+    "green",
+    "honey"
+   ],
+   "description": "Sweet, musky and floral — the source of wine. Methyl anthranilate gives the 'foxy' Concord-grape note.",
+   "pairings": [
+    "cheese-blue",
+    "cheese-goat",
+    "walnut",
+    "rosemary",
+    "pork",
+    "cheese-parmesan"
+   ],
+   "classic": "Grape & cheese — the cheeseboard staple",
+   "surprising": "Grape & rosemary — roasted on focaccia (schiacciata)"
+  },
+  {
+   "id": "rose",
+   "name": "Rose",
+   "category": "herb",
+   "emoji": "🌹",
+   "aromas": [
+    "floral",
+    "fruity",
+    "honey",
+    "citrus"
+   ],
+   "description": "Heady, sweet floral with citrus and honey facets. Defines Middle Eastern and Indian sweets; geraniol links it to lychee and raspberry.",
+   "pairings": [
+    "raspberry",
+    "cardamom",
+    "pistachio",
+    "lamb",
+    "strawberry",
+    "vanilla"
+   ],
+   "classic": "Rose & raspberry — shared floral terpenes (Ispahan)",
+   "surprising": "Rose & lamb — Persian and Moroccan tagines"
+  },
+  {
+   "id": "white-chocolate",
+   "name": "White Chocolate",
+   "category": "other",
+   "emoji": "🍫",
+   "aromas": [
+    "caramel",
+    "fatty",
+    "floral",
+    "honey"
+   ],
+   "description": "Cocoa butter, milk and sugar — creamy, vanillic and sweet with no cocoa solids. Lactones give it a milky, coconut-like richness.",
+   "pairings": [
+    "raspberry",
+    "caviar",
+    "coconut",
+    "saffron",
+    "lemon",
+    "cardamom"
+   ],
+   "classic": "White chocolate & raspberry — sweet-tart balance",
+   "surprising": "White chocolate & caviar — shared creamy amine notes"
+  },
+  {
+   "id": "pea",
+   "name": "Pea",
+   "category": "vegetable",
+   "emoji": "🟢",
+   "aromas": [
+    "green",
+    "earthy",
+    "floral",
+    "fatty"
+   ],
+   "description": "Sweet and grassy with a fresh, green snap. Pyrazines give the characteristic 'green pea' aroma.",
+   "pairings": [
+    "mint",
+    "iberico-ham",
+    "cheese-parmesan",
+    "fish",
+    "egg",
+    "lemon"
+   ],
+   "classic": "Pea & mint — spring soup and risotto",
+   "surprising": "Pea & coconut — green sweetness over creaminess"
+  },
+  {
+   "id": "blackcurrant",
+   "name": "Blackcurrant",
+   "category": "fruit",
+   "emoji": "🫐",
+   "aromas": [
+    "fruity",
+    "floral",
+    "green",
+    "sulfurous"
+   ],
+   "description": "Intensely tart, musky berry with a green, catty edge — the signature note of Cabernet Sauvignon and Ribena.",
+   "pairings": [
+    "chocolate",
+    "cabernet-sauvignon",
+    "mint",
+    "almond",
+    "vanilla",
+    "lamb"
+   ],
+   "classic": "Blackcurrant & chocolate — dark and tart (cassis)",
+   "surprising": "Blackcurrant & cabernet — shared green-fruity pyrazines"
+  },
+  {
+   "id": "blackberry",
+   "name": "Blackberry",
+   "category": "fruit",
+   "emoji": "🫐",
+   "aromas": [
+    "fruity",
+    "floral",
+    "woody",
+    "earthy"
+   ],
+   "description": "Deep, winey berry — sweet-tart with a faint earthy, almost vanilla depth when ripe.",
+   "pairings": [
+    "apple",
+    "almond",
+    "chocolate",
+    "bay-leaf",
+    "vanilla",
+    "cinnamon"
+   ],
+   "classic": "Blackberry & apple — the hedgerow crumble",
+   "surprising": "Blackberry & bay — savoury herbal note over the fruit"
+  },
+  {
+   "id": "melon",
+   "name": "Melon",
+   "category": "fruit",
+   "emoji": "🍈",
+   "aromas": [
+    "fruity",
+    "green",
+    "floral",
+    "tropical"
+   ],
+   "description": "Cantaloupe and honeydew — musky, sweet and watery-green. Esters give it a perfumed, tropical lift.",
+   "pairings": [
+    "iberico-ham",
+    "mint",
+    "ginger",
+    "feta",
+    "lime",
+    "cucumber"
+   ],
+   "classic": "Melon & prosciutto — the antipasto classic",
+   "surprising": "Melon & ginger — warm spice over cool fruit"
+  },
+  {
+   "id": "black-pudding",
+   "name": "Black Pudding",
+   "category": "protein",
+   "emoji": "🥩",
+   "aromas": [
+    "earthy",
+    "spicy",
+    "fatty",
+    "smoky"
+   ],
+   "description": "Rich blood sausage — earthy, mineral and warmly spiced (allspice, pepper). Iron-deep and savoury.",
+   "pairings": [
+    "apple",
+    "egg",
+    "chocolate",
+    "pork",
+    "onion",
+    "thyme"
+   ],
+   "classic": "Black pudding & apple — sweet-savoury full breakfast",
+   "surprising": "Black pudding & chocolate — shared earthy, mineral depth"
+  },
+  {
+   "id": "liver",
+   "name": "Liver",
+   "category": "protein",
+   "emoji": "🥩",
+   "aromas": [
+    "earthy",
+    "fatty",
+    "spicy",
+    "floral"
+   ],
+   "description": "Rich, mineral-iron offal — creamy when made into pâté, robust when pan-fried. Jasmine's indole curiously links to it.",
+   "pairings": [
+    "onion",
+    "sage",
+    "jasmine",
+    "apple",
+    "bacon",
+    "cognac"
+   ],
+   "classic": "Liver & onions — the comfort-food pairing",
+   "surprising": "Liver & jasmine — shared indole (the foodpairing origin story)"
+  },
+  {
+   "id": "paprika",
+   "name": "Paprika",
+   "category": "spice",
+   "emoji": "🌶️",
+   "aromas": [
+    "spicy",
+    "smoky",
+    "fruity",
+    "earthy"
+   ],
+   "description": "Ground dried peppers — sweet and fruity, or deeply smoky (pimentón). Colours and warms without fierce heat.",
+   "pairings": [
+    "chorizo",
+    "chicken",
+    "potato",
+    "garlic",
+    "egg",
+    "octopus"
+   ],
+   "classic": "Paprika & potato — Hungarian goulash, patatas",
+   "surprising": "Smoked paprika & chocolate — shared smoky depth"
+  },
+  {
+   "id": "turmeric",
+   "name": "Turmeric",
+   "category": "spice",
+   "emoji": "🟡",
+   "aromas": [
+    "earthy",
+    "spicy",
+    "woody",
+    "citrus"
+   ],
+   "description": "Warm, earthy, faintly bitter and peppery with a golden colour. The backbone of curry powder.",
+   "pairings": [
+    "cumin",
+    "ginger",
+    "coconut",
+    "cauliflower",
+    "chicken",
+    "lentil"
+   ],
+   "classic": "Turmeric & cumin — the curry base",
+   "surprising": "Turmeric & cauliflower — earthy aloo gobi"
+  },
+  {
+   "id": "coriander-seed",
+   "name": "Coriander Seed",
+   "category": "spice",
+   "emoji": "🟤",
+   "aromas": [
+    "citrus",
+    "woody",
+    "floral",
+    "spicy"
+   ],
+   "description": "Warm, citrusy and nutty — quite distinct from the fresh leaf. Linalool gives the floral-citrus lift.",
+   "pairings": [
+    "cumin",
+    "orange",
+    "carrot",
+    "pork",
+    "caraway",
+    "chilli"
+   ],
+   "classic": "Coriander & cumin — toasted spice-blend duo",
+   "surprising": "Coriander seed & orange — shared citrus linalool"
+  },
+  {
+   "id": "allspice",
+   "name": "Allspice",
+   "category": "spice",
+   "emoji": "🟤",
+   "aromas": [
+    "spicy",
+    "woody",
+    "floral",
+    "smoky"
+   ],
+   "description": "Tastes of cloves, cinnamon and nutmeg in one berry — warm, sweet and peppery. Key to jerk and mulling spices.",
+   "pairings": [
+    "pork",
+    "chilli",
+    "cinnamon",
+    "orange",
+    "chocolate",
+    "pumpkin"
+   ],
+   "classic": "Allspice & chilli — Jamaican jerk",
+   "surprising": "Allspice & beef — Middle Eastern kibbeh and stews"
+  },
+  {
+   "id": "caraway",
+   "name": "Caraway",
+   "category": "spice",
+   "emoji": "🟤",
+   "aromas": [
+    "spicy",
+    "woody",
+    "citrus",
+    "minty"
+   ],
+   "description": "Earthy, aniseed-like seed with a sharp, slightly minty edge. Essential to rye bread, sauerkraut and many cheeses.",
+   "pairings": [
+    "cabbage",
+    "pork",
+    "sourdough-rye",
+    "cheese-cheddar",
+    "apple",
+    "potato"
+   ],
+   "classic": "Caraway & rye — the seeded loaf",
+   "surprising": "Caraway & orange — bright lift in Nordic baking"
+  },
+  {
+   "id": "mustard",
+   "name": "Mustard",
+   "category": "spice",
+   "emoji": "🟡",
+   "aromas": [
+    "spicy",
+    "sulfurous",
+    "green"
+   ],
+   "description": "Pungent heat from the same isothiocyanates as horseradish and wasabi. Sharpens dressings, sauces and rubs.",
+   "pairings": [
+    "pork",
+    "cheese-cheddar",
+    "honey",
+    "beef",
+    "leek",
+    "chicken"
+   ],
+   "classic": "Mustard & honey — the dressing and glaze",
+   "surprising": "Mustard & rabbit — French lapin à la moutarde"
+  },
+  {
+   "id": "bay-leaf",
+   "name": "Bay Leaf",
+   "category": "herb",
+   "emoji": "🌿",
+   "aromas": [
+    "woody",
+    "minty",
+    "floral",
+    "spicy"
+   ],
+   "description": "Quietly aromatic — eucalyptus, clove and pine. The silent partner in stocks, braises and béchamel infusions.",
+   "pairings": [
+    "tomato",
+    "beef",
+    "milk",
+    "potato",
+    "lemon",
+    "chestnut"
+   ],
+   "classic": "Bay & tomato — simmered into ragù and sauce",
+   "surprising": "Bay & custard — infused into rice pudding and crème"
+  },
+  {
+   "id": "sumac",
+   "name": "Sumac",
+   "category": "spice",
+   "emoji": "🔴",
+   "aromas": [
+    "citrus",
+    "fruity",
+    "spicy"
+   ],
+   "description": "Tangy, lemony-sour red berry powder — a bright acidic seasoning without liquid. Central to za'atar and Levantine cooking.",
+   "pairings": [
+    "chicken",
+    "onion",
+    "fish",
+    "yogurt",
+    "chickpea",
+    "lemon"
+   ],
+   "classic": "Sumac & onion — over Lebanese flatbread and grills",
+   "surprising": "Sumac & strawberry — tart-fruity dessert lift"
+  },
+  {
+   "id": "fenugreek",
+   "name": "Fenugreek",
+   "category": "spice",
+   "emoji": "🟤",
+   "aromas": [
+    "caramel",
+    "earthy",
+    "spicy",
+    "nutty"
+   ],
+   "description": "Maple-syrup-and-celery aroma (sotolon) — the unmistakable note of curry powder and many spice blends.",
+   "pairings": [
+    "cumin",
+    "turmeric",
+    "chicken",
+    "potato",
+    "coconut",
+    "tomato"
+   ],
+   "classic": "Fenugreek & curry — the signature blend note",
+   "surprising": "Fenugreek & maple — shared sotolon (it smells like syrup)"
+  },
+  {
+   "id": "oregano",
+   "name": "Oregano",
+   "category": "herb",
+   "emoji": "🌿",
+   "aromas": [
+    "spicy",
+    "woody",
+    "green",
+    "minty"
+   ],
+   "description": "Warm, peppery and slightly bitter (carvacrol). Dried, it intensifies — the defining herb of pizza, Greek and Mexican cooking.",
+   "pairings": [
+    "tomato",
+    "cheese-parmesan",
+    "lamb",
+    "lemon",
+    "chilli",
+    "olive-oil"
+   ],
+   "classic": "Oregano & tomato — pizza and Greek salad",
+   "surprising": "Oregano & pork — Mexican carnitas seasoning"
+  },
+  {
+   "id": "tarragon",
+   "name": "Tarragon",
+   "category": "herb",
+   "emoji": "🌿",
+   "aromas": [
+    "spicy",
+    "floral",
+    "green",
+    "minty"
+   ],
+   "description": "Sweet aniseed-like herb (estragole) with a delicate, sophisticated edge. The soul of béarnaise and French chicken dishes.",
+   "pairings": [
+    "chicken",
+    "egg",
+    "fish",
+    "butter",
+    "lemon",
+    "tomato"
+   ],
+   "classic": "Tarragon & chicken — the French roast classic",
+   "surprising": "Tarragon & strawberry — anise lift over the fruit"
+  },
+  {
+   "id": "chives",
+   "name": "Chives",
+   "category": "herb",
+   "emoji": "🌿",
+   "aromas": [
+    "sulfurous",
+    "green",
+    "floral"
+   ],
+   "description": "Mild, fresh oniony note with a grassy delicacy. A finishing herb that adds allium lift without raw bite.",
+   "pairings": [
+    "egg",
+    "potato",
+    "cream",
+    "fish",
+    "cheese-goat",
+    "cucumber"
+   ],
+   "classic": "Chives & potato — over a baked spud with sour cream",
+   "surprising": "Chives & cheese — the cream-cheese bagel pairing"
   }
  ],
  "aromas": {

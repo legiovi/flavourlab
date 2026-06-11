@@ -7,7 +7,7 @@ description: Aroma-based food pairing and recipe intelligence. Use when the user
 
 Aroma-based food pairing intelligence. Ingredients that share key aroma molecules
 pair well together. This skill exposes a dependency-free CLI over a curated dataset
-of **109 ingredients** (incl. wines & beverages), **17 aroma categories**,
+of **154 ingredients** (incl. wines & beverages), **17 aroma categories**,
 **2,700+ curated recipes** (full ingredients + methods), and **27 culinary foundations**.
 
 ## When to use
