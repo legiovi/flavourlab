@@ -1,14 +1,14 @@
 ---
 name: flavourlab
-description: Aroma-based food pairing and recipe intelligence. Use when the user wants to find ingredient pairings, check whether ingredients work together, generate a new recipe, create a variation of a recipe (swap an ingredient for an aroma-compatible one, e.g. fennel velouté → leek velouté), get a wine/beverage pairing, look up classical culinary base recipes (stocks, mother sauces, doughs, emulsions), or search 4,000+ real recipes. Built on flavour-pairing science (ingredients sharing volatile aroma compounds taste good together).
+description: Aroma-based food pairing and recipe intelligence. Use when the user wants to find ingredient pairings, check whether ingredients work together, generate a new recipe, create a variation of a recipe (swap an ingredient for an aroma-compatible one, e.g. fennel velouté → leek velouté), get a wine/beverage pairing, look up classical culinary base recipes (stocks, mother sauces, doughs, emulsions), or search 2,700+ curated recipes. Built on flavour-pairing science (ingredients sharing volatile aroma compounds taste good together).
 ---
 
 # FlavourLab
 
 Aroma-based food pairing intelligence. Ingredients that share key aroma molecules
 pair well together. This skill exposes a dependency-free CLI over a curated dataset
-of **108 ingredients** (incl. wines & beverages), **17 aroma categories**,
-**4,000+ real recipes** (full ingredients + methods), and **27 culinary foundations**.
+of **109 ingredients** (incl. wines & beverages), **17 aroma categories**,
+**2,700+ curated recipes** (full ingredients + methods), and **27 culinary foundations**.
 
 ## When to use
 - "What goes with X?" / "What pairs with X?" → `pairings`
