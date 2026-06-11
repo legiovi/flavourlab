@@ -53,6 +53,15 @@ INGREDIENT_MAP = {
     r'chardonnay':'chardonnay', r'riesling':'riesling', r'champagne':'champagne',
     r'\bport\b':'port', r'sherry':'sherry', r'\bsake\b':'sake', r'\bcider\b':'cider',
     r'vermouth':'vermouth',
+    # newly-added vegetables / herbs / spices / nuts
+    r'rhubarb':'rhubarb', r'asparagus':'asparagus', r'celery':'celery',
+    r'aubergine|eggplant':'aubergine', r'broccoli':'broccoli', r'cabbage':'cabbage',
+    r'parsnip':'parsnip', r'\bswede\b|rutabaga':'swede', r'watercress':'watercress',
+    r'\bdill\b':'dill', r'parsley':'parsley', r'\bsage\b':'sage',
+    r'\banise\b|aniseed|star anise':'anise', r'nutmeg':'nutmeg', r'\bclove\b|cloves':'clove',
+    r'saffron':'saffron', r'juniper':'juniper', r'horseradish':'horseradish',
+    r'walnut':'walnut', r'chestnut':'chestnut', r'peanut':'peanut', r'\bcaper':'caper',
+    r'anchov':'anchovy', r'caviar':'caviar',
 }
 COMPILED = [(re.compile(r'\b' + pat if not pat.startswith(r'\b') else pat, re.I), iid)
             for pat, iid in INGREDIENT_MAP.items()]

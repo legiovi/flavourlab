@@ -2536,6 +2536,556 @@
    ],
    "classic": "Sourdough & butter — fermented richness",
    "surprising": "Sourdough & smoked salmon — shared phenolic-smoky notes"
+  },
+  {
+   "id": "rhubarb",
+   "name": "Rhubarb",
+   "category": "vegetable",
+   "emoji": "🌿",
+   "aromas": [
+    "fruity",
+    "green",
+    "floral",
+    "earthy"
+   ],
+   "description": "Intensely sour stalks with green, fruity-tart notes. Behaves like a fruit in the kitchen; its acidity absorbs spice and cuts rich, fatty meats.",
+   "pairings": [
+    "strawberry",
+    "ginger",
+    "orange",
+    "pork",
+    "vanilla",
+    "almond"
+   ],
+   "classic": "Rhubarb & custard — British pudding classic",
+   "surprising": "Rhubarb & pork — sour fruitiness cuts the fat"
+  },
+  {
+   "id": "asparagus",
+   "name": "Asparagus",
+   "category": "vegetable",
+   "emoji": "🌿",
+   "aromas": [
+    "green",
+    "sulfurous",
+    "earthy",
+    "fatty"
+   ],
+   "description": "Green, vegetal and faintly sulfurous. Grassy when raw; roasting brings out nutty, caramellic depth.",
+   "pairings": [
+    "egg",
+    "butter",
+    "cheese-parmesan",
+    "lemon",
+    "fish",
+    "iberico-ham"
+   ],
+   "classic": "Asparagus & hollandaise — spring classic",
+   "surprising": "Asparagus & strawberry — shared green-fruity notes"
+  },
+  {
+   "id": "celery",
+   "name": "Celery",
+   "category": "vegetable",
+   "emoji": "🥬",
+   "aromas": [
+    "green",
+    "earthy",
+    "spicy",
+    "floral"
+   ],
+   "description": "Peppery, green and aromatic. A backbone of mirepoix; its phthalides give the distinctive savoury-herbal scent.",
+   "pairings": [
+    "chicken",
+    "onion",
+    "carrot",
+    "blue-cheese",
+    "apple",
+    "walnut"
+   ],
+   "classic": "Celery & blue cheese — Buffalo-wing sidekick",
+   "surprising": "Celery & peanut — shared green, nutty notes"
+  },
+  {
+   "id": "aubergine",
+   "name": "Aubergine",
+   "category": "vegetable",
+   "emoji": "🍆",
+   "aromas": [
+    "earthy",
+    "smoky",
+    "green",
+    "fatty"
+   ],
+   "description": "Mild and spongy raw; grilling or roasting develops deep smoky, savoury, almost meaty character.",
+   "pairings": [
+    "tomato",
+    "garlic",
+    "miso",
+    "lamb",
+    "tahini",
+    "basil"
+   ],
+   "classic": "Aubergine parmigiana — with tomato and cheese",
+   "surprising": "Aubergine & miso (nasu dengaku) — smoky-umami glaze"
+  },
+  {
+   "id": "broccoli",
+   "name": "Broccoli",
+   "category": "vegetable",
+   "emoji": "🥦",
+   "aromas": [
+    "sulfurous",
+    "green",
+    "earthy",
+    "nutty"
+   ],
+   "description": "Brassica with green, sulfurous notes; charring or roasting adds nutty, toasted depth.",
+   "pairings": [
+    "garlic",
+    "chilli",
+    "cheese-parmesan",
+    "almond",
+    "anchovy",
+    "lemon"
+   ],
+   "classic": "Broccoli & garlic — sautéed with chilli",
+   "surprising": "Broccoli & dark chocolate — shared sulfurous-earthy notes"
+  },
+  {
+   "id": "cabbage",
+   "name": "Cabbage",
+   "category": "vegetable",
+   "emoji": "🥬",
+   "aromas": [
+    "sulfurous",
+    "green",
+    "earthy",
+    "fermented"
+   ],
+   "description": "Green and sulfurous; fermenting (sauerkraut, kimchi) or charring transforms it into deep savoury-sour complexity.",
+   "pairings": [
+    "pork",
+    "caraway",
+    "apple",
+    "potato",
+    "chestnut",
+    "juniper"
+   ],
+   "classic": "Cabbage & pork — choucroute garnie",
+   "surprising": "Cabbage & chestnut — sweet-earthy autumn pairing"
+  },
+  {
+   "id": "parsnip",
+   "name": "Parsnip",
+   "category": "vegetable",
+   "emoji": "🥕",
+   "aromas": [
+    "earthy",
+    "caramel",
+    "spicy",
+    "nutty"
+   ],
+   "description": "Sweet, earthy root with a peppery edge; roasting brings out honeyed, caramellic notes.",
+   "pairings": [
+    "honey",
+    "cumin",
+    "carrot",
+    "apple",
+    "hazelnut",
+    "thyme"
+   ],
+   "classic": "Roast parsnip & honey — caramelised winter side",
+   "surprising": "Parsnip & banana — shared sweet, earthy esters"
+  },
+  {
+   "id": "swede",
+   "name": "Swede",
+   "category": "vegetable",
+   "emoji": "🥔",
+   "aromas": [
+    "earthy",
+    "sulfurous",
+    "caramel",
+    "green"
+   ],
+   "description": "Mellow brassica root, sweeter than turnip, with earthy-mustardy notes. A staple of mashes and stews.",
+   "pairings": [
+    "carrot",
+    "potato",
+    "butter",
+    "nutmeg",
+    "lamb",
+    "thyme"
+   ],
+   "classic": "Swede & carrot mash — Scottish neeps",
+   "surprising": "Swede & nutmeg — warm spice lifts the earthiness"
+  },
+  {
+   "id": "watercress",
+   "name": "Watercress",
+   "category": "vegetable",
+   "emoji": "🌿",
+   "aromas": [
+    "green",
+    "spicy",
+    "sulfurous",
+    "floral"
+   ],
+   "description": "Peppery, mustard-hot leaves with fresh green notes. A bright, bitter counterpoint to rich foods.",
+   "pairings": [
+    "orange",
+    "beef",
+    "egg",
+    "potato",
+    "pear",
+    "walnut"
+   ],
+   "classic": "Watercress & beef — peppery foil to roast beef",
+   "surprising": "Watercress & orange — bitter-sweet salad classic"
+  },
+  {
+   "id": "dill",
+   "name": "Dill",
+   "category": "herb",
+   "emoji": "🌿",
+   "aromas": [
+    "green",
+    "citrus",
+    "spicy",
+    "minty"
+   ],
+   "description": "Feathery herb with fresh, grassy, faintly aniseed and citrus notes. Essential to Nordic and Eastern European cooking.",
+   "pairings": [
+    "fish",
+    "cucumber",
+    "yogurt",
+    "potato",
+    "egg",
+    "lemon"
+   ],
+   "classic": "Dill & salmon — gravlax cure",
+   "surprising": "Dill & beetroot — shared fresh, earthy-green notes"
+  },
+  {
+   "id": "parsley",
+   "name": "Parsley",
+   "category": "herb",
+   "emoji": "🌿",
+   "aromas": [
+    "green",
+    "citrus",
+    "spicy",
+    "floral"
+   ],
+   "description": "Clean, grassy and peppery. Flat-leaf is the workhorse herb; the green backbone of gremolata, chimichurri and salsa verde.",
+   "pairings": [
+    "garlic",
+    "lemon",
+    "fish",
+    "potato",
+    "beef",
+    "caper"
+   ],
+   "classic": "Parsley, garlic & lemon — gremolata",
+   "surprising": "Parsley & banana — shared fresh green notes"
+  },
+  {
+   "id": "sage",
+   "name": "Sage",
+   "category": "herb",
+   "emoji": "🌿",
+   "aromas": [
+    "woody",
+    "minty",
+    "spicy",
+    "earthy"
+   ],
+   "description": "Camphoraceous, savoury and slightly bitter. Loves fat — fried in butter it turns nutty and crisp.",
+   "pairings": [
+    "butter",
+    "pork",
+    "butternut-squash",
+    "chicken",
+    "cheese-parmesan",
+    "chestnut"
+   ],
+   "classic": "Sage & butter — with pumpkin ravioli",
+   "surprising": "Sage & apple — savoury-sweet stuffing pairing"
+  },
+  {
+   "id": "anise",
+   "name": "Anise & Fennel Seed",
+   "category": "spice",
+   "emoji": "🟤",
+   "aromas": [
+    "spicy",
+    "floral",
+    "minty",
+    "woody"
+   ],
+   "description": "Sweet, liquorice-like anethole. Spans star anise, aniseed and fennel seed — warming and aromatic in both sweet and savoury dishes.",
+   "pairings": [
+    "fish",
+    "pork",
+    "orange",
+    "chocolate",
+    "fennel",
+    "cinnamon"
+   ],
+   "classic": "Anise & fish — Provençal and Chinese braises",
+   "surprising": "Star anise & beef — Vietnamese pho aromatic"
+  },
+  {
+   "id": "nutmeg",
+   "name": "Nutmeg",
+   "category": "spice",
+   "emoji": "🫚",
+   "aromas": [
+    "woody",
+    "spicy",
+    "minty",
+    "earthy"
+   ],
+   "description": "Warm, woody and sweet with a faint camphor edge. A pinch lifts dairy, spinach and custards.",
+   "pairings": [
+    "cream",
+    "cheese-parmesan",
+    "potato",
+    "cinnamon",
+    "cauliflower",
+    "lamb"
+   ],
+   "classic": "Nutmeg & béchamel — the classic grating",
+   "surprising": "Nutmeg & cauliflower — warm spice over a gratin"
+  },
+  {
+   "id": "clove",
+   "name": "Clove",
+   "category": "spice",
+   "emoji": "🟤",
+   "aromas": [
+    "spicy",
+    "woody",
+    "smoky",
+    "floral"
+   ],
+   "description": "Intensely warm, sweet and medicinal (eugenol). A little goes a long way in hams, mulled drinks and spice blends.",
+   "pairings": [
+    "orange",
+    "cinnamon",
+    "pork",
+    "apple",
+    "ginger",
+    "chocolate"
+   ],
+   "classic": "Clove & orange — pomander and mulled wine",
+   "surprising": "Clove & beef — studded into braises and stocks"
+  },
+  {
+   "id": "saffron",
+   "name": "Saffron",
+   "category": "spice",
+   "emoji": "🌺",
+   "aromas": [
+    "floral",
+    "honey",
+    "earthy",
+    "woody"
+   ],
+   "description": "Honeyed, hay-like and floral with a luxurious golden colour. Defines paella, bouillabaisse and Persian rice.",
+   "pairings": [
+    "fish",
+    "crustaceans",
+    "chicken",
+    "orange",
+    "almond",
+    "rice"
+   ],
+   "classic": "Saffron & seafood — paella and bouillabaisse",
+   "surprising": "Saffron & vanilla — floral-sweet dessert pairing"
+  },
+  {
+   "id": "juniper",
+   "name": "Juniper",
+   "category": "spice",
+   "emoji": "🫐",
+   "aromas": [
+    "woody",
+    "spicy",
+    "green",
+    "citrus"
+   ],
+   "description": "Piney, resinous berries with a citrus lift — the soul of gin. Cuts through rich game and cured meats.",
+   "pairings": [
+    "pork",
+    "beef",
+    "cabbage",
+    "gin",
+    "orange",
+    "rosemary"
+   ],
+   "classic": "Juniper & game — venison and wild boar",
+   "surprising": "Juniper & grapefruit — shared pine-citrus terpenes"
+  },
+  {
+   "id": "horseradish",
+   "name": "Horseradish",
+   "category": "spice",
+   "emoji": "🌶️",
+   "aromas": [
+    "spicy",
+    "sulfurous",
+    "green"
+   ],
+   "description": "Pungent, sinus-clearing heat from the same mustard-oil compounds as wasabi. A sharp foil to fatty proteins.",
+   "pairings": [
+    "beef",
+    "fish",
+    "beetroot",
+    "apple",
+    "cream",
+    "potato"
+   ],
+   "classic": "Horseradish & roast beef — the British pairing",
+   "surprising": "Horseradish & smoked fish — heat cuts the oil"
+  },
+  {
+   "id": "walnut",
+   "name": "Walnut",
+   "category": "other",
+   "emoji": "🌰",
+   "aromas": [
+    "nutty",
+    "earthy",
+    "woody",
+    "fatty"
+   ],
+   "description": "Rich, tannic and slightly bitter. Toasting deepens its earthy, buttery character.",
+   "pairings": [
+    "blue-cheese",
+    "pear",
+    "celery",
+    "coffee",
+    "apple",
+    "honey"
+   ],
+   "classic": "Walnut & blue cheese — salad and board classic",
+   "surprising": "Walnut & coffee — shared roasted, bitter depth"
+  },
+  {
+   "id": "chestnut",
+   "name": "Chestnut",
+   "category": "other",
+   "emoji": "🌰",
+   "aromas": [
+    "nutty",
+    "caramel",
+    "earthy",
+    "fatty"
+   ],
+   "description": "Sweet, starchy and mild with a soft, floury texture. Bridges sweet and savoury — stuffings, soups and confections.",
+   "pairings": [
+    "pork",
+    "cabbage",
+    "chocolate",
+    "cream",
+    "mushroom",
+    "vanilla"
+   ],
+   "classic": "Chestnut & sprouts — Christmas dinner classic",
+   "surprising": "Chestnut & chocolate — Mont Blanc dessert"
+  },
+  {
+   "id": "peanut",
+   "name": "Peanut",
+   "category": "other",
+   "emoji": "🥜",
+   "aromas": [
+    "nutty",
+    "earthy",
+    "caramel",
+    "fatty"
+   ],
+   "description": "Roasted, savoury-sweet legume with deep nutty notes that overlap with chocolate and coffee.",
+   "pairings": [
+    "chocolate",
+    "chilli",
+    "coriander",
+    "coconut",
+    "lime",
+    "soy-sauce"
+   ],
+   "classic": "Peanut & chocolate — Reese's, Snickers",
+   "surprising": "Peanut & chicken — satay and Thai sauces"
+  },
+  {
+   "id": "caper",
+   "name": "Caper",
+   "category": "other",
+   "emoji": "🫒",
+   "aromas": [
+    "green",
+    "floral",
+    "fermented",
+    "spicy"
+   ],
+   "description": "Pickled flower buds — briny, tangy and floral. A piquant lift for fish, sauces and pasta.",
+   "pairings": [
+    "fish",
+    "lemon",
+    "olive-oil",
+    "tomato",
+    "anchovy",
+    "butter"
+   ],
+   "classic": "Caper & lemon — with fish and piccata",
+   "surprising": "Caper & raisin — sweet-sour Sicilian agrodolce"
+  },
+  {
+   "id": "anchovy",
+   "name": "Anchovy",
+   "category": "protein",
+   "emoji": "🐟",
+   "aromas": [
+    "marine",
+    "fermented",
+    "fatty",
+    "earthy"
+   ],
+   "description": "Intensely savoury cured fish — a pure umami bomb that melts into sauces and dressings, boosting depth without tasting fishy.",
+   "pairings": [
+    "garlic",
+    "tomato",
+    "lemon",
+    "olive-oil",
+    "beef",
+    "caper"
+   ],
+   "classic": "Anchovy & garlic — bagna càuda, Caesar dressing",
+   "surprising": "Anchovy & beef — melted into a rich gravy for umami"
+  },
+  {
+   "id": "caviar",
+   "name": "Caviar",
+   "category": "protein",
+   "emoji": "🍣",
+   "aromas": [
+    "marine",
+    "fatty",
+    "earthy"
+   ],
+   "description": "Briny, buttery cured roe with a delicate marine pop. A luxury garnish that loves fat and acidity.",
+   "pairings": [
+    "egg",
+    "potato",
+    "cream",
+    "champagne",
+    "oyster",
+    "chicken"
+   ],
+   "classic": "Caviar & blini with crème fraîche",
+   "surprising": "Caviar & white chocolate — shared creamy amines"
   }
  ],
  "aromas": {
